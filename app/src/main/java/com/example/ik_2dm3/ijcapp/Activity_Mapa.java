@@ -1,15 +1,25 @@
 package com.example.ik_2dm3.ijcapp;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.util.AttributeSet;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -56,13 +66,13 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(GoogleMap googleMap) {
         // Add a marker in Arrigorriaga and move the camera
-        mMap=googleMap;
+        mMap = googleMap;
 
         LatLng AyuntamientoArrigorriaga = new LatLng(43.205889, -2.887724);
 
         mMap.addMarker(new MarkerOptions().position(AyuntamientoArrigorriaga).title("Ayuntamiento de Arrigorriaga").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(AyuntamientoArrigorriaga));
+        //mMap.moveCamera(CameraUpdateFactory.newLatLng(AyuntamientoArrigorriaga));
 
    /*
    try {
@@ -97,14 +107,31 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
             // to handle the case where the user grants the permission. See the documentation
             // for ActivityCompat#requestPermissions for more details.
             mMap.setMyLocationEnabled(true);
-        }else {
+        } else {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MY_PERMISSION_FINE_LOCATION);
             }
         }
 
+       /* if (mMap.isMyLocationEnabled()) {
+            LocationManager lm = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+
+            Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+
+            double latitude = location.getLatitude();
+            LatLng UbicacionActual = new LatLng(longitude,latitude);
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(UbicacionActual));
+            mMap.getMaxZoomLevel();
 
         }
+        */
+
+
+    }
+
+
+
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
