@@ -1,8 +1,11 @@
 package com.example.ik_2dm3.ijcapp;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -62,6 +65,16 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
         } catch (Resources.NotFoundException e) {
             Log.e(TAG, "Can't find style. Error: ", e);
         }
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+            mMap.setMyLocationEnabled(true);
+        } else {
+            // Show rationale and request permission.
+        }
+
+        //KmlLayer layer = new KmlLayer(getMap(), R.raw.kmlFile, getApplicationContext());
+        //layer.addLayerToMap();
 
     }
 }
