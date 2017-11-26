@@ -106,9 +106,25 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
         //segunda vez que abre la app se cierra.
 
         //Añadimos los marcadores que se soliciten:
-        //Arrigorriaga:
-        LatLng AyuntamientoArrigorriaga = new LatLng(43.205889, -2.887724);
+        //Arrigorriagako Udaletxea:
+        LatLng AyuntamientoArrigorriaga = new LatLng(43.20593, -2.88784);
         mMap.addMarker(new MarkerOptions().position(AyuntamientoArrigorriaga).title("Ayuntamiento de Arrigorriaga").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
+
+        //Arrigorriagako Etxetzarrak
+        LatLng ArrigorriagakoEtxetzarrak = new LatLng(43.2097, -2.88835);
+        mMap.addMarker(new MarkerOptions().position(ArrigorriagakoEtxetzarrak).title("Arrigorriagako Etxetzarrak").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
+
+        //Baruako Jauregia(Kultur Extea)
+        LatLng KulturEtxea = new LatLng(43.20947, -2.88836);
+        mMap.addMarker(new MarkerOptions().position(KulturEtxea).title("Baruako Jauregia (Kultur Etxea)").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
+
+        //Santa Maria Magdalena eliza
+        LatLng SantaMariaMagdalenaEliza = new LatLng(43.2056, -2.88866);
+        mMap.addMarker(new MarkerOptions().position(SantaMariaMagdalenaEliza).title("Santa Maria Magdalena eliza").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
+
+        //Landaederragako Kristo Santuaren baseliza
+        LatLng LandaederragakoKristoSantuarenBaseliza = new LatLng(43.2093, -2.8937);
+        mMap.addMarker(new MarkerOptions().position(LandaederragakoKristoSantuarenBaseliza).title("Landaederragako Kristo Santuaren baseliza").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
 
         //Este código es para meter el json al mapa:
        /*
