@@ -198,6 +198,8 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
         });
     }
 
+    //Recogemos el resultado del startResolutionForResult anterior y si el usuario no ha aceptadp cerramos la app y le mostramos
+    //un toast que dice que "Esta app requiere que se active el GPS"
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         final LocationSettingsStates states = LocationSettingsStates.fromIntent(data);
