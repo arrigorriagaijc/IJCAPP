@@ -108,7 +108,7 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
         //Añadimos los marcadores que se soliciten:
         //Arrigorriagako Udaletxea:
         LatLng AyuntamientoArrigorriaga = new LatLng(43.20593, -2.88784);
-        mMap.addMarker(new MarkerOptions().position(AyuntamientoArrigorriaga).title("Ayuntamiento de Arrigorriaga").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
+        mMap.addMarker(new MarkerOptions().position(AyuntamientoArrigorriaga).title("Arrigorriagako Udaletxea").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
 
         //Arrigorriagako Etxetzarrak
         LatLng ArrigorriagakoEtxetzarrak = new LatLng(43.2097, -2.88835);
