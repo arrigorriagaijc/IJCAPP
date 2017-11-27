@@ -185,7 +185,7 @@ public class SopaLetras extends AppCompatActivity {
         //Button btn810=(Button)findViewById(R.id.btn810);
         Button btn811=(Button)findViewById(R.id.btn811);
         btn811.setText(ArraylistLetras.get(69));
-
+//fasfas
         //Button btn91=(Button)findViewById(R.id.btn91);
         //Button btn92=(Button)findViewById(R.id.btn92);
         //Button btn93=(Button)findViewById(R.id.btn93);
