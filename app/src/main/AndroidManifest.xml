@@ -38,7 +38,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".OuterClass"></activity>
+        <activity android:name=".SopaLetras"></activity>
     </application>
 
 </manifest>
