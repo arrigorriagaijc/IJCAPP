@@ -230,7 +230,7 @@ public class SopaLetras extends AppCompatActivity {
         Button btn911=(Button)findViewById(R.id.btn911);
         btn911.setText(ArraylistLetras.get(70).toString());
 
-
+//
         btn11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
