@@ -2,7 +2,9 @@ package com.example.ik_2dm3.ijcapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -228,7 +230,13 @@ public class SopaLetras extends AppCompatActivity {
         Button btn911=(Button)findViewById(R.id.btn911);
         btn911.setText(ArraylistLetras.get(70).toString());
 
-        btn11.setOn
+
+        btn11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
     }
 
