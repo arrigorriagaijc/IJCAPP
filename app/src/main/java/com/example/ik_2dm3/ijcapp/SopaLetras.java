@@ -16,30 +16,36 @@ public class SopaLetras extends AppCompatActivity {
         Random r = new Random();
 
         ArrayList<Character> ArraylistLetras=new ArrayList<>();
-        for (int i=0; i<72;i++){
+        for (int i=0; i<71;i++){
             char c = (char)(r.nextInt(26) + 'a');
             ArraylistLetras.add(Character.toUpperCase(c));
         }
 
         Button btn11=(Button)findViewById(R.id.btn11);
-        btn11.setText(ArraylistLetras.get(0));
+        btn11.setText(ArraylistLetras.get(0).toString());
         Button btn12=(Button)findViewById(R.id.btn12);
-        btn12.setText(ArraylistLetras.get(1));
-        //Button btn13=(Button)findViewById(R.id.btn13);
-        //Button btn14=(Button)findViewById(R.id.btn14);
-        //Button btn15=(Button)findViewById(R.id.btn15);
-        //Button btn16=(Button)findViewById(R.id.btn16);
-        //Button btn17=(Button)findViewById(R.id.btn17);
+        btn12.setText(ArraylistLetras.get(1).toString());
+        Button btn13=(Button)findViewById(R.id.btn13);
+        btn13.setText("L");
+        Button btn14=(Button)findViewById(R.id.btn14);
+        btn14.setText("E");
+        Button btn15=(Button)findViewById(R.id.btn15);
+        btn15.setText("Y");
+        Button btn16=(Button)findViewById(R.id.btn16);
+        btn13.setText("E");
+        Button btn17=(Button)findViewById(R.id.btn17);
+        btn17.setText("S");
         Button btn18=(Button)findViewById(R.id.btn18);
-        btn18.setText(ArraylistLetras.get(2));
+        btn18.setText(ArraylistLetras.get(2).toString());
         Button btn19=(Button)findViewById(R.id.btn19);
-        btn19.setText(ArraylistLetras.get(3));
+        btn19.setText(ArraylistLetras.get(3).toString());
         Button btn110=(Button)findViewById(R.id.btn110);
-        btn110.setText(ArraylistLetras.get(4));
+        btn110.setText(ArraylistLetras.get(4).toString());
         Button btn111=(Button)findViewById(R.id.btn111);
-        btn111.setText(ArraylistLetras.get(5));
+        btn111.setText(ArraylistLetras.get(5).toString());
 
-        //Button btn21=(Button)findViewById(R.id.btn21);
+        Button btn21=(Button)findViewById(R.id.btn21);
+        btn21.setText("A");
         Button btn22=(Button)findViewById(R.id.btn22);
         btn22.setText(ArraylistLetras.get(6));
         Button btn23=(Button)findViewById(R.id.btn23);
@@ -56,11 +62,13 @@ public class SopaLetras extends AppCompatActivity {
         btn28.setText(ArraylistLetras.get(12));
         Button btn29=(Button)findViewById(R.id.btn29);
         btn29.setText(ArraylistLetras.get(13));
-        //Button btn210=(Button)findViewById(R.id.btn210);
+        Button btn210=(Button)findViewById(R.id.btn210);
+        btn210.setText("P");
         Button btn211=(Button)findViewById(R.id.btn211);
         btn211.setText(ArraylistLetras.get(14));
 
-        //Button btn31=(Button)findViewById(R.id.btn31);
+        Button btn31=(Button)findViewById(R.id.btn31);
+        btn31.setText("L");
         Button btn32=(Button)findViewById(R.id.btn32);
         btn32.setText(ArraylistLetras.get(15));
         Button btn33=(Button)findViewById(R.id.btn33);
@@ -77,11 +85,13 @@ public class SopaLetras extends AppCompatActivity {
         btn38.setText(ArraylistLetras.get(21));
         Button btn39=(Button)findViewById(R.id.btn39);
         btn39.setText(ArraylistLetras.get(22));
-        //Button btn310=(Button)findViewById(R.id.btn310);
+        Button btn310=(Button)findViewById(R.id.btn310);
+        btn310.setText("O");
         Button btn311=(Button)findViewById(R.id.btn311);
         btn311.setText(ArraylistLetras.get(23));
 
-        //Button btn41=(Button)findViewById(R.id.btn41);
+        Button btn41=(Button)findViewById(R.id.btn41);
+        btn41.setText("C");
         Button btn42=(Button)findViewById(R.id.btn42);
         btn42.setText(ArraylistLetras.get(24));
         Button btn43=(Button)findViewById(R.id.btn43);
@@ -98,11 +108,13 @@ public class SopaLetras extends AppCompatActivity {
         btn48.setText(ArraylistLetras.get(30));
         Button btn49=(Button)findViewById(R.id.btn49);
         btn49.setText(ArraylistLetras.get(31));
-        //Button btn410=(Button)findViewById(R.id.btn410);
+        Button btn410=(Button)findViewById(R.id.btn410);
+        btn410.setText("L");
         Button btn411=(Button)findViewById(R.id.btn411);
         btn411.setText(ArraylistLetras.get(32));
 
-        //Button btn51=(Button)findViewById(R.id.btn51);
+        Button btn51=(Button)findViewById(R.id.btn51);
+        btn51.setText("A");
         Button btn52=(Button)findViewById(R.id.btn52);
         btn52.setText(ArraylistLetras.get(33));
         Button btn53=(Button)findViewById(R.id.btn53);
@@ -119,11 +131,13 @@ public class SopaLetras extends AppCompatActivity {
         btn58.setText(ArraylistLetras.get(39));
         Button btn59=(Button)findViewById(R.id.btn59);
         btn59.setText(ArraylistLetras.get(40));
-        //Button btn510=(Button)findViewById(R.id.btn510);
+        Button btn510=(Button)findViewById(R.id.btn510);
+        btn510.setText("I");
         Button btn511=(Button)findViewById(R.id.btn511);
         btn511.setText(ArraylistLetras.get(41));
 
-        //Button btn61=(Button)findViewById(R.id.btn61);
+        Button btn61=(Button)findViewById(R.id.btn61);
+        btn61.setText("L");
         Button btn62=(Button)findViewById(R.id.btn62);
         btn62.setText(ArraylistLetras.get(42));
         Button btn63=(Button)findViewById(R.id.btn63);
@@ -140,65 +154,79 @@ public class SopaLetras extends AppCompatActivity {
         btn68.setText(ArraylistLetras.get(48));
         Button btn69=(Button)findViewById(R.id.btn69);
         btn69.setText(ArraylistLetras.get(49));
-        //Button btn610=(Button)findViewById(R.id.btn610);
+        Button btn610=(Button)findViewById(R.id.btn610);
+        btn610.setText("T");
         Button btn611=(Button)findViewById(R.id.btn611);
         btn611.setText(ArraylistLetras.get(50));
 
-        //Button btn71=(Button)findViewById(R.id.btn71);
+        Button btn71=(Button)findViewById(R.id.btn71);
+        btn71.setText("D");
         Button btn72=(Button)findViewById(R.id.btn72);
         btn72.setText(ArraylistLetras.get(51));
         Button btn73=(Button)findViewById(R.id.btn73);
-        btn73.setText(ArraylistLetras.get(54));
+        btn73.setText(ArraylistLetras.get(52));
         Button btn74=(Button)findViewById(R.id.btn74);
-        btn74.setText(ArraylistLetras.get(55));
+        btn74.setText(ArraylistLetras.get(53));
         Button btn75=(Button)findViewById(R.id.btn75);
-        btn75.setText(ArraylistLetras.get(56));
+        btn75.setText(ArraylistLetras.get(54));
         Button btn76=(Button)findViewById(R.id.btn76);
-        btn76.setText(ArraylistLetras.get(57));
+        btn76.setText(ArraylistLetras.get(55));
         Button btn77=(Button)findViewById(R.id.btn77);
-        btn77.setText(ArraylistLetras.get(58));
+        btn77.setText(ArraylistLetras.get(56));
         Button btn78=(Button)findViewById(R.id.btn78);
-        btn78.setText(ArraylistLetras.get(59));
+        btn78.setText(ArraylistLetras.get(57));
         Button btn79=(Button)findViewById(R.id.btn79);
-        btn79.setText(ArraylistLetras.get(60));
-        //Button btn710=(Button)findViewById(R.id.btn710);
+        btn79.setText(ArraylistLetras.get(58));
+        Button btn710=(Button)findViewById(R.id.btn710);
+        btn710.setText("I");
         Button btn711=(Button)findViewById(R.id.btn711);
-        btn711.setText(ArraylistLetras.get(61));
+        btn711.setText(ArraylistLetras.get(59));
 
-        //Button btn81=(Button)findViewById(R.id.btn81);
+        Button btn81=(Button)findViewById(R.id.btn81);
+        btn81.setText("E");
         Button btn82=(Button)findViewById(R.id.btn82);
-        btn82.setText(ArraylistLetras.get(62));
+        btn82.setText(ArraylistLetras.get(60));
         Button btn83=(Button)findViewById(R.id.btn83);
-        btn83.setText(ArraylistLetras.get(63));
+        btn83.setText(ArraylistLetras.get(61));
         Button btn84=(Button)findViewById(R.id.btn84);
-        btn84.setText(ArraylistLetras.get(64));
+        btn84.setText(ArraylistLetras.get(62));
         Button btn85=(Button)findViewById(R.id.btn85);
-        btn85.setText(ArraylistLetras.get(65));
+        btn85.setText(ArraylistLetras.get(63));
         Button btn86=(Button)findViewById(R.id.btn86);
-        btn86.setText(ArraylistLetras.get(66));
+        btn86.setText(ArraylistLetras.get(64));
         Button btn87=(Button)findViewById(R.id.btn87);
-        btn86.setText(ArraylistLetras.get(67));
+        btn86.setText(ArraylistLetras.get(65));
         Button btn88=(Button)findViewById(R.id.btn88);
-        btn87.setText(ArraylistLetras.get(68));
+        btn87.setText(ArraylistLetras.get(66));
         Button btn89=(Button)findViewById(R.id.btn89);
-        btn89.setText(ArraylistLetras.get(68));
-        //Button btn810=(Button)findViewById(R.id.btn810);
+        btn89.setText(ArraylistLetras.get(67));
+        Button btn810=(Button)findViewById(R.id.btn810);
+        btn810.setText("C");
         Button btn811=(Button)findViewById(R.id.btn811);
-        btn811.setText(ArraylistLetras.get(69));
-//fasfas
-        //Button btn91=(Button)findViewById(R.id.btn91);
-        //Button btn92=(Button)findViewById(R.id.btn92);
-        //Button btn93=(Button)findViewById(R.id.btn93);
-        //Button btn94=(Button)findViewById(R.id.btn94);
-        //Button btn95=(Button)findViewById(R.id.btn95);
-        //Button btn96=(Button)findViewById(R.id.btn96);
-        //Button btn97=(Button)findViewById(R.id.btn97);
-        //Button btn98=(Button)findViewById(R.id.btn98);
+        btn811.setText(ArraylistLetras.get(68));
+
+        Button btn91=(Button)findViewById(R.id.btn91);
+        btn91.setText("C");
+        Button btn92=(Button)findViewById(R.id.btn92);
+        btn92.setText("O");
+        Button btn93=(Button)findViewById(R.id.btn93);
+        btn93.setText("N");
+        Button btn94=(Button)findViewById(R.id.btn94);
+        btn94.setText("C");
+        Button btn95=(Button)findViewById(R.id.btn95);
+        btn95.setText("E");
+        Button btn96=(Button)findViewById(R.id.btn96);
+        btn96.setText("J");
+        Button btn97=(Button)findViewById(R.id.btn97);
+        btn97.setText("A");
+        Button btn98=(Button)findViewById(R.id.btn98);
+        btn98.setText("L");
         Button btn99=(Button)findViewById(R.id.btn99);
-        btn99.setText(ArraylistLetras.get(70));
-        //Button btn910=(Button)findViewById(R.id.btn910);
+        btn99.setText(ArraylistLetras.get(69));
+        Button btn910=(Button)findViewById(R.id.btn910);
+        btn13.setText("A");
         Button btn911=(Button)findViewById(R.id.btn911);
-        btn911.setText(ArraylistLetras.get(71));
+        btn911.setText(ArraylistLetras.get(70));
 
     }
 
