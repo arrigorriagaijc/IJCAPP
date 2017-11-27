@@ -45,6 +45,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -108,24 +109,46 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
         //Añadimos los marcadores que se soliciten:
         //Arrigorriagako Udaletxea:
         LatLng AyuntamientoArrigorriaga = new LatLng(43.20593, -2.88784);
-        mMap.addMarker(new MarkerOptions().position(AyuntamientoArrigorriaga).title("Arrigorriagako Udaletxea").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
+        Marker AyArrigo= mMap.addMarker(new  MarkerOptions().position(AyuntamientoArrigorriaga).title("Arrigorriagako Udaletxea").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
 
         //Arrigorriagako Etxetzarrak
         LatLng ArrigorriagakoEtxetzarrak = new LatLng(43.2097, -2.88835);
-        mMap.addMarker(new MarkerOptions().position(ArrigorriagakoEtxetzarrak).title("Arrigorriagako Etxetzarrak").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
+        Marker ArrigoEtxe=mMap.addMarker(new MarkerOptions().position(ArrigorriagakoEtxetzarrak).title("Arrigorriagako Etxetzarrak").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
 
         //Baruako Jauregia(Kultur Extea)
         LatLng KulturEtxea = new LatLng(43.20947, -2.88836);
-        mMap.addMarker(new MarkerOptions().position(KulturEtxea).title("Baruako Jauregia (Kultur Etxea)").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
+        Marker KulturEtxe=mMap.addMarker(new MarkerOptions().position(KulturEtxea).title("Baruako Jauregia (Kultur Etxea)").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
 
         //Santa Maria Magdalena eliza
         LatLng SantaMariaMagdalenaEliza = new LatLng(43.2056, -2.88866);
-        mMap.addMarker(new MarkerOptions().position(SantaMariaMagdalenaEliza).title("Santa Maria Magdalena eliza").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
+        Marker MariaEliza=mMap.addMarker(new MarkerOptions().position(SantaMariaMagdalenaEliza).title("Santa Maria Magdalena eliza").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
 
         //Landaederragako Kristo Santuaren baseliza
         LatLng LandaederragakoKristoSantuarenBaseliza = new LatLng(43.2093, -2.8937);
-        mMap.addMarker(new MarkerOptions().position(LandaederragakoKristoSantuarenBaseliza).title("Landaederragako Kristo Santuaren baseliza").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
+        Marker LandaBas=mMap.addMarker(new MarkerOptions().position(LandaederragakoKristoSantuarenBaseliza).title("Landaederragako Kristo Santuaren baseliza").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
 
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                if(marker.getTitle().equals("Arrigorriagako Udaletxea")) {
+                    marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ayunatmientoarrigorriagaredondo));
+                }
+                if(marker.getTitle().equals("Arrigorriagako Etxetzarrak")) {
+                    marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.arrigorriagakoetxetzarrrakredondo));
+                }
+                if(marker.getTitle().equals("Baruako Jauregia (Kultur Etxea)")) {
+                    marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.baruakojauregiaredondo));
+                }
+                if(marker.getTitle().equals("Santa Maria Magdalena eliza")) {
+                    marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.santamariamagdalenaredondo));
+                }
+                if(marker.getTitle().equals("Landaederragako Kristo Santuaren baseliza")) {
+                    marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.landaederragakokirstosantuarenbaseliza));
+                }
+
+                return false;
+            }
+        });
         //Este código es para meter el json al mapa:
        /*
        try {
