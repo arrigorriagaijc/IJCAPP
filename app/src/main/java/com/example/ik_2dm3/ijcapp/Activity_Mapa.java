@@ -132,6 +132,8 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
             public boolean onMarkerClick(Marker marker) {
                 if(marker.getTitle().equals("Arrigorriagako Udaletxea")) {
                     marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ayunatmientoarrigorriagaredondo));
+                    Intent intent=new Intent(Activity_Mapa.this, SopaLetras.class);
+                    startActivity(intent);
                 }
                 if(marker.getTitle().equals("Arrigorriagako Etxetzarrak")) {
                     marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.arrigorriagakoetxetzarrrakredondo));
