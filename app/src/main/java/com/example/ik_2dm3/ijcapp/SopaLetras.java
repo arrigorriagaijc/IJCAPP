@@ -105,26 +105,43 @@ public class SopaLetras extends AppCompatActivity {
         //Button btn71=(Button)findViewById(R.id.btn71);
         Button btn72=(Button)findViewById(R.id.btn72);
         Button btn73=(Button)findViewById(R.id.btn73);
+        btn73.setText(ArraylistLetras.get(54));
         Button btn74=(Button)findViewById(R.id.btn74);
+        btn74.setText(ArraylistLetras.get(55));
         Button btn75=(Button)findViewById(R.id.btn75);
+        btn75.setText(ArraylistLetras.get(56));
         Button btn76=(Button)findViewById(R.id.btn76);
+        btn76.setText(ArraylistLetras.get(57));
         Button btn77=(Button)findViewById(R.id.btn77);
+        btn77.setText(ArraylistLetras.get(58));
         Button btn78=(Button)findViewById(R.id.btn78);
+        btn78.setText(ArraylistLetras.get(59));
         Button btn79=(Button)findViewById(R.id.btn79);
+        btn79.setText(ArraylistLetras.get(60));
         //Button btn710=(Button)findViewById(R.id.btn710);
         Button btn711=(Button)findViewById(R.id.btn711);
+        btn711.setText(ArraylistLetras.get(61));
 
         //Button btn81=(Button)findViewById(R.id.btn81);
         Button btn82=(Button)findViewById(R.id.btn82);
+        btn82.setText(ArraylistLetras.get(62));
         Button btn83=(Button)findViewById(R.id.btn83);
+        btn83.setText(ArraylistLetras.get(63));
         Button btn84=(Button)findViewById(R.id.btn84);
+        btn84.setText(ArraylistLetras.get(64));
         Button btn85=(Button)findViewById(R.id.btn85);
+        btn85.setText(ArraylistLetras.get(65));
         Button btn86=(Button)findViewById(R.id.btn86);
+        btn86.setText(ArraylistLetras.get(66));
         Button btn87=(Button)findViewById(R.id.btn87);
+        btn86.setText(ArraylistLetras.get(67));
         Button btn88=(Button)findViewById(R.id.btn88);
+        btn87.setText(ArraylistLetras.get(68));
         Button btn89=(Button)findViewById(R.id.btn89);
+        btn89.setText(ArraylistLetras.get(68));
         //Button btn810=(Button)findViewById(R.id.btn810);
         Button btn811=(Button)findViewById(R.id.btn811);
+        btn811.setText(ArraylistLetras.get(69));
 
         //Button btn91=(Button)findViewById(R.id.btn91);
         //Button btn92=(Button)findViewById(R.id.btn92);
@@ -135,8 +152,10 @@ public class SopaLetras extends AppCompatActivity {
         //Button btn97=(Button)findViewById(R.id.btn97);
         //Button btn98=(Button)findViewById(R.id.btn98);
         Button btn99=(Button)findViewById(R.id.btn99);
+        btn99.setText(ArraylistLetras.get(70));
         //Button btn910=(Button)findViewById(R.id.btn910);
         Button btn911=(Button)findViewById(R.id.btn911);
+        btn911.setText(ArraylistLetras.get(71));
 
     }
 
