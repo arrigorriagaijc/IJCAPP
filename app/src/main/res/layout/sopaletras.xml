@@ -26,7 +26,114 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="9.6"
-        android:weightSum="11"
-        android:orientation="horizontal"></LinearLayout>
+        android:orientation="vertical"
+        android:weightSum="11">
+
+        <LinearLayout
+            android:id="@+id/llHFila1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llHFila2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llHFila3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llHFila4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llHFila5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="9">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llHFila6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="9">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llHFila7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="9">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llHFila8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="9">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llHFila9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="9">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llHFila10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="9">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llHFila11"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="9">
+
+        </LinearLayout>
+    </LinearLayout>
 
 </android.widget.LinearLayout>

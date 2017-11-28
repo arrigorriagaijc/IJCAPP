@@ -2,7 +2,9 @@ package com.example.ik_2dm3.ijcapp;
 
 import android.content.Context;
 import android.support.v7.widget.AppCompatButton;
+import android.support.v7.widget.LinearLayoutCompat;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class Letras extends android.support.v7.widget.AppCompatTextView
@@ -18,6 +20,7 @@ public class Letras extends android.support.v7.widget.AppCompatTextView
         this.x=x;
         this.y=y;
         this.letra=letra;
+        this.setLayoutParams(new LinearLayoutCompat.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT,1));
 
         this.setText(String.valueOf(letra));
     }
