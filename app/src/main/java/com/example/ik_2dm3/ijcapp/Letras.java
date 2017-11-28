@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class Letras extends android.support.v7.widget.AppCompatTextView
+public class Letras extends android.support.v7.widget.AppCompatButton
 {
     public int x = 0 ;
     public int y = 0;
@@ -20,8 +20,10 @@ public class Letras extends android.support.v7.widget.AppCompatTextView
         this.x=x;
         this.y=y;
         this.letra=letra;
-        this.setLayoutParams(new LinearLayoutCompat.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT,1));
 
-        this.setText(String.valueOf(letra));
+        this.setLayoutParams(new LinearLayoutCompat.LayoutParams(LinearLayoutCompat.LayoutParams.WRAP_CONTENT, LinearLayoutCompat.LayoutParams.MATCH_PARENT,1));
+        this.setText(String.valueOf(letra).toUpperCase());
+        //this.setTextAlignment(TEXT_ALIGNMENT_CENTER);
+        //this.setPadding(0,10,0,10);
     }
 }
