@@ -1,23 +1,16 @@
 package com.example.ik_2dm3.ijcapp;
 
-import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutCompat;
-import android.util.Log;
-import android.view.DragEvent;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.MultiAutoCompleteTextView;
 import android.widget.TextView;
-
+import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Random;
-//
+
 
 public class SopaLetras extends AppCompatActivity {
 
@@ -27,27 +20,34 @@ public class SopaLetras extends AppCompatActivity {
     private Boolean PrimerToque=false;
     private ArrayList<TextView> arrayListLetrasSeleccionadas=new ArrayList<>();
     private ArrayList<TextView> arrayListLetraAnterior=new ArrayList<>();
+    private ArrayList<TextView> arrayListLetrasAcertadas=new ArrayList<>();
+    private ArrayList<TextView> arrayListTextView=new ArrayList<>();
+    private boolean añadir=true;
+    private int aciertos=0;
+    private float[] posFinX = new float[1];
+    private float[] posFinY = new float[1];
+    private float[] dirX = new float[1];
+    private float[] dirY = new float[1];
+    private float[] posX = new float[1];
+    private float[] posY = new float[1];
+    private boolean alcalde=false;
+    private boolean concejal=false;
+    private boolean politica=false;
+    private boolean leyes=false;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sopaletras);
 
+        //Declaro el char que me va a servir para guardar las letras que genere para la sopa de letras
         char c;
-        final ArrayList<TextView> arrayListTextView=new ArrayList<>();
+        //Preparo una sentencia alatoria
         Random r = new Random();
-        final float[] posIniX = new float[1];
-        final float[] posIniY = new float[1];
-        final float[] posFinX = new float[1];
-        final float[] posFinY = new float[1];
-        final float[] dirX = new float[1];
-        final float[] dirY = new float[1];
-        final float[] posX = new float[1];
-        final float[] posY = new float[1];
 
-        //LinearLayout llHFila9=(LinearLayout)findViewById(R.id.llHFila9);
-        //llHFila1.setY((float) 200.0);
-
+        //Añado todos los textViews a un arraylist - Código Espartano
         TextView tv1= findViewById(R.id.tv1);
         arrayListTextView.add(tv1);
         TextView tv2= findViewById(R.id.tv2);
@@ -248,126 +248,316 @@ public class SopaLetras extends AppCompatActivity {
         arrayListTextView.add(tv99);
 
 
-        /*if (hitRect.contains(posiX, posiY)) {
-            arrayListTextView.get(j).setBackgroundColor(Color.parseColor("#E4E663"));
-            Log.d(TAG,"Estas dentro");
-        }*/
-
-        //float pos;
-        //pos=findViewById(R.id.tv99).getY();
-        //tv95.getLocationInWindow(pos);
-        //Log.d(TAG,"X: "+Float.toString(pos));
-        //Log.d(TAG,Float.toString(tv99.getTranslationY()));
-
+        //Recorro el array de textViews
         for(int i=0;i<99;i++){
+            //Genero una letra para la char c
             c = (char)(r.nextInt(26) + 'a');
+            //Asigno la letra al textView que estemos
             arrayListTextView.get(i).setText(String.valueOf(c).toUpperCase());
-            arrayListTextView.get(i).setFocusable(true);
-            arrayListTextView.get(i).setFocusableInTouchMode(true);
+            //Declaro un evento que reaccione al toque de la pantalla
             arrayListTextView.get(i).setOnTouchListener(new View.OnTouchListener() {
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
+                    //4 casos
                     switch (event.getAction()) {
+                        //El primer caso es cuando toco con el dedo la pantalla, este evento solo recoge el primer pulso, no el arrastrar
                         case MotionEvent.ACTION_DOWN:
+                            //Transformo la vista v del listener en textView ya que es su formato original y para trabajar con el.
                             ((TextView) v).setBackgroundColor(Color.parseColor("#E4E663"));
+                            //En otro array donde voy a guardar las letras que yo seleccione con el dedo voy a guardar este textView
                             arrayListLetrasSeleccionadas.add((TextView)v);
+                            //Aqui estoy declarando una variable que es capaz de coger una vista y decir con la siguiente función si unas coordenadas que yo
+                            //le paso están dentro de esa vista.
                             Rect hitRect = mHitRect;
+                            //Esta es la función citada, que hace referencia a la vista v (el TextView) y modifica la variable hitRect que le paso
                             v.getGlobalVisibleRect(hitRect);
+                            //Con estas dos funciones sacamos la X e Y central de la vista
                             dirX[0]=hitRect.exactCenterX();
                             dirY[0]=hitRect.exactCenterY();
+                            //En este otro array voy a guardar la letra que tengo para posteriormente comprobar la direccion en la que he empezado a arrastrar el dedo
                             arrayListLetraAnterior.add((TextView)v);
+                            //Aqui declaro una variable que me servira para que se establezcan las direcciones una sola vez y no se vuelva loco el problema
                             PrimerToque=false;
-                            //Log.d(TAG,Float.toString(posIniX[0])+" "+Float.toString(posIniY[0]));
+                            //Aqui declaro una variable que me va a decir si el textView en el que estoy ya lo he añadido al arraylist de antes para que no se repitan letras
+                            añadir=true;
                             break;
+                        //El segundo caso es cuando levanto el dedo de la pantalla, este evento solo recoge el primer pulso, no el arrastrar
                         case MotionEvent.ACTION_UP:
-                            //Cuando levanto el dedo se pone all blanco
-                            for(int z=0;z<99;z++){
-                                arrayListTextView.get(z).setBackgroundColor(Color.parseColor("#FFFFFF"));
-                            }
+                            //Declaro la variable en la que se va a guardar la palabra que tengo marcada con el dedo
                             String palabra=new String("");
+                            //Meto en la palabra lo que tengo marcado (seleccionado)
                             for (int g=0;g<arrayListLetrasSeleccionadas.size();g++){
                                 palabra=palabra+arrayListLetrasSeleccionadas.get(g).getText();
                             }
-                            Log.d(TAG,palabra);
-                            break;
-                        case MotionEvent.ACTION_MOVE:
-                            ((TextView) v).setBackgroundColor(Color.parseColor("#E4E663"));
-                            //Esta es la posición actual del dedo
-                            posX[0] =event.getRawX();
-                            posY[0] =event.getRawY();
-                            int posiX=(int)posX[0];
-                            int posiY=(int)posY[0];
-                            //Compruebo que mi posicion actual coincide con la posicion de alguno de los textviews
+                            //Si la palabra que tengo seleccionada coincide con alcalde y no ha sido acertada
+                            if (palabra.equals("ALCALDE") && alcalde==false){
+                                //Hago un bucle donde busco los textViews donde están las letras de esta palabra
+                                for(int z=0;z<99;z++){
+                                    for(int s=0; s<arrayListLetrasSeleccionadas.size();s++){
+                                        if(arrayListTextView.get(z).equals(arrayListLetrasSeleccionadas.get(s))){
+                                            //les cambio el color a azul clarito
+                                            arrayListTextView.get(z).setBackgroundColor(Color.parseColor("#00FFFF"));
+                                            //añado al array de letras acertadas los textViews de la palabra
+                                            arrayListLetrasAcertadas.add(arrayListTextView.get(z));
+                                        }
 
-                            for(int j=0;j<99;j++){
-                                //Obtengo el cuadrado posicional de mi textview
-                                hitRect = mHitRect;
-                                arrayListTextView.get(j).getGlobalVisibleRect(hitRect);
-                                //Log.d(TAG,"Pos: "+Integer.toString(j+1)+", X: "+Integer.toString((int)hitRect.exactCenterX())+", Y: "+Integer.toString((int)hitRect.exactCenterY()));
+                                    }
 
-                                    //Si estoy en uno de los textviews:
-                                    if(hitRect.contains(posiX,posiY)){
-                                        //Capturamos las coordenadas del cuadrado sobre el que estamos
-                                        posFinX[0]=hitRect.exactCenterX();
-                                        posFinY[0]=hitRect.exactCenterY();
-                                        //
-                                        //
-                                        //Si no es el anterior textview:
-                                        if(!arrayListLetraAnterior.get(arrayListLetraAnterior.size()-1).equals(arrayListTextView.get(j)) && ((posFinX[0]!=dirX[0] && posFinY[0]==dirY[0])  || (posFinX[0]==dirX[0] && posFinY[0]!=dirY[0]))){
-
-                                            if(dirX[0]==posFinX[0] && posFinY[0]<dirY[0]){
-                                                direccion=new String("arriba");
-                                                //Log.d(TAG,"arriba");
-                                            }
-                                            //Si vamos hacia abajo
-                                            if(dirX[0]==posFinX[0] && posFinY[0]>dirY[0]){
-                                                direccion=new String("abajo");
-                                                //Log.d(TAG,"abajo");
-                                            }
-                                            //Si vamos hacia la derecha
-                                            if(dirY[0]==posFinY[0] && posFinX[0]>dirX[0]){
-                                                direccion=new String("derecha");
-                                                //Log.d(TAG,"derecha");
-                                            }
-                                            //Si vamos hacia la izquierda
-                                            if(dirY[0]==posFinY[0] && posFinX[0]<dirX[0]) {
-                                                direccion = new String("izquierda");
-                                                //Log.d(TAG, "izquierda");
-                                            }
-                                                //Log.d(TAG,Float.toString(posFinX[0])+" "+Float.toString(posFinY[0]));
-                                            //Si la posicion del cuadrado coincide con la de la direccion:
-                                            if(posFinX[0]==dirX[0] && (direccion.equals("arriba") || direccion.equals("abajo"))){
-                                                arrayListTextView.get(j).setBackgroundColor(Color.parseColor("#E4E663"));
-                                                //Meto en un array las letras que he seleccionado
-                                                arrayListLetrasSeleccionadas.add(arrayListTextView.get(j));
-                                                arrayListLetraAnterior.add(arrayListTextView.get(j));
-                                                //Log.d(TAG,"Funciona");
-                                            }
-                                            else if(posFinY[0]==dirY[0] && (direccion.equals("izquierda") || direccion.equals("derecha"))){
-                                                arrayListTextView.get(j).setBackgroundColor(Color.parseColor("#E4E663"));
-                                                //Meto en un array las letras que he seleccionado
-                                                arrayListLetrasSeleccionadas.add(arrayListTextView.get(j));
-                                                arrayListLetraAnterior.add(arrayListTextView.get(j));
-                                            }
+                                }
+                                //Pongo el valor de alcalde a true para que no vuelva a contabilizarla
+                                alcalde=true;
+                                //Aumento en uno los aciertos
+                                aciertos++;
+                            }
+                            //Si la palabra que tengo seleccionada coincide con leyes y no ha sido acertada
+                            else if (palabra.equals("LEYES") && leyes==false){
+                                //Hago un bucle donde busco los textViews donde están las letras de esta palabra
+                                for(int z=0;z<99;z++){
+                                    for(int s=0; s<arrayListLetrasSeleccionadas.size();s++){
+                                        if(arrayListTextView.get(z).equals(arrayListLetrasSeleccionadas.get(s))){
+                                            //les cambio el color a azul clarito
+                                            arrayListTextView.get(z).setBackgroundColor(Color.parseColor("#00FFFF"));
+                                            //añado al array de letras acertadas los textViews de la palabra
+                                            arrayListLetrasAcertadas.add(arrayListTextView.get(z));
 
                                         }
 
-                                    //Log.d(TAG,"Estas fuera");
-                                }
+                                    }
 
+                                }
+                                //Pongo el valor de leyes a true para que no vuelva a contabilizarla
+                                leyes=true;
+                                //Aumento en uno los aciertos
+                                aciertos++;
+                            }
+                            //Si la palabra que tengo seleccionada coincide con concejal y no ha sido acertada
+                            else if (palabra.equals("CONCEJAL") && concejal==false){
+                                //Hago un bucle donde busco los textViews donde están las letras de esta palabra
+                                for(int z=0;z<99;z++){
+                                    for(int s=0; s<arrayListLetrasSeleccionadas.size();s++){
+                                        if(arrayListTextView.get(z).equals(arrayListLetrasSeleccionadas.get(s))){
+                                            //les cambio el color a azul clarito
+                                            arrayListTextView.get(z).setBackgroundColor(Color.parseColor("#00FFFF"));
+                                            //añado al array de letras acertadas los textViews de la palabra
+                                            arrayListLetrasAcertadas.add(arrayListTextView.get(z));
+
+                                        }
+
+                                    }
+
+                                }
+                                //Pongo el valor de concejal a true para que no vuelva a contabilizarla
+                                concejal=true;
+                                //Aumento en uno los aciertos
+                                aciertos++;
+                            }
+                            //Si la palabra que tengo seleccionada coincide con politica y no ha sido acertada
+                            else if (palabra.equals("POLITICA") && politica==false){
+                                //Hago un bucle donde busco los textViews donde están las letras de esta palabra
+                                for(int z=0;z<99;z++){
+                                    for(int s=0; s<arrayListLetrasSeleccionadas.size();s++){
+                                        if(arrayListTextView.get(z).equals(arrayListLetrasSeleccionadas.get(s))){
+                                            //les cambio el color a azul clarito
+                                            arrayListTextView.get(z).setBackgroundColor(Color.parseColor("#00FFFF"));
+                                            //añado al array de letras acertadas los textViews de la palabra
+                                            arrayListLetrasAcertadas.add(arrayListTextView.get(z));
+
+                                        }
+
+                                    }
+
+                                }
+                                //Pongo el valor de politica a true para que no vuelva a contabilizarla
+                                politica=true;
+                                //Aumento en uno los aciertos
+                                aciertos++;
+                            //Si no es ninguna de las 4 palabras
+                            }else{
+                                //Hago un bucle donde recorro el array de todos los textviews
+                                for(int t=0; t<99;t++){
+                                    //Si el arraydeletrasacertadas esta vacío pongo all blanco
+                                    if(arrayListLetrasAcertadas.isEmpty()){
+                                        //Pongo el textView blanco
+                                        arrayListTextView.get(t).setBackgroundColor(Color.parseColor("#FFFFFF"));
+                                    }
+                                    //Si no esta vacio
+                                    else {
+                                        //Hago un bucle donde recorro el array de letras acertadas
+                                        for (int l = 0; l < arrayListLetrasAcertadas.size(); l++) {
+                                            //si el textview de letras acertadas no coincide con el textview del array de todos los textviews
+                                            if (!arrayListTextView.get(t).equals(arrayListLetrasAcertadas.get(l))) {
+                                                //Cambio el color a blanco
+                                                arrayListTextView.get(t).setBackgroundColor(Color.parseColor("#FFFFFF"));
+                                            }
+                                            else{
+                                                //cambio el color a azul clarito
+                                                arrayListTextView.get(t).setBackgroundColor(Color.parseColor("#00FFFF"));
+                                                //Salgo del bucle para que no me siga comparando porque si no me lo vuelve a poner blanco
+                                                //ya que compara con todas las letras acertadas
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            //Limpio el arraylist de letras seleccionadas
+                            arrayListLetrasSeleccionadas.clear();
+                            //Limpio el arraylist de letras anteriores
+                            arrayListLetraAnterior.clear();
+                            //Vacio la palabra
+                            palabra=new String("");
+                            //Hago un bucle recorriendo el array de letras acertadas
+                            for (int g=0;g<arrayListLetrasAcertadas.size();g++){
+                                //Asigno a palabra cada una de las letras de los textViews
+                                palabra=palabra+arrayListLetrasAcertadas.get(g).getText();
+                            }
+                            //Si los aciertos son 4, (Estan todos acertados)
+                            if(aciertos==4){
+                                //Saco un mensaje de eres un crack por pantalla en un toast
+                                Toast.makeText(getApplicationContext(), "Eres un crack", Toast.LENGTH_LONG).show();
+                                //Finalizo este activity, esto lo tendremos que cambiar porque habra que volver con un onrequestactivitya activity_mapa
+                                finish();
                             }
                             break;
+                        //El tercer caso es cuando sin levantar el dedo de la pantalla lo arrastro
+                        case MotionEvent.ACTION_MOVE:
+                            //Esta es la posición actual del dedo
+                            posX[0] =event.getRawX();
+                            posY[0] =event.getRawY();
+                            //La transformo a entero
+                            int posiX=(int)posX[0];
+                            int posiY=(int)posY[0];
+                            //Hago un bucle para comprobar que la posicion actual de mi dedo coincide con la posicion de alguno de los textviews
+                            for(int j=0;j<99;j++){
+                                //Obtengo un cuadrado posicional
+                                hitRect = mHitRect;
+                                //meto en mi cuadrado posicional la posicion de mi textView
+                                arrayListTextView.get(j).getGlobalVisibleRect(hitRect);
+                                    //Si estoy en uno cualquier de los textviews:
+                                    if(hitRect.contains(posiX,posiY)){
+                                        //Capturamos las coordenadas del textView sobre el que estamos
+                                        posFinX[0]=hitRect.exactCenterX();
+                                        posFinY[0]=hitRect.exactCenterY();
+                                        //Si no es el anterior textview
+                                        if(!arrayListLetraAnterior.get(arrayListLetraAnterior.size()-1).equals(arrayListTextView.get(j))){
+                                            //Si la posicion x del primer toque coincide con la posicion x del textview en el que estoy y la posicion y en la que estoy
+                                            //es mayor que la del primer toque y o estamos en el primer arrastre (toque) o la direccion ya está establecida hacia arriba porque
+                                            //no es el primer arrastre y ya se ha fijado
+                                            if(dirX[0]==posFinX[0] && posFinY[0]<dirY[0] && (PrimerToque.equals(false) || direccion.equals("arriba"))){
+                                                //Asigno la direccion hacia arriba
+                                                direccion=new String("arriba");
+                                                //Hago un bucle en el que recorro el array de letras anteriores
+                                                for(int f=0; f<arrayListLetraAnterior.size();f++){
+                                                    //Si el textView sobre el que estoy coindide con alguno de los anteriores en los que estado
+                                                    if(arrayListTextView.get(j).equals(arrayListLetraAnterior.get(f))){
+                                                        //Declaro añadir falso para que no lo añada
+                                                        añadir=false;
+                                                    }
+                                                }
+                                                //Si añadir es verdadero (el textview sobre el que estoy no coincide con ninguno de los anteriores en los que he estado)
+                                                if(añadir){
+                                                    //Fijo el color del textview en el que estoy en verde
+                                                    arrayListTextView.get(j).setBackgroundColor(Color.parseColor("#E4E663"));
+                                                    //Meto en un array el textview en el que estoy
+                                                    arrayListLetrasSeleccionadas.add(arrayListTextView.get(j));
+                                                    //Añado el textview en el que estoy al arrayList de letras anteriores
+                                                    arrayListLetraAnterior.add(arrayListTextView.get(j));
+                                                }
+                                                //Declaro primerToque true para que no vuelva a establecerse la direccion y no se vuelva loco el programa
+                                                PrimerToque=true;
+                                            }
+                                            //Si la posicion x del primer toque coincide con la posicion x del textview en el que estoy y la posicion y en la que estoy
+                                            //es menor que la del primer toque y o estamos en el primer arrastre (toque) o la direccion ya está establecida hacia abajo porque
+                                            //no es el primer arrastre y ya se ha fijado
+                                            if(dirX[0]==posFinX[0] && posFinY[0]>dirY[0] && (PrimerToque.equals(false) || direccion.equals("abajo"))){
+                                                //Asigno la direccion hacia abajo
+                                                direccion=new String("abajo");
+                                                //Hago un bucle en el que recorro el array de letras anteriores
+                                                for(int f=0; f<arrayListLetraAnterior.size();f++){
+                                                    //Si el textView sobre el que estoy coindide con alguno de los anteriores en los que estado
+                                                    if(arrayListTextView.get(j).equals(arrayListLetraAnterior.get(f))){
+                                                        //Declaro añadir falso para que no lo añada
+                                                        añadir=false;
+                                                    }
+                                                }
+                                                //Si añadir es verdadero (el textview sobre el que estoy no coincide con ninguno de los anteriores en los que he estado)
+                                                if(añadir){
+                                                    //Fijo el color del textview en el que estoy en verde
+                                                    arrayListTextView.get(j).setBackgroundColor(Color.parseColor("#E4E663"));
+                                                    //Meto en un array el textview en el que estoy
+                                                    arrayListLetrasSeleccionadas.add(arrayListTextView.get(j));
+                                                    //Añado el textview en el que estoy al arrayList de letras anteriores
+                                                    arrayListLetraAnterior.add(arrayListTextView.get(j));
+                                                }
+                                                //Declaro primerToque true para que no vuelva a establecerse la direccion y no se vuelva loco el programa
+                                                PrimerToque=true;
+                                            }
+                                            //Si la posicion y del primer toque coincide con la posicion y del textview en el que estoy y la posicion x en la que estoy
+                                            //es mayor que la del primer toque y o estamos en el primer arrastre (toque) o la direccion ya está establecida hacia la derecha porque
+                                            //no es el primer arrastre y ya se ha fijado
+                                            if(dirY[0]==posFinY[0] && posFinX[0]>dirX[0] && (PrimerToque.equals(false) || direccion.equals("derecha"))){
+                                                //Asigno la direccion hacia la derecha
+                                                direccion=new String("derecha");
+                                                //Hago un bucle en el que recorro el array de letras anteriores
+                                                for(int f=0; f<arrayListLetraAnterior.size();f++){
+                                                    //Si el textView sobre el que estoy coindide con alguno de los anteriores en los que estado
+                                                    if(arrayListTextView.get(j).equals(arrayListLetraAnterior.get(f))){
+                                                        //Declaro añadir falso para que no lo añada
+                                                        añadir=false;
+                                                    }
+                                                }
+                                                //Si añadir es verdadero (el textview sobre el que estoy no coincide con ninguno de los anteriores en los que he estado)
+                                                if(añadir){
+                                                    //Fijo el color del textview en el que estoy en verde
+                                                    arrayListTextView.get(j).setBackgroundColor(Color.parseColor("#E4E663"));
+                                                    //Meto en un array el textview en el que estoy
+                                                    arrayListLetrasSeleccionadas.add(arrayListTextView.get(j));
+                                                    //Añado el textview en el que estoy al arrayList de letras anteriores
+                                                    arrayListLetraAnterior.add(arrayListTextView.get(j));
+                                                }
+                                                //Declaro primerToque true para que no vuelva a establecerse la direccion y no se vuelva loco el programa
+                                                PrimerToque=true;
+                                            }
+                                            //Si la posicion y del primer toque coincide con la posicion y del textview en el que estoy y la posicion x en la que estoy
+                                            //es menor que la del primer toque y o estamos en el primer arrastre (toque) o la direccion ya está establecida hacia la izquierda porque
+                                            //no es el primer arrastre y ya se ha fijado
+                                            if(dirY[0]==posFinY[0] && posFinX[0]<dirX[0] && (PrimerToque.equals(false) || direccion.equals("izquierda"))) {
+                                                //Asigno la direccion hacia la izquierda
+                                                direccion = new String("izquierda");
+                                                //Hago un bucle en el que recorro el array de letras anteriores
+                                                for(int f=0; f<arrayListLetraAnterior.size();f++){
+                                                    //Si el textView sobre el que estoy coindide con alguno de los anteriores en los que estado
+                                                    if(arrayListTextView.get(j).equals(arrayListLetraAnterior.get(f))){
+                                                        //Declaro añadir falso para que no lo añada
+                                                        añadir=false;
+                                                    }
+                                                }
+                                                //Si añadir es verdadero (el textview sobre el que estoy no coincide con ninguno de los anteriores en los que he estado)
+                                                if(añadir){
+                                                    //Fijo el color del textview en el que estoy en verde
+                                                    arrayListTextView.get(j).setBackgroundColor(Color.parseColor("#E4E663"));
+                                                    //Meto en un array el textview en el que estoy
+                                                    arrayListLetrasSeleccionadas.add(arrayListTextView.get(j));
+                                                    //Añado el textview en el que estoy al arrayList de letras anteriores
+                                                    arrayListLetraAnterior.add(arrayListTextView.get(j));
+                                                }
+                                                //Declaro primerToque true para que no vuelva a establecerse la direccion y no se vuelva loco el programa
+                                                PrimerToque=true;
+                                            }
+                                        }
+                                }
+                            }
+                            break;
+                        //El cuarto caso son los demas y se sale del menu simplemente
                         default:
                             break;
                     }
-
                     return true;
                 }
             });
-
-
-
         }
+
+        //Declaro las letras que son fijas en sus correspondientes TextViews
         arrayListTextView.get(2).setText(String.valueOf("L").toUpperCase());
         arrayListTextView.get(3).setText(String.valueOf("E").toUpperCase());
         arrayListTextView.get(4).setText(String.valueOf("Y").toUpperCase());
@@ -397,9 +587,12 @@ public class SopaLetras extends AppCompatActivity {
         arrayListTextView.get(95).setText(String.valueOf("L").toUpperCase());
         arrayListTextView.get(97).setText(String.valueOf("A").toUpperCase());
 
-
-
-
-
     }
 }
+
+//Hay una paradoja a resolver, arrayListAnterior y arrayListSeleccionado guardan lo mismo dentro, pero al sustituir all por uno solo
+//el programa no funciona igual, no es importante pero ahí queda.
+
+//Estaria bien solucionar el color amarillo
+
+//Queda gestionar la vuelta al activity de mapa
