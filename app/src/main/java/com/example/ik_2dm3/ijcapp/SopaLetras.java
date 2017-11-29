@@ -14,7 +14,7 @@ import java.util.Random;
 
 public class SopaLetras extends AppCompatActivity {
 
-    private static final String TAG = "TAG";
+    //private static final String TAG = "TAG";
     private final Rect mHitRect = new Rect();
     private String direccion;
     private Boolean PrimerToque=false;
