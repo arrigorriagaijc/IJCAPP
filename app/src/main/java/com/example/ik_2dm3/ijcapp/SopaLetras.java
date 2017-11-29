@@ -310,7 +310,7 @@ public class SopaLetras extends AppCompatActivity {
                                         //Capturamos las coordenadas del cuadrado sobre el que estamos
                                         posFinX[0]=hitRect.exactCenterX();
                                         posFinY[0]=hitRect.exactCenterY();
-
+                                        //
                                         //Si no es el anterior textview:
                                         if(!arrayListLetraAnterior.get(arrayListLetraAnterior.size()-1).equals(arrayListTextView.get(j)) && ((posFinX[0]!=dirX[0] && posFinY[0]==dirY[0])  || (posFinX[0]==dirX[0] && posFinY[0]!=dirY[0]))){
 
