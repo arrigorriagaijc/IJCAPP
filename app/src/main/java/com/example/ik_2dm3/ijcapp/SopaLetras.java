@@ -23,6 +23,10 @@ public class SopaLetras extends AppCompatActivity {
 
     private static final String TAG = "TAG";
     private final Rect mHitRect = new Rect();
+    private String direccion;
+    private Boolean PrimerToque=false;
+    private ArrayList<TextView> arrayListLetrasSeleccionadas=new ArrayList<>();
+    private ArrayList<TextView> arrayListLetraAnterior=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +36,15 @@ public class SopaLetras extends AppCompatActivity {
         char c;
         final ArrayList<TextView> arrayListTextView=new ArrayList<>();
         Random r = new Random();
+        final float[] posIniX = new float[1];
+        final float[] posIniY = new float[1];
+        final float[] posFinX = new float[1];
+        final float[] posFinY = new float[1];
+        final float[] dirX = new float[1];
+        final float[] dirY = new float[1];
         final float[] posX = new float[1];
         final float[] posY = new float[1];
-        final int[] loc = new int[2];
+
         //LinearLayout llHFila9=(LinearLayout)findViewById(R.id.llHFila9);
         //llHFila1.setY((float) 200.0);
 
@@ -249,7 +259,6 @@ public class SopaLetras extends AppCompatActivity {
         //Log.d(TAG,"X: "+Float.toString(pos));
         //Log.d(TAG,Float.toString(tv99.getTranslationY()));
 
-
         for(int i=0;i<99;i++){
             c = (char)(r.nextInt(26) + 'a');
             arrayListTextView.get(i).setText(String.valueOf(c).toUpperCase());
@@ -261,25 +270,90 @@ public class SopaLetras extends AppCompatActivity {
                     switch (event.getAction()) {
                         case MotionEvent.ACTION_DOWN:
                             ((TextView) v).setBackgroundColor(Color.parseColor("#E4E663"));
+                            arrayListLetrasSeleccionadas.add((TextView)v);
+                            Rect hitRect = mHitRect;
+                            v.getGlobalVisibleRect(hitRect);
+                            dirX[0]=hitRect.exactCenterX();
+                            dirY[0]=hitRect.exactCenterY();
+                            arrayListLetraAnterior.add((TextView)v);
+                            PrimerToque=false;
+                            //Log.d(TAG,Float.toString(posIniX[0])+" "+Float.toString(posIniY[0]));
                             break;
                         case MotionEvent.ACTION_UP:
-                            ((TextView) v).setBackgroundColor(Color.parseColor("#FFFFFF"));
+                            //Cuando levanto el dedo se pone all blanco
+                            for(int z=0;z<99;z++){
+                                arrayListTextView.get(z).setBackgroundColor(Color.parseColor("#FFFFFF"));
+                            }
+                            String palabra=new String("");
+                            for (int g=0;g<arrayListLetrasSeleccionadas.size();g++){
+                                palabra=palabra+arrayListLetrasSeleccionadas.get(g).getText();
+                            }
+                            Log.d(TAG,palabra);
                             break;
                         case MotionEvent.ACTION_MOVE:
                             ((TextView) v).setBackgroundColor(Color.parseColor("#E4E663"));
+                            //Esta es la posición actual del dedo
                             posX[0] =event.getRawX();
                             posY[0] =event.getRawY();
                             int posiX=(int)posX[0];
                             int posiY=(int)posY[0];
+                            //Compruebo que mi posicion actual coincide con la posicion de alguno de los textviews
 
                             for(int j=0;j<99;j++){
-                                Rect hitRect = mHitRect;
+                                //Obtengo el cuadrado posicional de mi textview
+                                hitRect = mHitRect;
                                 arrayListTextView.get(j).getGlobalVisibleRect(hitRect);
-                                Log.d(TAG,"Pos: "+Integer.toString(j+1)+", X: "+Integer.toString((int)hitRect.exactCenterX())+", Y: "+Integer.toString((int)hitRect.exactCenterY()));
-                                if (hitRect.contains(posiX, posiY)) {
-                                    arrayListTextView.get(j).setBackgroundColor(Color.parseColor("#E4E663"));
-                                    Log.d(TAG,"Estas dentro");
+                                //Log.d(TAG,"Pos: "+Integer.toString(j+1)+", X: "+Integer.toString((int)hitRect.exactCenterX())+", Y: "+Integer.toString((int)hitRect.exactCenterY()));
+
+                                    //Si estoy en uno de los textviews:
+                                    if(hitRect.contains(posiX,posiY)){
+                                        //Capturamos las coordenadas del cuadrado sobre el que estamos
+                                        posFinX[0]=hitRect.exactCenterX();
+                                        posFinY[0]=hitRect.exactCenterY();
+
+                                        //Si no es el anterior textview:
+                                        if(!arrayListLetraAnterior.get(arrayListLetraAnterior.size()-1).equals(arrayListTextView.get(j)) && ((posFinX[0]!=dirX[0] && posFinY[0]==dirY[0])  || (posFinX[0]==dirX[0] && posFinY[0]!=dirY[0]))){
+
+                                            if(dirX[0]==posFinX[0] && posFinY[0]<dirY[0]){
+                                                direccion=new String("arriba");
+                                                //Log.d(TAG,"arriba");
+                                            }
+                                            //Si vamos hacia abajo
+                                            if(dirX[0]==posFinX[0] && posFinY[0]>dirY[0]){
+                                                direccion=new String("abajo");
+                                                //Log.d(TAG,"abajo");
+                                            }
+                                            //Si vamos hacia la derecha
+                                            if(dirY[0]==posFinY[0] && posFinX[0]>dirX[0]){
+                                                direccion=new String("derecha");
+                                                //Log.d(TAG,"derecha");
+                                            }
+                                            //Si vamos hacia la izquierda
+                                            if(dirY[0]==posFinY[0] && posFinX[0]<dirX[0]) {
+                                                direccion = new String("izquierda");
+                                                //Log.d(TAG, "izquierda");
+                                            }
+                                                //Log.d(TAG,Float.toString(posFinX[0])+" "+Float.toString(posFinY[0]));
+                                            //Si la posicion del cuadrado coincide con la de la direccion:
+                                            if(posFinX[0]==dirX[0] && (direccion.equals("arriba") || direccion.equals("abajo"))){
+                                                arrayListTextView.get(j).setBackgroundColor(Color.parseColor("#E4E663"));
+                                                //Meto en un array las letras que he seleccionado
+                                                arrayListLetrasSeleccionadas.add(arrayListTextView.get(j));
+                                                arrayListLetraAnterior.add(arrayListTextView.get(j));
+                                                //Log.d(TAG,"Funciona");
+                                            }
+                                            else if(posFinY[0]==dirY[0] && (direccion.equals("izquierda") || direccion.equals("derecha"))){
+                                                arrayListTextView.get(j).setBackgroundColor(Color.parseColor("#E4E663"));
+                                                //Meto en un array las letras que he seleccionado
+                                                arrayListLetrasSeleccionadas.add(arrayListTextView.get(j));
+                                                arrayListLetraAnterior.add(arrayListTextView.get(j));
+                                            }
+
+                                        }
+
+                                    //Log.d(TAG,"Estas fuera");
                                 }
+
                             }
                             break;
                         default:
@@ -293,6 +367,38 @@ public class SopaLetras extends AppCompatActivity {
 
 
         }
+        arrayListTextView.get(2).setText(String.valueOf("L").toUpperCase());
+        arrayListTextView.get(3).setText(String.valueOf("E").toUpperCase());
+        arrayListTextView.get(4).setText(String.valueOf("Y").toUpperCase());
+        arrayListTextView.get(5).setText(String.valueOf("E").toUpperCase());
+        arrayListTextView.get(6).setText(String.valueOf("S").toUpperCase());
+        arrayListTextView.get(11).setText(String.valueOf("A").toUpperCase());
+        arrayListTextView.get(20).setText(String.valueOf("P").toUpperCase());
+        arrayListTextView.get(22).setText(String.valueOf("L").toUpperCase());
+        arrayListTextView.get(31).setText(String.valueOf("O").toUpperCase());
+        arrayListTextView.get(33).setText(String.valueOf("C").toUpperCase());
+        arrayListTextView.get(42).setText(String.valueOf("L").toUpperCase());
+        arrayListTextView.get(44).setText(String.valueOf("A").toUpperCase());
+        arrayListTextView.get(53).setText(String.valueOf("I").toUpperCase());
+        arrayListTextView.get(55).setText(String.valueOf("L").toUpperCase());
+        arrayListTextView.get(64).setText(String.valueOf("T").toUpperCase());
+        arrayListTextView.get(66).setText(String.valueOf("D").toUpperCase());
+        arrayListTextView.get(75).setText(String.valueOf("I").toUpperCase());
+        arrayListTextView.get(77).setText(String.valueOf("E").toUpperCase());
+        arrayListTextView.get(86).setText(String.valueOf("C").toUpperCase());
+        arrayListTextView.get(88).setText(String.valueOf("C").toUpperCase());
+        arrayListTextView.get(89).setText(String.valueOf("O").toUpperCase());
+        arrayListTextView.get(90).setText(String.valueOf("N").toUpperCase());
+        arrayListTextView.get(91).setText(String.valueOf("C").toUpperCase());
+        arrayListTextView.get(92).setText(String.valueOf("E").toUpperCase());
+        arrayListTextView.get(93).setText(String.valueOf("J").toUpperCase());
+        arrayListTextView.get(94).setText(String.valueOf("A").toUpperCase());
+        arrayListTextView.get(95).setText(String.valueOf("L").toUpperCase());
+        arrayListTextView.get(97).setText(String.valueOf("A").toUpperCase());
+
+
+
+
 
     }
 }
