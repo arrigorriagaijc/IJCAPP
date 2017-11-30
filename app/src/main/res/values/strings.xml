@@ -5,4 +5,14 @@
     <string name="letra">A</string>
     <string name="euskera">EUSKERA</string>
     <string name="español">CASTELLANO</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="alcalde">El alcalde de Arrigorriaga es Asier Albizua Manrique.</string>
+    <string name="leyes">El ayuntamiento hace que las leyes se cumplan.</string>
+    <string name="concejal">En el ayuntamiento de Arrigorriaga hay 11 concejales.</string>
+    <string name="politica">"EAJ-PNV, EH-Bildu, PSE-PSOE y Arrigorriaga Gara son los 4 partidos políticos que hay en el ayuntamiento."</string>
+    <string name="pol">Política:</string>
+    <string name="ley">Leyes:</string>
+    <string name="conce">Concejal:</string>
+    <string name="alca">Alcalde:</string>
 </resources>

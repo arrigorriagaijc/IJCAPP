@@ -1,11 +1,20 @@
 package com.example.ik_2dm3.ijcapp;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.Rect;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutCompat;
+import android.text.Html;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.ArrayList;
@@ -34,6 +43,9 @@ public class SopaLetras extends AppCompatActivity {
     private boolean concejal=false;
     private boolean politica=false;
     private boolean leyes=false;
+    private Dialog customDialog = null;
+    private int titulo;
+    private int mensaje;
 
 
 
@@ -308,6 +320,7 @@ public class SopaLetras extends AppCompatActivity {
                                 alcalde=true;
                                 //Aumento en uno los aciertos
                                 aciertos++;
+
                             }
                             //Si la palabra que tengo seleccionada coincide con leyes y no ha sido acertada
                             else if (palabra.equals("LEYES") && leyes==false){
@@ -399,6 +412,32 @@ public class SopaLetras extends AppCompatActivity {
                                         }
                                     }
                                 }
+                            }
+                            //Si subrayo las letras cuantas veces quiera me sale la ventana emergente(bocadillo)
+                            if (palabra.equals("LEYES")){
+                                //Asigno a la variables titulo y mensaje su valor para que se ejecuten
+                                //dentro del dialog
+                                titulo=R.string.ley;
+                                mensaje=R.string.leyes;
+                                dialogo();
+                            }else if(palabra.equals("ALCALDE")){
+                                //Asigno a la variables titulo y mensaje su valor para que se ejecuten
+                                //dentro del dialog
+                                titulo=R.string.alca;
+                                mensaje=R.string.alcalde;
+                                dialogo();
+                            }else if(palabra.equals("CONCEJAL")){
+                                //Asigno a la variables titulo y mensaje su valor para que se ejecuten
+                                //dentro del dialog
+                                titulo=R.string.conce;
+                                mensaje=R.string.concejal;
+                                dialogo();
+                            }else if(palabra.equals("POLITICA")){
+                                //Asigno a la variables titulo y mensaje su valor para que se ejecuten
+                                //dentro del dialog
+                                titulo=R.string.pol;
+                                mensaje=R.string.politica;
+                                dialogo();
                             }
                             //Limpio el arraylist de letras seleccionadas
                             arrayListLetrasSeleccionadas.clear();
@@ -587,6 +626,27 @@ public class SopaLetras extends AppCompatActivity {
         arrayListTextView.get(95).setText(String.valueOf("L").toUpperCase());
         arrayListTextView.get(97).setText(String.valueOf("A").toUpperCase());
 
+    }
+
+    public void dialogo(){
+        //Establecemos la ventana actual como contexto de nuestro dialog
+        customDialog=new Dialog(SopaLetras.this);
+        //Asignamos a nuestro dialogo el layout que hemos creado
+        customDialog.setContentView(R.layout.dialog_sopaletras);
+        //Accedemos a las variables del layout y las modificamos
+        TextView tvPalabra=(TextView) customDialog.findViewById(R.id.tvPalabra);
+        tvPalabra.setText(titulo);
+        TextView tvExplicacion=(TextView) customDialog.findViewById(R.id.tvExplicacion);
+        tvExplicacion.setText(mensaje);
+        Button btnAceptar=(Button) customDialog.findViewById(R.id.btnAceptar);
+        btnAceptar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                customDialog.dismiss();
+            }
+        });
+        //mostramos el dialogo
+        customDialog.show();
     }
 }
 
