@@ -3,4 +3,6 @@
     <string name="title_activity__mapa">Map</string>
     <string name="mensaje_sopa">Busca estas cuatro palabras en la sopa de letras: Alcalde, Concejal, Leyes y política.</string>
     <string name="letra">A</string>
+    <string name="euskera">EUSKERA</string>
+    <string name="español">CASTELLANO</string>
 </resources>
