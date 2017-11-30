@@ -271,7 +271,6 @@ public class SopaLetras extends AppCompatActivity {
         });
         btnSiguiente.setEnabled(false);
 
-
         //Recorro el array de textViews
         for(int i=0;i<99;i++){
             //Genero una letra para la char c
