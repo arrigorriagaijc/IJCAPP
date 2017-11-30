@@ -32,14 +32,16 @@
         <activity
             android:name=".Activity_Mapa"
             android:label="@string/title_activity__mapa">
+
+        </activity>
+        <activity android:name=".SopaLetras"></activity>
+        <activity android:name=".Activity_Idiomas">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SopaLetras"></activity>
-        <activity android:name=".Activity_Idiomas"></activity>
     </application>
 
 </manifest>

@@ -137,8 +137,6 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
                 }
                 if(marker.getTitle().equals("Arrigorriagako Etxetzarrak")) {
                     marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.arrigorriagakoetxetzarrrakredondo));
-                    Intent intent=new Intent(Activity_Mapa.this, Activity_Idiomas.class);
-                    startActivity(intent);
                 }
                 if(marker.getTitle().equals("Baruako Jauregia (Kultur Etxea)")) {
                     marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.baruakojauregiaredondo));
