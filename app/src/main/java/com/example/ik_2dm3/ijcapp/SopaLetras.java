@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -46,6 +47,7 @@ public class SopaLetras extends AppCompatActivity {
     private Dialog customDialog = null;
     private int titulo;
     private int mensaje;
+    private boolean acertado=false;
 
 
 
@@ -259,6 +261,16 @@ public class SopaLetras extends AppCompatActivity {
         TextView tv99= findViewById(R.id.tv99);
         arrayListTextView.add(tv99);
 
+        final Button btnSiguiente=(Button) findViewById(R.id.btnSiguiente);
+        btnSiguiente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Finalizo este activity, esto lo tendremos que cambiar porque habra que volver con un onrequestactivitya activity_mapa
+                finish();
+            }
+        });
+        btnSiguiente.setEnabled(false);
+
 
         //Recorro el array de textViews
         for(int i=0;i<99;i++){
@@ -391,7 +403,7 @@ public class SopaLetras extends AppCompatActivity {
                                     //Si el arraydeletrasacertadas esta vacío pongo all blanco
                                     if(arrayListLetrasAcertadas.isEmpty()){
                                         //Pongo el textView blanco
-                                        arrayListTextView.get(t).setBackgroundColor(Color.parseColor("#FFFFFF"));
+                                        arrayListTextView.get(t).setBackgroundColor(Color.parseColor("#FAFAFF"));
                                     }
                                     //Si no esta vacio
                                     else {
@@ -400,7 +412,7 @@ public class SopaLetras extends AppCompatActivity {
                                             //si el textview de letras acertadas no coincide con el textview del array de todos los textviews
                                             if (!arrayListTextView.get(t).equals(arrayListLetrasAcertadas.get(l))) {
                                                 //Cambio el color a blanco
-                                                arrayListTextView.get(t).setBackgroundColor(Color.parseColor("#FFFFFF"));
+                                                arrayListTextView.get(t).setBackgroundColor(Color.parseColor("#FAFAFF"));
                                             }
                                             else{
                                                 //cambio el color a azul clarito
@@ -451,11 +463,15 @@ public class SopaLetras extends AppCompatActivity {
                                 palabra=palabra+arrayListLetrasAcertadas.get(g).getText();
                             }
                             //Si los aciertos son 4, (Estan todos acertados)
-                            if(aciertos==4){
+                            if(aciertos==4 && acertado==false){
                                 //Saco un mensaje de eres un crack por pantalla en un toast
-                                Toast.makeText(getApplicationContext(), "Eres un crack", Toast.LENGTH_LONG).show();
-                                //Finalizo este activity, esto lo tendremos que cambiar porque habra que volver con un onrequestactivitya activity_mapa
-                                finish();
+                                Toast.makeText(getApplicationContext(), "Has acabado, pulsa la flecha", Toast.LENGTH_LONG).show();
+                                //Habilito el boton de siguiente
+                                btnSiguiente.setEnabled(true);
+                                //Le pongo el botón a color
+                                btnSiguiente.setBackground(getResources().getDrawable(R.drawable.flechahabilitada));
+                                //Pongo la variable acertado a true para que no me haga estas ordenes mas veces
+                                acertado=true;
                             }
                             break;
                         //El tercer caso es cuando sin levantar el dedo de la pantalla lo arrastro
@@ -625,7 +641,6 @@ public class SopaLetras extends AppCompatActivity {
         arrayListTextView.get(94).setText(String.valueOf("A").toUpperCase());
         arrayListTextView.get(95).setText(String.valueOf("L").toUpperCase());
         arrayListTextView.get(97).setText(String.valueOf("A").toUpperCase());
-
     }
 
     public void dialogo(){
