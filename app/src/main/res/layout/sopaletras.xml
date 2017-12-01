@@ -5,6 +5,7 @@
     android:id="@+id/llGeneral"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/ayuntamientoarrigorriaga"
     android:orientation="vertical"
     android:weightSum="11"
     tools:context="com.example.ik_2dm3.ijcapp.SopaLetras">

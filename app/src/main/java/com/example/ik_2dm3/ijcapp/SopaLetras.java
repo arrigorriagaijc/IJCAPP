@@ -48,6 +48,9 @@ public class SopaLetras extends AppCompatActivity {
     private int titulo;
     private int mensaje;
     private boolean acertado=false;
+    private  Button btnSiguiente;
+    private LinearLayout llGeneral;
+
 
 
 
@@ -261,7 +264,9 @@ public class SopaLetras extends AppCompatActivity {
         TextView tv99= findViewById(R.id.tv99);
         arrayListTextView.add(tv99);
 
-        final Button btnSiguiente=(Button) findViewById(R.id.btnSiguiente);
+        llGeneral=(LinearLayout) findViewById(R.id.llGeneral);
+
+        btnSiguiente=(Button) findViewById(R.id.btnSiguiente);
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -402,7 +407,7 @@ public class SopaLetras extends AppCompatActivity {
                                     //Si el arraydeletrasacertadas esta vacío pongo all blanco
                                     if(arrayListLetrasAcertadas.isEmpty()){
                                         //Pongo el textView blanco
-                                        arrayListTextView.get(t).setBackgroundColor(Color.parseColor("#FAFAFF"));
+                                        arrayListTextView.get(t).setBackgroundColor(Color.parseColor("#00000000"));
                                     }
                                     //Si no esta vacio
                                     else {
@@ -411,7 +416,7 @@ public class SopaLetras extends AppCompatActivity {
                                             //si el textview de letras acertadas no coincide con el textview del array de todos los textviews
                                             if (!arrayListTextView.get(t).equals(arrayListLetrasAcertadas.get(l))) {
                                                 //Cambio el color a blanco
-                                                arrayListTextView.get(t).setBackgroundColor(Color.parseColor("#FAFAFF"));
+                                                arrayListTextView.get(t).setBackgroundColor(Color.parseColor("#00000000"));
                                             }
                                             else{
                                                 //cambio el color a azul clarito
