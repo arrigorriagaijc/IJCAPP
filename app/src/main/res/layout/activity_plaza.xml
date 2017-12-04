@@ -28,38 +28,32 @@
 
     <Button
         android:id="@+id/btnAudio1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="56dp"
         android:layout_weight="0.5"
-        android:background="@color/colorPrimaryDark"
-        android:scaleX="1"
-        android:scaleY="1"
+        android:background="@drawable/btnidioma"
         android:text="@string/audio"
-        android:textColor="@color/common_google_signin_btn_text_dark_default"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView3"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/givMikel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvZona1" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="96dp"
-        android:layout_height="137dp"
-        android:layout_marginBottom="64dp"
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/givMikel"
+        android:layout_width="360dp"
+        android:layout_height="240dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:scaleX="4"
-        android:scaleY="4"
-        android:src="@drawable/mikel"
+        android:background="@drawable/mikelgif"
+        android:scaleX="1.1"
+        android:scaleY="1.1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

@@ -274,7 +274,6 @@ public class SopaLetras extends AppCompatActivity {
                 finish();
             }
         });
-        btnSiguiente.setEnabled(false);
 
         //Recorro el array de textViews
         for(int i=0;i<99;i++){
@@ -470,10 +469,8 @@ public class SopaLetras extends AppCompatActivity {
                             if(aciertos==4 && acertado==false){
                                 //Saco un mensaje de eres un crack por pantalla en un toast
                                 Toast.makeText(getApplicationContext(), "Has acabado, pulsa la flecha", Toast.LENGTH_LONG).show();
-                                //Habilito el boton de siguiente
-                                btnSiguiente.setEnabled(true);
-                                //Le pongo el botón a color
-                                btnSiguiente.setBackground(getResources().getDrawable(R.drawable.flechahabilitada));
+                                //Visibilizo el boton
+                                btnSiguiente.setVisibility(0);
                                 //Pongo la variable acertado a true para que no me haga estas ordenes mas veces
                                 acertado=true;
                             }

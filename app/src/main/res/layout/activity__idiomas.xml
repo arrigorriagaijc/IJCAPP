@@ -5,7 +5,7 @@
     android:id="@+id/llIdiomas"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@drawable/pantallaidiomas"
     android:orientation="vertical"
     android:weightSum="8"
     tools:context="com.example.ik_2dm3.ijcapp.Activity_Idiomas">
@@ -22,11 +22,11 @@
 
     <Button
         android:id="@+id/btnEuskera"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
-        android:background="@android:color/white"
+        android:background="@drawable/btnidioma"
         android:text="@string/euskera" />
 
     <Space
@@ -41,12 +41,13 @@
 
     <Button
         android:id="@+id/btnEspañol"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_vertical|center_horizontal"
         android:layout_weight="1"
-        android:background="@android:color/white"
+        android:background="@drawable/btnidioma"
         android:elevation="0dp"
+        android:lineSpacingExtra="20sp"
         android:text="@string/español" />
 
     <Space

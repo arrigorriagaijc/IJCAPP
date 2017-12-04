@@ -14,7 +14,7 @@
     <TextView
         android:id="@+id/tvMensaje"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="600dp"
         android:layout_weight="7.9"
         android:background="@color/colorPrimaryDark"
         android:text="@string/mensaje_sopa"
@@ -47,6 +47,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -57,6 +58,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -67,6 +69,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -77,6 +80,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -87,6 +91,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -97,6 +102,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -107,6 +113,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -117,6 +124,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -127,6 +135,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -137,6 +146,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -147,6 +157,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
         </LinearLayout>
 
@@ -166,6 +177,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -176,6 +188,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -186,6 +199,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -196,6 +210,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -206,6 +221,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -216,6 +232,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -226,6 +243,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -236,6 +254,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -246,6 +265,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -256,6 +276,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -266,6 +287,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
         </LinearLayout>
 
@@ -285,6 +307,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -295,6 +318,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -305,6 +329,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -315,6 +340,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -325,6 +351,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -335,6 +362,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -345,6 +373,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -355,6 +384,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -365,6 +395,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -375,6 +406,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -385,6 +417,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
         </LinearLayout>
 
@@ -404,6 +437,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -414,6 +448,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -424,6 +459,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -434,6 +470,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -444,6 +481,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -454,6 +492,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -464,6 +503,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -474,6 +514,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -484,6 +525,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -494,6 +536,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -504,6 +547,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
         </LinearLayout>
 
@@ -523,6 +567,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -533,6 +578,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -543,6 +589,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -553,6 +600,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -563,6 +611,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -573,6 +622,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -583,6 +633,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -593,6 +644,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -603,6 +655,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -613,6 +666,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -623,6 +677,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
         </LinearLayout>
 
@@ -642,6 +697,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -652,6 +708,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -662,6 +719,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -672,6 +730,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -682,6 +741,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -692,6 +752,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -702,6 +763,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -712,6 +774,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -722,6 +785,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -732,6 +796,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -742,6 +807,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
         </LinearLayout>
 
@@ -761,6 +827,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -771,6 +838,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -781,6 +849,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -791,6 +860,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -801,6 +871,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -811,6 +882,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -821,6 +893,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -831,6 +904,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -841,6 +915,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -851,6 +926,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -861,6 +937,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
         </LinearLayout>
 
@@ -880,6 +957,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -890,6 +968,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -900,6 +979,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -910,6 +990,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -920,6 +1001,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -930,6 +1012,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -940,6 +1023,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -950,6 +1034,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -960,6 +1045,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -970,6 +1056,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -980,6 +1067,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
         </LinearLayout>
 
@@ -999,6 +1087,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -1009,6 +1098,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -1019,6 +1109,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -1029,6 +1120,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -1039,6 +1131,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -1049,6 +1142,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -1059,6 +1153,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -1069,6 +1164,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -1079,6 +1175,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -1089,6 +1186,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
 
             <TextView
@@ -1099,17 +1197,21 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:text="@string/letra"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="24sp" />
         </LinearLayout>
 
     </LinearLayout>
 //algo
+
     <Button
         android:id="@+id/btnSiguiente"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_gravity="center_vertical|center_horizontal"
-        android:background="@drawable/flechainhabilitada"
-        android:gravity="center_vertical|center_horizontal" />
+        android:layout_marginVertical="5dp"
+        android:background="@drawable/btnsiguiente"
+        android:gravity="center_vertical|center_horizontal"
+        android:visibility="invisible" />
 
 </android.widget.LinearLayout>
