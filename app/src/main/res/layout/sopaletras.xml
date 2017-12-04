@@ -1103,7 +1103,7 @@
         </LinearLayout>
 
     </LinearLayout>
-
+//algo
     <Button
         android:id="@+id/btnSiguiente"
         android:layout_width="70dp"
