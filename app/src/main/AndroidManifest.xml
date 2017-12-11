@@ -35,7 +35,6 @@
         <activity
             android:name=".SopaLetras"
             android:screenOrientation="portrait" />
-
         <activity android:name=".Activity_Idiomas">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,6 +43,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity_Plaza" />
+        <activity android:name=".Pistas2"></activity>
     </application>
 
 </manifest>
