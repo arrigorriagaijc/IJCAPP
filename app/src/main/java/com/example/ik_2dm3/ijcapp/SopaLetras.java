@@ -5,6 +5,8 @@ import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +22,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Random;
+
+import pl.droidsonroids.gif.GifImageView;
 
 
 public class SopaLetras extends AppCompatActivity {
@@ -50,14 +54,60 @@ public class SopaLetras extends AppCompatActivity {
     private boolean acertado=false;
     private  Button btnSiguiente;
     private LinearLayout llGeneral;
-
-
+    private MediaPlayer mediaPlayer;
+    private Button btnAudio2;
+    private GifImageView givMikel;
+    private ConstraintLayout clMikel;
+    private TextView tvMensaje;
+    private LinearLayout llSopa;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sopaletras);
+
+        givMikel=(GifImageView) findViewById(R.id.givMikel);
+        ConstraintLayout llPlaza=(ConstraintLayout) findViewById(R.id.llPlaza);
+        btnAudio2=(Button) findViewById(R.id.btnAudio2);
+        mediaPlayer= MediaPlayer.create(SopaLetras.this, R.raw.udaletxeaerdaraz);
+        clMikel=(ConstraintLayout) findViewById(R.id.clMikel);
+        llSopa=(LinearLayout) findViewById(R.id.llSopa);
+        tvMensaje=(TextView) findViewById(R.id.tvMensaje);
+        btnSiguiente=(Button) findViewById(R.id.btnSiguiente);
+
+
+        //Hacemos que empiece parado poniendo la imagen
+        givMikel.setBackgroundResource(R.drawable.mikel);
+        //Le ponemos al boton del audio un listener para que cuando hagamos click se reproduzca el audio y se seshavbilite el boton
+        btnAudio2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mediaPlayer.start();
+                btnAudio2.setEnabled(false);
+                //Activamos el gif, asignandolo al src
+                givMikel.setBackgroundResource(R.drawable.mikelgif);
+
+
+            }
+        });
+
+        //Le ponemos al boton del audio un listener para que cuando complete el audio se vuelva a habilitar el boton
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                btnAudio2.setEnabled(true);
+                mediaPlayer=MediaPlayer.create(SopaLetras.this, R.raw.udaletxeaerdaraz);
+                //Volvemos a desactivar el gif asignando la imagen
+                givMikel.setBackgroundResource(R.drawable.mikel);
+                //Cambiamos la visibilidad de este constraintlayout a gone
+                clMikel.setVisibility(View.GONE);
+                tvMensaje.setVisibility(View.VISIBLE);
+                llSopa.setVisibility(View.VISIBLE);
+                btnSiguiente.setVisibility(View.INVISIBLE);
+
+            }
+        });
 
         //Declaro el char que me va a servir para guardar las letras que genere para la sopa de letras
         char c;
@@ -266,7 +316,6 @@ public class SopaLetras extends AppCompatActivity {
 
         llGeneral=(LinearLayout) findViewById(R.id.llGeneral);
 
-        btnSiguiente=(Button) findViewById(R.id.btnSiguiente);
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -470,7 +519,7 @@ public class SopaLetras extends AppCompatActivity {
                                 //Saco un mensaje de eres un crack por pantalla en un toast
                                 Toast.makeText(getApplicationContext(), "Has acabado, pulsa la flecha", Toast.LENGTH_LONG).show();
                                 //Visibilizo el boton
-                                btnSiguiente.setVisibility(0);
+                                btnSiguiente.setVisibility(View.VISIBLE);
                                 //Pongo la variable acertado a true para que no me haga estas ordenes mas veces
                                 acertado=true;
                             }

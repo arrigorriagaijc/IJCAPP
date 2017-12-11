@@ -16,5 +16,6 @@
     <string name="conce">Concejal:</string>
     <string name="alca">Alcalde:</string>
     <string name="audiozona1">Escucha este audio sobre la Plaza de Arrigorriaga.</string>
+    <string name="audiozona2">Escucha este audio sobre el Ayuntamiento de Arrigorriaga.</string>
     <string name="audio">Audio</string>
 </resources>
