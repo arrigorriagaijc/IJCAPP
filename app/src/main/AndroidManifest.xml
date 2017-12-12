@@ -43,7 +43,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity_Plaza" />
-        <activity android:name=".Pistas2"></activity>
+        <activity android:name=".Pistas2" />
+        <activity android:name=".Activity_Santamaria"></activity>
     </application>
 
 </manifest>
