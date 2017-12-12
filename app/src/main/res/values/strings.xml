@@ -18,5 +18,9 @@
     <string name="audiozona1">Escucha este audio sobre la Plaza de Arrigorriaga.</string>
     <string name="audiozona2">Escucha este audio sobre el Ayuntamiento de Arrigorriaga.</string>
     <string name="audio">Audio</string>
+    <string name="enunciado_Santa_Maria">En el siguiente ejercicio aparecerán 4 diferentes oraciones. Tienes que elegir la respuesta correcta. Para empezar pulsa sobre la flecha.</string>
+    <string name="pregunta1_Santa_Maria">El nombre de la parroquia de Arrigorriaga es...</string>
+    <string name="respuesta1_buena">SANTA MARIA MAGDALENA</string>
+    <string name="respuesta1_mala">SANTA TERESA MAGDALENA</string>
     <string name="pista2">Los domingos, los habitantes de Arrigorriaga a dónde suelen ir a rezar?</string>
 </resources>

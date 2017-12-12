@@ -9,4 +9,152 @@
     android:weightSum="1"
     tools:context="com.example.ik_2dm3.ijcapp.Activity_Santamaria">
 
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/clEnunciado"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/ivEnunciado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="112dp"
+            android:scaleX="1.28"
+            android:scaleY="1.28"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/enunciadosantamaria" />
+
+        <Button
+            android:id="@+id/btnSiguiente"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/btnsiguiente"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivEnunciado"
+            app:layout_constraintVertical_bias="0.646" />
+
+        <TextView
+            android:id="@+id/tvEnunciado"
+            android:layout_width="384dp"
+            android:layout_height="256dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:paddingLeft="6dp"
+            android:text="@string/enunciado_Santa_Maria"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivEnunciado"
+            app:layout_constraintEnd_toEndOf="@+id/ivEnunciado"
+            app:layout_constraintStart_toStartOf="@+id/ivEnunciado"
+            app:layout_constraintTop_toTopOf="@+id/ivEnunciado" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.widget.LinearLayout
+        android:id="@+id/llPregunta1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:weightSum="4">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/clPregunta1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5">
+
+            <ImageView
+                android:id="@+id/ivPregunta1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="80dp"
+                android:layout_weight="1"
+                android:alpha=".60"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/preguntasantamaria" />
+
+            <TextView
+                android:id="@+id/tvPregunta1"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/pregunta1_Santa_Maria"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivPregunta1"
+                app:layout_constraintEnd_toEndOf="@+id/ivPregunta1"
+                app:layout_constraintStart_toStartOf="@+id/ivPregunta1"
+                app:layout_constraintTop_toTopOf="@+id/ivPregunta1" />
+        </android.support.constraint.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvRespuesta2"
+                android:layout_width="190dp"
+                android:layout_height="126dp"
+                android:layout_marginRight="6dp"
+                android:layout_weight="1"
+                android:alpha=".80"
+                android:background="@drawable/respuestasantamaria"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/respuesta1_buena"
+                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tvRespuesta3"
+                android:layout_width="190dp"
+                android:layout_height="126dp"
+                android:layout_marginLeft="6dp"
+                android:layout_weight="1"
+                android:alpha=".80"
+                android:background="@drawable/respuestasantamaria"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/respuesta1_mala"
+                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnPregunta1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:background="@drawable/btnsiguiente"
+            android:visibility="visible" />
+
+    </android.widget.LinearLayout>
 </android.widget.LinearLayout>
