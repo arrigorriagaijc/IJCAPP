@@ -23,4 +23,5 @@
     <string name="respuesta1_buena">SANTA MARIA MAGDALENA</string>
     <string name="respuesta1_mala">SANTA TERESA MAGDALENA</string>
     <string name="pista2">Los domingos, los habitantes de Arrigorriaga a dónde suelen ir a rezar?</string>
+    <string name="respuesta1corregida">Es Santa Maria Magdalena.</string>
 </resources>
