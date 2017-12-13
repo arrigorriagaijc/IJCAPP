@@ -53,6 +53,7 @@
         android:background="@drawable/mikelgif"
         android:scaleX="1.1"
         android:scaleY="1.1"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

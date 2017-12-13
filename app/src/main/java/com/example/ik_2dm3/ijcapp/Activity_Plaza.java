@@ -3,6 +3,7 @@ package com.example.ik_2dm3.ijcapp;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.VideoView;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,7 +25,6 @@ public class Activity_Plaza extends AppCompatActivity {
     private Button btnAudio1;
     private GifImageView givMikel;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +34,6 @@ public class Activity_Plaza extends AppCompatActivity {
         ConstraintLayout llPlaza=(ConstraintLayout) findViewById(R.id.llPlaza);
         btnAudio1=(Button) findViewById(R.id.btnAudio1);
         mediaPlayer=MediaPlayer.create(Activity_Plaza.this, R.raw.arrigorriagahistoriacastellano);
-
 
         //Hacemos que empiece parado poniendo la imagen
         givMikel.setBackgroundResource(R.drawable.mikel);

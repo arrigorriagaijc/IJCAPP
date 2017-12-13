@@ -119,33 +119,75 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/tvRespuesta2"
-                android:layout_width="190dp"
-                android:layout_height="126dp"
-                android:layout_marginRight="6dp"
-                android:layout_weight="1"
-                android:alpha=".80"
-                android:background="@drawable/respuestasantamaria"
-                android:gravity="center_vertical|center_horizontal"
-                android:text="@string/respuesta1_buena"
-                android:textColor="@color/common_google_signin_btn_text_dark_default"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/tvRespuesta3"
-                android:layout_width="190dp"
-                android:layout_height="126dp"
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/clRespuestaBuena"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="6dp"
-                android:layout_weight="1"
-                android:alpha=".80"
-                android:background="@drawable/respuestasantamaria"
-                android:gravity="center_vertical|center_horizontal"
-                android:text="@string/respuesta1_mala"
-                android:textColor="@color/common_google_signin_btn_text_dark_default"
-                android:textSize="24sp" />
+                android:layout_marginRight="6dp"
+                android:layout_marginTop="6dp">
+
+                <ImageView
+                    android:id="@+id/ivRespuestaBuena"
+                    android:layout_width="150dp"
+                    android:layout_height="99dp"
+                    android:alpha="0.6"
+                    app:srcCompat="@drawable/respuestasantamaria" />
+
+                <TextView
+                    android:id="@+id/tvRespuestaBuena"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="@string/respuesta1_buena"
+                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivRespuestaBuena"
+                    app:layout_constraintEnd_toEndOf="@+id/ivRespuestaBuena"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ivRespuestaBuena" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/clRespuestaMala"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginTop="6dp">
+
+                <ImageView
+                    android:id="@+id/ivRespuestaMala"
+                    android:layout_width="150dp"
+                    android:layout_height="99dp"
+                    android:alpha="0.6"
+                    app:srcCompat="@drawable/respuestasantamaria" />
+
+                <TextView
+                    android:id="@+id/tvRespuestaMala"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="@string/respuesta1_mala"
+                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivRespuestaMala"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ivRespuestaMala" />
+
+            </android.support.constraint.ConstraintLayout>
         </LinearLayout>
 
         <Button
