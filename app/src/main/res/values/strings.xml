@@ -20,8 +20,16 @@
     <string name="audio">Audio</string>
     <string name="enunciado_Santa_Maria">En el siguiente ejercicio aparecerán 4 diferentes oraciones. Tienes que elegir la respuesta correcta. Para empezar pulsa sobre la flecha.</string>
     <string name="pregunta1_Santa_Maria">El nombre de la parroquia de Arrigorriaga es...</string>
+    <string name="pregunta2_Santa_Maria">La parroquia de Santa Maria Magdalena es del siglo XX.</string>
+    <string name="pregunta3_Santa_Maria">La parroquia mantiene el aspecto de su época.</string>
     <string name="respuesta1_buena">SANTA MARIA MAGDALENA</string>
     <string name="respuesta1_mala">SANTA TERESA MAGDALENA</string>
-    <string name="pista2">Los domingos, los habitantes de Arrigorriaga a dónde suelen ir a rezar?</string>
+    <string name="respuesta2_buena">FALSO</string>
+    <string name="respuesta2_mala">VERDADERO</string>
+    <string name="respuesta3_buena">FALSO</string>
+    <string name="respuesta3_mala">VERDADERO</string>
     <string name="respuesta1corregida">Es Santa Maria Magdalena.</string>
+    <string name="respuesta2corregida">La parroquia es del siglo IX.</string>
+    <string name="respuesta3corregida">La parroquia está totalmente reformada.</string>
+    <string name="pista2">Los domingos, los habitantes de Arrigorriaga a dónde suelen ir a rezar?</string>
 </resources>
