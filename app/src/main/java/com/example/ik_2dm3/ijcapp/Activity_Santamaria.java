@@ -308,7 +308,7 @@ public class Activity_Santamaria extends AppCompatActivity {
                 btnPregunta3.setVisibility(View.VISIBLE);
             }
         });
-
+//
         //Si pulsa en siguiente se muestra la pregunta 4
         btnPregunta3.setOnClickListener(new View.OnClickListener() {
             @Override
