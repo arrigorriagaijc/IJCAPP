@@ -22,25 +22,14 @@
     <string name="pregunta1_Santa_Maria">El nombre de la parroquia de Arrigorriaga es...</string>
     <string name="pregunta2_Santa_Maria">La parroquia de Santa Maria Magdalena es del siglo XX.</string>
     <string name="pregunta3_Santa_Maria">La parroquia mantiene el aspecto de su época.</string>
-    <string name="pregunta4_Santa_Maria">En esta foto aparece la parroquia Santa Maria Magdalena.</string>
-    <string name="pregunta5_Santa_MAria">Es una ermita pequeña.Está situada en el barrio de Abrisketa. ¿Cuál es?</string>
     <string name="respuesta1_buena">SANTA MARIA MAGDALENA</string>
     <string name="respuesta1_mala">SANTA TERESA MAGDALENA</string>
     <string name="respuesta2_buena">FALSO</string>
     <string name="respuesta2_mala">VERDADERO</string>
     <string name="respuesta3_buena">FALSO</string>
     <string name="respuesta3_mala">VERDADERO</string>
-    <string name="respuesta4_buena">VERDADERO</string>
-    <string name="respuesta4_mala">FALSO</string>
-    <string name="respuesta51_mala">Ermita de San Luis de Bilbao.</string>
-    <string name="respuesta5_buena">Ermita de San Pedro Abrisketa.</string>
-    <string name="respuesta52_mala">Ermita de San Telmo de Vitoria.</string>
-    <string name="respuesta53_mala">Ermita de Santa Marta de Donostia.</string>
-    <string name="respuesta54_mala">FALSO</string>
     <string name="respuesta1corregida">Es Santa Maria Magdalena.</string>
     <string name="respuesta2corregida">La parroquia es del siglo IX.</string>
     <string name="respuesta3corregida">La parroquia está totalmente reformada.</string>
-    <string name="respuesta5corregida">Está en el barrio de Abrisketa.La romería en honor a San Pedro, se celebra el primer domingo después del 29 de junio. Es la más vieja de Bizkaia, del siglo XII, y de estilo románico.</string>
     <string name="pista2">Los domingos, los habitantes de Arrigorriaga a dónde suelen ir a rezar?</string>
-    <string name="explicacion">Como sabéis, en Arrigorriaga hay otros edificios que también son religiosos, por ejemplo las ermitas.</string>
 </resources>
