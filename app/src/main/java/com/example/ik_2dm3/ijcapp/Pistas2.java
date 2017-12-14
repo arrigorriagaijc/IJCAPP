@@ -10,7 +10,7 @@ public class Pistas2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pistas2);
 
-
+//
 
 
     }
