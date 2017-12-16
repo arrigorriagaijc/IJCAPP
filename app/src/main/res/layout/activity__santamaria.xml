@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <ImageView
             android:id="@+id/ivEnunciado"
@@ -81,8 +81,9 @@
         <android.support.constraint.ConstraintLayout
             android:id="@+id/clPregunta1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="4">
+            android:layout_height="wrap_content"
+            android:paddingBottom="25dp"
+            android:visibility="visible">
 
             <ImageView
                 android:id="@+id/ivPregunta1"
@@ -196,25 +197,53 @@
             </android.support.constraint.ConstraintLayout>
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/tvRespuestaCorregida1"
-            android:layout_width="wrap_content"
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/clCorregido1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:background="@drawable/respuesta1corregida"
-            android:gravity="center_vertical|center_horizontal"
-            android:paddingLeft="6dp"
-            android:paddingRight="6dp"
-            android:text="@string/respuesta1corregida"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused"
-            android:textSize="28sp"
-            android:visibility="gone" />
+            android:paddingBottom="25dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/ivRespuestaCorregida1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:alpha="0.6"
+                android:scaleX="1.8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/respuesta1corregida"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <TextView
+                android:id="@+id/tvRespuestaCorregida1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:text="@string/respuesta1corregida"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="28sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivRespuestaCorregida1"
+                app:layout_constraintEnd_toEndOf="@+id/ivRespuestaCorregida1"
+                app:layout_constraintStart_toStartOf="@+id/ivRespuestaCorregida1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
 
         <Button
             android:id="@+id/btnPregunta1"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center_vertical|center_horizontal"
+            android:accessibilityLiveRegion="none"
             android:background="@drawable/btnsiguiente"
             android:visibility="gone" />
 
@@ -232,8 +261,8 @@
         <android.support.constraint.ConstraintLayout
             android:id="@+id/clPregunta2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="4">
+            android:layout_height="wrap_content"
+            android:paddingBottom="25dp">
 
             <ImageView
                 android:id="@+id/ivPregunta2"
@@ -348,19 +377,47 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/tvRespuestaCorregida2"
-            android:layout_width="wrap_content"
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/clCorregido2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:background="@drawable/respuesta1corregida"
-            android:gravity="center_vertical|center_horizontal"
-            android:paddingLeft="6dp"
-            android:paddingRight="6dp"
-            android:text="@string/respuesta2corregida"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused"
-            android:textSize="28sp"
-            android:visibility="gone" />
+            android:paddingBottom="25dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/ivRespuestaCorregida2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:alpha="0.6"
+                android:scaleX="2.1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/respuesta1corregida" />
+
+            <TextView
+                android:id="@+id/tvRespuestaCorregida2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:text="@string/respuesta1corregida"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="28sp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/ivRespuestaCorregida2"
+                app:layout_constraintEnd_toEndOf="@+id/ivRespuestaCorregida2"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/ivRespuestaCorregida2"
+                app:layout_constraintTop_toTopOf="@+id/ivRespuestaCorregida2" />
+
+        </android.support.constraint.ConstraintLayout>
 
         <Button
             android:id="@+id/btnPregunta2"
@@ -378,14 +435,14 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:orientation="vertical"
-        android:visibility="gone"
+        android:visibility="visible"
         android:weightSum="4">
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/clPregunta3"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="4">
+            android:layout_height="wrap_content"
+            android:paddingBottom="25dp">
 
             <ImageView
                 android:id="@+id/ivPregunta3"
@@ -442,6 +499,7 @@
                     android:id="@+id/ivRespuestaMala3"
                     android:layout_width="150dp"
                     android:layout_height="99dp"
+                    android:alpha="0.6"
                     app:srcCompat="@drawable/respuestasantamaria" />
 
                 <TextView
@@ -475,6 +533,7 @@
                     android:id="@+id/ivRespuestaBuena3"
                     android:layout_width="150dp"
                     android:layout_height="99dp"
+                    android:alpha="0.6"
                     app:srcCompat="@drawable/respuestasantamaria" />
 
                 <TextView
@@ -497,19 +556,38 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/tvRespuestaCorregida3"
-            android:layout_width="wrap_content"
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/clCorregido3"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:background="@drawable/respuesta1corregida"
-            android:gravity="center_vertical|center_horizontal"
-            android:paddingLeft="6dp"
-            android:paddingRight="6dp"
-            android:text="@string/respuesta3corregida"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused"
-            android:textSize="28sp"
-            android:visibility="gone" />
+            android:paddingBottom="25dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/ivRespuestaCorregida3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:alpha="0.6"
+                android:scaleX="2.1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/respuesta1corregida" />
+
+            <TextView
+                android:id="@+id/tvRespuestaCorregida3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:text="@string/respuesta3corregida"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="28sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
 
         <Button
             android:id="@+id/btnPregunta3"
@@ -533,7 +611,7 @@
         <android.support.constraint.ConstraintLayout
             android:id="@+id/clPregunta4"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="4"
             android:visibility="visible">
 
