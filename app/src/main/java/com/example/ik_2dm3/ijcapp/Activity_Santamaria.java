@@ -34,9 +34,9 @@ public class Activity_Santamaria extends AppCompatActivity {
     private LinearLayout llPregunta2;
     private LinearLayout llPregunta3;
     private LinearLayout llPregunta4;
-    private TextView tvRespuestaCorregida1;
-    private TextView tvRespuestaCorregida2;
-    private TextView tvRespuestaCorregida3;
+    private ConstraintLayout clCorregido1;
+    private ConstraintLayout clCorregido2;
+    private ConstraintLayout clCorregido3;
     private LinearLayout llRespuestas1;
     private LinearLayout llRespuestas2;
     private LinearLayout llRespuestas3;
@@ -87,9 +87,9 @@ public class Activity_Santamaria extends AppCompatActivity {
         llPregunta3=(LinearLayout) findViewById(R.id.llPregunta3);
         llPregunta4=(LinearLayout) findViewById(R.id.llPregunta4);
         llPregunta5=(LinearLayout) findViewById(R.id.llPregunta5);
-        tvRespuestaCorregida1=(TextView) findViewById(R.id.tvRespuestaCorregida1);
-        tvRespuestaCorregida2=(TextView) findViewById(R.id.tvRespuestaCorregida2);
-        tvRespuestaCorregida3=(TextView) findViewById(R.id.tvRespuestaCorregida3);
+        clCorregido1=(ConstraintLayout) findViewById(R.id.clCorregido1);
+        clCorregido2=(ConstraintLayout) findViewById(R.id.clCorregido2);
+        clCorregido3=(ConstraintLayout) findViewById(R.id.clCorregido3);
         llRespuestas1=(LinearLayout) findViewById(R.id.llRespuestas1);
         llRespuestas2=(LinearLayout) findViewById(R.id.llRespuestas2);
         llRespuestas3=(LinearLayout) findViewById(R.id.llRespuestas3);
@@ -167,7 +167,7 @@ public class Activity_Santamaria extends AppCompatActivity {
                 //Ocultamos las respuestas
                 llRespuestas1.setVisibility(View.GONE);
                 //Mostramos la explicación:
-                tvRespuestaCorregida1.setVisibility(View.VISIBLE);
+                clCorregido1.setVisibility(View.VISIBLE);
                 //Mostramos el botón pregunta1:
                 btnPregunta1.setVisibility(View.VISIBLE);
             }
@@ -235,7 +235,7 @@ public class Activity_Santamaria extends AppCompatActivity {
                 //Ocultamos las respuestas
                 llRespuestas2.setVisibility(View.GONE);
                 //Mostramos la explicación:
-                tvRespuestaCorregida2.setVisibility(View.VISIBLE);
+                clCorregido2.setVisibility(View.VISIBLE);
                 //Mostramos el botón pregunta 2:
                 btnPregunta2.setVisibility(View.VISIBLE);
             }
@@ -303,7 +303,7 @@ public class Activity_Santamaria extends AppCompatActivity {
                 //Ocultamos las respuestas
                 llRespuestas3.setVisibility(View.GONE);
                 //Mostramos la explicación:
-                tvRespuestaCorregida3.setVisibility(View.VISIBLE);
+                clCorregido3.setVisibility(View.VISIBLE);
                 //Mostramos el botón pregunta1:
                 btnPregunta3.setVisibility(View.VISIBLE);
             }
