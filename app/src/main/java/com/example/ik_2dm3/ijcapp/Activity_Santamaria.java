@@ -33,6 +33,7 @@ public class Activity_Santamaria extends AppCompatActivity {
     private LinearLayout llPregunta1;
     private LinearLayout llPregunta2;
     private LinearLayout llPregunta3;
+    //
     private LinearLayout llPregunta4;
     private ConstraintLayout clCorregido1;
     private ConstraintLayout clCorregido2;
