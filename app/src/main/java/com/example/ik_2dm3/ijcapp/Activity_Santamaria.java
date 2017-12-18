@@ -33,7 +33,7 @@ public class Activity_Santamaria extends AppCompatActivity {
     private LinearLayout llPregunta1;
     private LinearLayout llPregunta2;
     private LinearLayout llPregunta3;
-    //
+    private ConstraintLayout clRespuestaCorregida5;
     private LinearLayout llPregunta4;
     private ConstraintLayout clCorregido1;
     private ConstraintLayout clCorregido2;
@@ -103,6 +103,7 @@ public class Activity_Santamaria extends AppCompatActivity {
         llRespuestas52=(LinearLayout) findViewById(R.id.llRespuestas52);
         tvRespuestaCorregida5=(TextView) findViewById(R.id.tvRespuestaCorregida5);
         btnPregunta5=(Button) findViewById(R.id.btnPregunta5);
+        clRespuestaCorregida5=(ConstraintLayout) findViewById(R.id.clRespuestaCorregida5);
 
 
         //Pasamos a la primera pregunta
@@ -439,7 +440,7 @@ public class Activity_Santamaria extends AppCompatActivity {
                 //Cambiamos el bacground
                 llSantaMaria.setBackground(getResources().getDrawable(R.drawable.sanpedroabrisketa));
                 //Mostramos la respuesta corregida
-                tvRespuestaCorregida5.setVisibility(View.VISIBLE);
+                clRespuestaCorregida5.setVisibility(View.VISIBLE);
                 //Mostramos el botón pregunta 5:
                 btnPregunta5.setVisibility(View.VISIBLE);
             }
@@ -472,7 +473,7 @@ public class Activity_Santamaria extends AppCompatActivity {
                 //Cambiamos el bacground
                 llSantaMaria.setBackground(getResources().getDrawable(R.drawable.sanpedroabrisketa));
                 //Mostramos la respuesta corregida
-                tvRespuestaCorregida5.setVisibility(View.VISIBLE);
+                clRespuestaCorregida5.setVisibility(View.VISIBLE);
                 //Mostramos el botón pregunta 5:
                 btnPregunta5.setVisibility(View.VISIBLE);
             }
@@ -505,7 +506,7 @@ public class Activity_Santamaria extends AppCompatActivity {
                 //Cambiamos el bacground
                 llSantaMaria.setBackground(getResources().getDrawable(R.drawable.sanpedroabrisketa));
                 //Mostramos la respuesta corregida
-                tvRespuestaCorregida5.setVisibility(View.VISIBLE);
+                clRespuestaCorregida5.setVisibility(View.VISIBLE);
                 //Mostramos el botón pregunta 5:
                 btnPregunta5.setVisibility(View.VISIBLE);
             }
@@ -538,7 +539,7 @@ public class Activity_Santamaria extends AppCompatActivity {
                 //Cambiamos el bacground
                 llSantaMaria.setBackground(getResources().getDrawable(R.drawable.sanpedroabrisketa));
                 //Mostramos la respuesta corregida
-                tvRespuestaCorregida5.setVisibility(View.VISIBLE);
+                clRespuestaCorregida5.setVisibility(View.VISIBLE);
                 //Mostramos el botón pregunta 5:
                 btnPregunta5.setVisibility(View.VISIBLE);
             }
