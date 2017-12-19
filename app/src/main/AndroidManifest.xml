@@ -43,7 +43,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity_Plaza" />
-        <activity android:name=".Pistas2" />
+        <activity android:name=".Pista3" />
         <activity
             android:name=".Activity_Santamaria"
             android:screenOrientation="portrait" />
