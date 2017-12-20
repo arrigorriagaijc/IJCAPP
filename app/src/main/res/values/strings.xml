@@ -42,8 +42,11 @@
     <string name="respuesta3corregida">La parroquia está totalmente reformada.</string>
     <string name="respuesta5corregida">Está en el barrio de Abrisketa. La romería en honor a San Pedro, se celebra el primer domingo después del 29 de junio. Es la más vieja de Bizkaia, del siglo XII, y de estilo románico.</string>
     <string name="pista3">Los domingos, los habitantes de Arrigorriaga a dónde suelen ir a rezar?</string>
+    <string name="pista4">En este podemos ver teatros y películas</string>
     <string name="explicacion">Como sabéis, en Arrigorriaga hay otros edificios que también son religiosos, por ejemplo las ermitas.</string>
     <string name="casa_cultura">Casa cultura</string>
     <string name="iglesia">Iglesia</string>
     <string name="escuela">Escuela</string>
+    <string name="salalonbo">Sala Lonbo</string>
+    <string name="ayuntamiento">Ayuntamiento</string>
 </resources>
