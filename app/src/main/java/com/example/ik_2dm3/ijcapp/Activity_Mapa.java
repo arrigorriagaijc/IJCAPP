@@ -147,9 +147,13 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
                 }
                 if(marker.getTitle().equals("Santa Maria Magdalena eliza")) {
                     marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.santamariamagdalenaredondo));
+                    Intent intent=new Intent(Activity_Mapa.this, Pista4.class);
+                    startActivity(intent);
                 }
                 if(marker.getTitle().equals("Landaederragako Kristo Santuaren baseliza")) {
                     marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.landaederragakokirstosantuarenbaseliza));
+                    Intent intent=new Intent(Activity_Mapa.this, Pista5.class);
+                    startActivity(intent);
                 }
 
                 return false;

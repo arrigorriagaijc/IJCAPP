@@ -2,13 +2,13 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/llPistas2"
+    android:id="@+id/llPistas3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/pantallaidiomas"
     android:orientation="vertical"
     android:weightSum="1"
-    tools:context="com.example.ik_2dm3.ijcapp.Pistas2">
+    tools:context="com.example.ik_2dm3.ijcapp.Pista3">
 
     <ImageView
         android:id="@+id/imageView"
@@ -22,10 +22,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.163"
-        app:srcCompat="@drawable/pergaminoverde" />
+        app:srcCompat="@drawable/pergaminoazul" />
 
     <TextView
-        android:id="@+id/textoPista2"
+        android:id="@+id/textoPista3"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
@@ -34,7 +34,7 @@
         android:layout_weight="0.1"
         android:gravity="center_vertical|center_horizontal"
         android:paddingRight="12dp"
-        android:text="@string/pista2"
+        android:text="@string/pista4"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
@@ -51,18 +51,18 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="68dp"
         android:alpha="0.8"
-        android:background="@drawable/preguntasverdes"
+        android:background="@drawable/preguntasantamaria"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textoPista2">
+        app:layout_constraintTop_toBottomOf="@+id/textoPista3">
 
         <RadioButton
             android:id="@+id/radioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/casa_cultura"
+            android:text="@string/salalonbo"
             android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:textSize="20sp" />
 
@@ -71,7 +71,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/iglesia"
+            android:text="@string/ayuntamiento"
             android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:textSize="20sp" />
 
@@ -80,14 +80,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/escuela"
+            android:text="@string/iglesia"
             android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:textSize="20sp" />
 
     </RadioGroup>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnSiguiente"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginBottom="8dp"
