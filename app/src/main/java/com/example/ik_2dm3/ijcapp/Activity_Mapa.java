@@ -8,9 +8,11 @@ import android.content.Intent;
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.graphics.drawable.LayerDrawable;
 import android.location.Location;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -47,6 +49,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -110,6 +113,11 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
         //Arrigorriagako Udaletxea:
         LatLng AyuntamientoArrigorriaga = new LatLng(43.20593, -2.88784);
         Marker AyArrigo= mMap.addMarker(new  MarkerOptions().position(AyuntamientoArrigorriaga).title("Arrigorriagako Udaletxea").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
+
+        Uri gmmIntentUri = Uri.parse("google.navigation:q=43.20593, -2.88784&mode=w");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);
 
         //Arrigorriagako Etxetzarrak
         LatLng ArrigorriagakoEtxetzarrak = new LatLng(43.2097, -2.88835);
@@ -194,6 +202,7 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
                 return false;
             }
         });
+
 
 
     }
