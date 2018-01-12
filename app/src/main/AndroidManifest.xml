@@ -48,7 +48,8 @@
         <activity
             android:name=".Activity_Santamaria"
             android:screenOrientation="portrait" />
-        <activity android:name=".Pista5"></activity>
+        <activity android:name=".Pista5" />
+        <activity android:name=".Final"></activity>
     </application>
 
 </manifest>
