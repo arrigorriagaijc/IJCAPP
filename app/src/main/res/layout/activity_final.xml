@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/CLFinal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fcd5b4"
@@ -9,17 +10,67 @@
     tools:context="com.example.ik_2dm3.ijcapp.Final">
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/IVFinal"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
         android:layout_marginStart="8dp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/felicidades" />
+
+    <ImageView
+        android:id="@+id/IVFinal2"
+        android:layout_width="300dp"
+        android:layout_height="260dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/givMikelfinal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bocadilloVerde" />
+
+    <TextView
+        android:id="@+id/TVFinal"
+        android:layout_width="267dp"
+        android:layout_height="174dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:text="TextView"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="@dimen/place_autocomplete_button_padding"
+        app:layout_constraintBottom_toBottomOf="@+id/IVFinal2"
+        app:layout_constraintEnd_toEndOf="@+id/IVFinal2"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="@+id/IVFinal2"
+        app:layout_constraintTop_toTopOf="@+id/IVFinal2"
+        app:layout_constraintVertical_bias="0.314"
+        tools:text="@string/tvfinal" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/givMikelfinal"
+        android:layout_width="225dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="72dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/mikelgif"
+        android:scaleX="1.1"
+        android:scaleY="1.1"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
