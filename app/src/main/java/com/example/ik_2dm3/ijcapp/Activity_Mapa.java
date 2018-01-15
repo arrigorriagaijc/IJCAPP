@@ -13,6 +13,7 @@ import android.graphics.drawable.LayerDrawable;
 import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -55,9 +56,18 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.maps.android.kml.KmlLayer;
 
+import org.json.JSONObject;
 import org.xmlpull.v1.XmlPullParserException;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallback {
 
@@ -69,6 +79,7 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
     private FusedLocationProviderClient mFusedLocationClient;
     private double latitude;
     private double longitude;
+    private LatLng UbicacionActual;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +89,6 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
 
         //Si queremos cambiar el icono al buscador de ubicacion:
         //ImageView boton=(ImageView) mapFragment.getView().findViewById(2);
@@ -111,13 +121,26 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
 
         //Añadimos los marcadores que se soliciten:
         //Arrigorriagako Udaletxea:
-        LatLng AyuntamientoArrigorriaga = new LatLng(43.20593, -2.88784);
+        LatLng AyuntamientoArrigorriaga = new LatLng(43.205918, -2.887718);
         Marker AyArrigo= mMap.addMarker(new  MarkerOptions().position(AyuntamientoArrigorriaga).title("Arrigorriagako Udaletxea").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
 
-        Uri gmmIntentUri = Uri.parse("google.navigation:q=43.20593, -2.88784&mode=w");
+        Uri gmmIntentUri = Uri.parse("google.navigation:q=43.256998, -2.903901&mode=w");
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
         mapIntent.setPackage("com.google.android.apps.maps");
-        startActivity(mapIntent);
+        if (mapIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(mapIntent);
+        }
+
+
+
+
+
+
+
+
+        /*String url = obtenerDireccionesURL(UbicacionActual, AyuntamientoArrigorriaga);
+        DownloadTask downloadTask = new DownloadTask();
+        downloadTask.execute(url);*/
 
         //Arrigorriagako Etxetzarrak
         LatLng ArrigorriagakoEtxetzarrak = new LatLng(43.2097, -2.88835);
@@ -202,9 +225,6 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
                 return false;
             }
         });
-
-
-
     }
 
     //Creamos una sentencia para activar el GPS si es necesario
@@ -295,7 +315,7 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
                             if (location != null) {
                                 latitude = location.getLatitude();
                                 longitude = location.getLongitude();
-                                LatLng UbicacionActual = new LatLng(latitude, longitude);
+                                UbicacionActual = new LatLng(latitude, longitude);
                                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(UbicacionActual, 16f));
                             } else {
                                 Log.d(TAG, "No recoge nada");
@@ -317,6 +337,7 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
             // to handle the case where the user grants the permission. See the documentation
             // for ActivityCompat#requestPermissions for more details.
             mMap.setMyLocationEnabled(true);
+
             //Situo la cámara en mi ubicación actual
             ObtenerLocalizacion();
         } else {
@@ -349,5 +370,137 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
                 break;
         }
     }
+
+    /*private String obtenerDireccionesURL(LatLng origin,LatLng dest){
+
+        String str_origin = "origin="+origin.latitude+","+origin.longitude;
+
+        String str_dest = "destination="+dest.latitude+","+dest.longitude;
+
+        String sensor = "sensor=false";
+
+        String parameters = str_origin+"&"+str_dest+"&"+sensor;
+
+        String output = "json";
+
+        String url = "https://maps.googleapis.com/maps/api/directions/"+output+"?"+parameters;
+
+        return url;
+    }
+
+    private class DownloadTask extends AsyncTask<String, Void, String>{
+
+        @Override
+        protected String doInBackground(String... url) {
+
+            String data = "";
+
+            try{
+                data = downloadUrl(url[0]);
+            }catch(Exception e){
+                Log.d("ERROR AL OBTENER WS",e.toString());
+            }
+            return data;
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+
+            ParserTask parserTask = new ParserTask();
+
+            parserTask.execute(result);
+        }
+    }
+
+    private class ParserTask extends AsyncTask<String, Integer, List<List<HashMap<String,String>>> >{
+
+        @Override
+        protected List<List<HashMap<String, String>>> doInBackground(String... jsonData) {
+
+            JSONObject jObject;
+            List<List<HashMap<String, String>>> routes = null;
+
+            try{
+                jObject = new JSONObject(jsonData[0]);
+                DirectionsJSONParser parser = new DirectionsJSONParser();
+
+                routes = parser.parse(jObject);
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+            return routes;
+        }
+
+        @Override
+        protected void onPostExecute(List<List<HashMap<String, String>>> result) {
+            ArrayList<LatLng> points = null;
+            PolylineOptions lineOptions = null;
+            MarkerOptions markerOptions = new MarkerOptions();
+
+            for(int i=0;i<result.size();i++){
+                points = new ArrayList<LatLng>();
+                lineOptions = new PolylineOptions();
+
+                List<HashMap<String, String>> path = result.get(i);
+
+                for(int j=0;j<path.size();j++){
+                    HashMap<String,String> point = path.get(j);
+
+                    double lat = Double.parseDouble(point.get("lat"));
+                    double lng = Double.parseDouble(point.get("lng"));
+                    LatLng position = new LatLng(lat, lng);
+
+                    points.add(position);
+                }
+
+                lineOptions.addAll(points);
+                lineOptions.width(4);
+                lineOptions.color(Color.rgb(0,0,255));
+            }
+            if(lineOptions!=null) {
+                mMap.addPolyline(lineOptions);
+            }
+        }
+    }
+
+    private String downloadUrl(String strUrl) throws IOException {
+        String data = "";
+        InputStream iStream = null;
+        HttpURLConnection urlConnection = null;
+        try{
+            URL url = new URL(strUrl);
+
+            // Creamos una conexion http
+            urlConnection = (HttpURLConnection) url.openConnection();
+
+            // Conectamos
+            urlConnection.connect();
+
+            // Leemos desde URL
+            iStream = urlConnection.getInputStream();
+
+            BufferedReader br = new BufferedReader(new InputStreamReader(iStream));
+
+            StringBuffer sb = new StringBuffer();
+
+            String line = "";
+            while( ( line = br.readLine()) != null){
+                sb.append(line);
+            }
+
+            data = sb.toString();
+
+            br.close();
+
+        }catch(Exception e){
+            Log.d("Exception", e.toString());
+        }finally{
+            iStream.close();
+            urlConnection.disconnect();
+        }
+        return data;
+    }
+*/
 
 }
