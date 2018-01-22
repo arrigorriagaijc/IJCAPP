@@ -37,6 +37,9 @@
     <string name="respuesta5_buena">Ermita de San Pedro Abrisketa.</string>
     <string name="respuesta52_mala">Ermita de San Telmo de Vitoria.</string>
     <string name="respuesta53_mala">Ermita de Santa Marta de Donostia.</string>
+    <string name="rbRespuesta1">Ayuntamiento</string>
+    <string name="rbRespuesta2">Etxetzarra</string>
+    <string name="rbRespuesta3">Caserío</string>
     <string name="respuesta1corregida">Es Santa Maria Magdalena.</string>
     <string name="respuesta2corregida">La parroquia es del siglo IX.</string>
     <string name="respuesta3corregida">La parroquia está totalmente reformada.</string>

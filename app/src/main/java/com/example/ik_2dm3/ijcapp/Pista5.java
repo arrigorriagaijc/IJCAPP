@@ -8,14 +8,23 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.DragEvent;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class Pista5 extends AppCompatActivity {
 
+    private RadioButton rbRespuesta1;
+    private RadioButton rbRespuesta2;
+    private RadioButton rbRespuesta3;
     private ImageView ivFondo;
     private ImageView ivFondo1;
     private ImageView ivPieza1;
@@ -65,12 +74,21 @@ public class Pista5 extends AppCompatActivity {
     private ConstraintLayout clSolucion;
     private ConstraintLayout clPiezas;
     private ConstraintLayout clEnunciadoPista5;
-    private ConstraintLayout clPreguntas;
+    private ConstraintLayout clPregunta;
+    private ConstraintLayout clPuzzlePista5;
+    private Toast toast;
+    private Button btnSiguiente;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pista5);
+
+        btnSiguiente=(Button) findViewById(R.id.btnSiguiente);
+
+        rbRespuesta1=(RadioButton) findViewById(R.id.rbRespuesta1);
+        rbRespuesta2=(RadioButton) findViewById(R.id.rbRespuesta2);
+        rbRespuesta3=(RadioButton) findViewById(R.id.rbRespuesta3);
 
         arrayListPiezas=new ArrayList<>();
         arrayListFondos=new ArrayList<>();
@@ -80,9 +98,10 @@ public class Pista5 extends AppCompatActivity {
         arrayListAcertado=new ArrayList<>();
 
         clSolucion=(ConstraintLayout) findViewById(R.id.clSolucion);
-        //clPreguntas=(ConstraintLayout) findViewById(R.id.clPreguntas);
+        clPregunta=(ConstraintLayout) findViewById(R.id.clPregunta);
         clPiezas=(ConstraintLayout) findViewById(R.id.clPiezas);
         clEnunciadoPista5=(ConstraintLayout) findViewById(R.id.clEnunciadoPista5);
+        clPuzzlePista5=(ConstraintLayout) findViewById(R.id.clPuzzlePista5);
 
         arrayListDrawablesPiezas.add(R.drawable.p1);
         arrayListDrawablesPiezas.add(R.drawable.p2);
@@ -162,6 +181,14 @@ public class Pista5 extends AppCompatActivity {
         arrayListPiezas.add(ivPieza8);
         arrayListFondos.add(ivFondo9);
         arrayListPiezas.add(ivPieza9);
+
+        btnSiguiente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clEnunciadoPista5.setVisibility(View.GONE);
+                clPuzzlePista5.setVisibility(View.VISIBLE);
+            }
+        });
 
         //Usando el onTouch tenemos el problema de que con dos toques muy seguidos el startdrag hace colapsar
         //el ondraglistener y no reaparece la imagen. Pasa a veces. Queda de comprobar en el móvil.
@@ -246,7 +273,7 @@ public class Pista5 extends AppCompatActivity {
                                 }
                                 ivFondo.setVisibility(View.VISIBLE);
                                 clPiezas.setVisibility(View.GONE);
-                                //clPreguntas.setVisibility(View.VISIBLE);
+                                clPregunta.setVisibility(View.VISIBLE);
                             }
                             break;
                         default:
@@ -255,6 +282,23 @@ public class Pista5 extends AppCompatActivity {
                     return true;
                 }
             });
+        }
+
+        if(rbRespuesta2.isChecked()){
+            LayoutInflater inflater = getLayoutInflater();
+            View layout = inflater.inflate(R.layout.acierto,
+                    (ViewGroup) findViewById(R.id.clAcierto));
+            //Creamos el toast
+            toast = new Toast(getApplicationContext());
+            //Lo centramos
+            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+            //Le ponemos duración corta
+            toast.setDuration(Toast.LENGTH_SHORT);
+            //Le asignamos el layout
+            toast.setView(layout);
+            //Lo mostramos
+            toast.show();
+            finish();
         }
     }
     public Boolean acabado(){
