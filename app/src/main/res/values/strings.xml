@@ -66,4 +66,13 @@
     <string name="respuesta31pag4">Edificio de la época romana.</string>
     <string name="respuesta32pag4">Un edificio vasco.?</string>
     <string name="respuesta33pag4">Antiguos teatros de piedra.</string>
+    <string name="pista1pregunta4">La "Etxetzarra" de Arrigorriaga está presente en la lista de patrimonio cultural
+        e histórico publicada por el País Vasco. Este edificio es un caserío antiguo vasco, en él, vivían habitantes de
+        Arrigorriaga que se ocupaban de la ganadería y la agricultura. Estos caserios han sido siempre símbolo de identidad
+        del País Vasco. Hoy en día algunos de estos caseríos son merecedores de ser patrimonio cultural según muchos
+        vascos. Este es el cual encotramos al lado de la casa de cultura del pueblo</string>
+    <string name="pista1pregunta4e">Arrigorriagako Etxetzarra Euskal Herriko ondare historiko-artistikoen zerrendan ageri da.
+     Etxetzarra, ireganean euskal baserria izandako eraikina da, bertan, Arrigorriako biztanle ziren baserritarrak zirenak.
+    Baserriak euskal kulturaren sinbolo dira</string>
+
 </resources>
