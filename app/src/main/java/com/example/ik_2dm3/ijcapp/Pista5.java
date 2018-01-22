@@ -22,13 +22,37 @@ public class Pista5 extends AppCompatActivity {
     private ImageView ivPieza2;
     private ImageView ivFondo3;
     private ImageView ivPieza3;
+    private ImageView ivFondo4;
+    private ImageView ivPieza4;
+    private ImageView ivFondo5;
+    private ImageView ivPieza5;
+    private ImageView ivFondo6;
+    private ImageView ivPieza6;
+    private ImageView ivFondo7;
+    private ImageView ivPieza7;
+    private ImageView ivFondo8;
+    private ImageView ivPieza8;
+    private ImageView ivFondo9;
+    private ImageView ivPieza9;
     private static final String IMAGEVIEW_TAG1 = "im1";
     private static final String IMAGEVIEW_TAG2 = "im2";
     private static final String IMAGEVIEW_TAG3 = "im3";
+    private static final String IMAGEVIEW_TAG4 = "im4";
+    private static final String IMAGEVIEW_TAG5 = "im5";
+    private static final String IMAGEVIEW_TAG6 = "im6";
+    private static final String IMAGEVIEW_TAG7 = "im7";
+    private static final String IMAGEVIEW_TAG8 = "im8";
+    private static final String IMAGEVIEW_TAG9 = "im9";
     private static final String TAG = "TAG";
     private boolean acertado1=false;
     private boolean acertado2=false;
     private boolean acertado3=false;
+    private boolean acertado4=false;
+    private boolean acertado5=false;
+    private boolean acertado6=false;
+    private boolean acertado7=false;
+    private boolean acertado8=false;
+    private boolean acertado9=false;
     private boolean solucionado=false;
     private ArrayList<ImageView> arrayListPiezas;
     private ArrayList<ImageView> arrayListFondos;
@@ -39,6 +63,7 @@ public class Pista5 extends AppCompatActivity {
     private View vista;
     private ConstraintLayout clSolucion;
     private ConstraintLayout clPiezas;
+    private ConstraintLayout clEnunciadoPista5;
     private ConstraintLayout clPreguntas;
 
     @Override
@@ -54,36 +79,87 @@ public class Pista5 extends AppCompatActivity {
         arrayListAcertado=new ArrayList<>();
 
         clSolucion=(ConstraintLayout) findViewById(R.id.clSolucion);
+        //clPreguntas=(ConstraintLayout) findViewById(R.id.clPreguntas);
         clPiezas=(ConstraintLayout) findViewById(R.id.clPiezas);
-        clPreguntas=(ConstraintLayout) findViewById(R.id.clPreguntas);
+        clEnunciadoPista5=(ConstraintLayout) findViewById(R.id.clEnunciadoPista5);
 
         arrayListDrawablesPiezas.add(R.drawable.p1);
         arrayListDrawablesPiezas.add(R.drawable.p2);
         arrayListDrawablesPiezas.add(R.drawable.p3);
+        arrayListDrawablesPiezas.add(R.drawable.p4);
+        arrayListDrawablesPiezas.add(R.drawable.p5);
+        arrayListDrawablesPiezas.add(R.drawable.p6);
+        arrayListDrawablesPiezas.add(R.drawable.p7);
+        arrayListDrawablesPiezas.add(R.drawable.p8);
+        arrayListDrawablesPiezas.add(R.drawable.p9);
 
         arrayListDrawablesFondos.add(R.drawable.p1fondo);
         arrayListDrawablesFondos.add(R.drawable.p2fondo);
         arrayListDrawablesFondos.add(R.drawable.p3fondo);
+        arrayListDrawablesFondos.add(R.drawable.p4fondo);
+        arrayListDrawablesFondos.add(R.drawable.p5fondo);
+        arrayListDrawablesFondos.add(R.drawable.p6fondo);
+        arrayListDrawablesFondos.add(R.drawable.p7fondo);
+        arrayListDrawablesFondos.add(R.drawable.p8fondo);
+        arrayListDrawablesFondos.add(R.drawable.p9fondo);
 
         arrayListAcertado.add(acertado1);
         arrayListAcertado.add(acertado2);
         arrayListAcertado.add(acertado3);
+        arrayListAcertado.add(acertado4);
+        arrayListAcertado.add(acertado5);
+        arrayListAcertado.add(acertado6);
+        arrayListAcertado.add(acertado7);
+        arrayListAcertado.add(acertado8);
+        arrayListAcertado.add(acertado9);
 
         arrayListEtiquetas.add(IMAGEVIEW_TAG1);
         arrayListEtiquetas.add(IMAGEVIEW_TAG2);
         arrayListEtiquetas.add(IMAGEVIEW_TAG3);
+        arrayListEtiquetas.add(IMAGEVIEW_TAG4);
+        arrayListEtiquetas.add(IMAGEVIEW_TAG5);
+        arrayListEtiquetas.add(IMAGEVIEW_TAG6);
+        arrayListEtiquetas.add(IMAGEVIEW_TAG7);
+        arrayListEtiquetas.add(IMAGEVIEW_TAG8);
+        arrayListEtiquetas.add(IMAGEVIEW_TAG9);
+
         ivFondo1=(ImageView) findViewById(R.id.ivFondo1);
         ivPieza1=(ImageView) findViewById(R.id.ivPieza1);
         ivFondo2=(ImageView) findViewById(R.id.ivFondo2);
         ivPieza2=(ImageView) findViewById(R.id.ivPieza2);
         ivFondo3=(ImageView) findViewById(R.id.ivFondo3);
         ivPieza3=(ImageView) findViewById(R.id.ivPieza3);
+        ivFondo4=(ImageView) findViewById(R.id.ivFondo4);
+        ivPieza4=(ImageView) findViewById(R.id.ivPieza4);
+        ivFondo5=(ImageView) findViewById(R.id.ivFondo5);
+        ivPieza5=(ImageView) findViewById(R.id.ivPieza5);
+        ivFondo6=(ImageView) findViewById(R.id.ivFondo6);
+        ivPieza6=(ImageView) findViewById(R.id.ivPieza6);
+        ivFondo7=(ImageView) findViewById(R.id.ivFondo7);
+        ivPieza7=(ImageView) findViewById(R.id.ivPieza7);
+        ivFondo8=(ImageView) findViewById(R.id.ivFondo8);
+        ivPieza8=(ImageView) findViewById(R.id.ivPieza8);
+        ivFondo9=(ImageView) findViewById(R.id.ivFondo9);
+        ivPieza9=(ImageView) findViewById(R.id.ivPieza9);
+
         arrayListFondos.add(ivFondo1);
         arrayListPiezas.add(ivPieza1);
         arrayListFondos.add(ivFondo2);
         arrayListPiezas.add(ivPieza2);
         arrayListFondos.add(ivFondo3);
         arrayListPiezas.add(ivPieza3);
+        arrayListFondos.add(ivFondo4);
+        arrayListPiezas.add(ivPieza4);
+        arrayListFondos.add(ivFondo5);
+        arrayListPiezas.add(ivPieza5);
+        arrayListFondos.add(ivFondo6);
+        arrayListPiezas.add(ivPieza6);
+        arrayListFondos.add(ivFondo7);
+        arrayListPiezas.add(ivPieza7);
+        arrayListFondos.add(ivFondo8);
+        arrayListPiezas.add(ivPieza8);
+        arrayListFondos.add(ivFondo9);
+        arrayListPiezas.add(ivPieza9);
 
         //Usando el onTouch tenemos el problema de que con dos toques muy seguidos el startdrag hace colapsar
         //el ondraglistener y no reaparece la imagen. Pasa a veces. Queda de comprobar en el móvil.

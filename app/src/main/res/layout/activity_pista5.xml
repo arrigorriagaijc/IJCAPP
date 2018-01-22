@@ -80,28 +80,27 @@
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/clSolucion"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="30dp"
             android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/ivFondo1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="232dp"
-                android:layout_marginStart="60dp"
-                android:layout_marginTop="40dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/p1fondo" />
@@ -110,10 +109,7 @@
                 android:id="@+id/ivFondo2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="138dp"
-                android:layout_marginStart="154dp"
-                android:layout_marginTop="40dp"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="70dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/p2fondo" />
@@ -122,19 +118,74 @@
                 android:id="@+id/ivFondo3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="64dp"
-                android:layout_marginStart="248dp"
-                android:layout_marginTop="40dp"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="132dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/p3fondo" />
+
+            <ImageView
+                android:id="@+id/ivFondo4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="56dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/p4fondo" />
+
+            <ImageView
+                android:id="@+id/ivFondo5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="58dp"
+                android:layout_marginTop="44dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/p5fondo" />
+
+            <ImageView
+                android:id="@+id/ivFondo6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="143dp"
+                android:layout_marginTop="44dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/p6fondo" />
+
+            <ImageView
+                android:id="@+id/ivFondo7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="120dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/p7fondo" />
+
+            <ImageView
+                android:id="@+id/ivFondo8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="58dp"
+                android:layout_marginTop="108dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/p8fondo" />
+
+            <ImageView
+                android:id="@+id/ivFondo9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="143dp"
+                android:layout_marginTop="108dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/p9fondo" />
         </android.support.constraint.ConstraintLayout>
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/clPiezas"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
@@ -142,23 +193,56 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/clSolucion">
+            app:layout_constraintTop_toBottomOf="@+id/clSolucion"
+            app:layout_constraintVertical_bias="0.54">
 
             <ImageView
-                android:id="@+id/ivPieza4"
+                android:id="@+id/ivPieza1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintBottom_toTopOf="@+id/ivPieza4"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/p1"
+                tools:layout_editor_absoluteX="114dp" />
+
+            <ImageView
+                android:id="@+id/ivPieza2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.6"
+                app:layout_constraintBottom_toTopOf="@+id/ivPieza3"
+                app:layout_constraintEnd_toStartOf="@+id/ivPieza1"
+                app:layout_constraintHorizontal_bias="0.928"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.024"
-                app:srcCompat="@drawable/p1" />
+                app:layout_constraintVertical_bias="0.285"
+                app:srcCompat="@drawable/p2" />
+
+            <ImageView
+                android:id="@+id/ivPieza3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/ivPieza4"
+                app:layout_constraintHorizontal_bias="0.764"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/p3"
+                tools:layout_editor_absoluteY="73dp" />
+
+            <ImageView
+                android:id="@+id/ivPieza4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/p4"
+                tools:layout_editor_absoluteX="126dp"
+                tools:layout_editor_absoluteY="79dp" />
 
             <ImageView
                 android:id="@+id/ivPieza5"
@@ -169,15 +253,27 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.106"
+                app:layout_constraintEnd_toStartOf="@+id/ivPieza6"
+                app:layout_constraintHorizontal_bias="0.764"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.025"
-                app:srcCompat="@drawable/p2" />
+                app:layout_constraintTop_toBottomOf="@+id/ivPieza3"
+                app:layout_constraintVertical_bias="0.504"
+                app:srcCompat="@drawable/p5" />
 
             <ImageView
                 android:id="@+id/ivPieza6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivPieza4"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/p6"
+                tools:layout_editor_absoluteX="126dp" />
+
+            <ImageView
+                android:id="@+id/ivPieza7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -186,11 +282,37 @@
                 android:layout_marginTop="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.129"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.557"
+                app:layout_constraintStart_toEndOf="@+id/ivPieza6"
+                app:layout_constraintTop_toBottomOf="@+id/ivPieza9"
+                app:layout_constraintVertical_bias="0.322"
+                app:srcCompat="@drawable/p7" />
+
+            <ImageView
+                android:id="@+id/ivPieza8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/ivPieza9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.685"
+                app:layout_constraintStart_toEndOf="@+id/ivPieza1"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.387"
-                app:srcCompat="@drawable/p3" />
+                app:srcCompat="@drawable/p8" />
+
+            <ImageView
+                android:id="@+id/ivPieza9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivPieza4"
+                app:srcCompat="@drawable/p9"
+                tools:layout_editor_absoluteY="85dp" />
         </android.support.constraint.ConstraintLayout>
 
     </android.support.constraint.ConstraintLayout>
