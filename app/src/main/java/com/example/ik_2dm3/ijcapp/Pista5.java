@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 public class Pista5 extends AppCompatActivity {
 
+    private ImageView ivFondo;
     private ImageView ivFondo1;
     private ImageView ivPieza1;
     private ImageView ivFondo2;
@@ -123,6 +124,7 @@ public class Pista5 extends AppCompatActivity {
         arrayListEtiquetas.add(IMAGEVIEW_TAG8);
         arrayListEtiquetas.add(IMAGEVIEW_TAG9);
 
+        ivFondo=(ImageView) findViewById(R.id.imageView16);
         ivFondo1=(ImageView) findViewById(R.id.ivFondo1);
         ivPieza1=(ImageView) findViewById(R.id.ivPieza1);
         ivFondo2=(ImageView) findViewById(R.id.ivFondo2);
@@ -239,8 +241,12 @@ public class Pista5 extends AppCompatActivity {
                                 });
                             }
                             if(acabado()==true){
+                                for(int i=0; i<arrayListFondos.size();i++){
+                                    arrayListFondos.get(i).setVisibility(View.GONE);
+                                }
+                                ivFondo.setVisibility(View.VISIBLE);
                                 clPiezas.setVisibility(View.GONE);
-                                clPreguntas.setVisibility(View.VISIBLE);
+                                //clPreguntas.setVisibility(View.VISIBLE);
                             }
                             break;
                         default:
