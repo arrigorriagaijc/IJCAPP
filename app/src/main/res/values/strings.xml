@@ -51,4 +51,16 @@
     <string name="ayuntamiento">Ayuntamiento</string>
     <string name="tvfinal">¡FELICIDADES! Habéis tenido la oportunidad de conocer los edifios más importantes de nuestro pueblo y con ello un poco más de historia.\n\nEspero que cuando paséis al lado de ellos seáis conscientes de lo importante que son.
     ¡Pasadlo bien!</string>
+    <string name="pregunata1pag4">1.¿Al lado de qué podemos encontrar la “Etxetzarra”?</string>
+    <string name="pregunata2pag4">2. ¿Qué tipo de edificio es la Etxetzarra?</string>
+    <string name="pregunata3pag4">3. ¿Qué representaban los caserios antiguamente?</string>
+    <string name="respuesta11pag4">Al lado del cine del pueblo.</string>
+    <string name="respuesta12pag4">Al lado de la casa de cultura del pueblo.</string>
+    <string name="respuesta13pag4">Al lado del ayuntamiento del pueblo.</string>
+    <string name="respuesta21pag4">Un castillo de la época renacentista.</string>
+    <string name="respuesta22pag4">Un edificio moderno del siglo XX.</string>
+    <string name="respuesta23pag4">Un caserio antiguo vasco.</string>
+    <string name="respuesta31pag4">Edificio de la época romana.</string>
+    <string name="respuesta32pag4">Un edificio vasco.?</string>
+    <string name="respuesta33pag4">Antiguos teatros de piedra.</string>
 </resources>
