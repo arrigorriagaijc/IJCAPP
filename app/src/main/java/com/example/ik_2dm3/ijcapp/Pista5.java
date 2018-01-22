@@ -16,12 +16,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class Pista5 extends AppCompatActivity {
 
+    private RadioGroup rgPregunta;
     private RadioButton rbRespuesta1;
     private RadioButton rbRespuesta2;
     private RadioButton rbRespuesta3;
@@ -86,6 +88,7 @@ public class Pista5 extends AppCompatActivity {
 
         btnSiguiente=(Button) findViewById(R.id.btnSiguiente);
 
+        rgPregunta=(RadioGroup) findViewById(R.id.rgPregunta);
         rbRespuesta1=(RadioButton) findViewById(R.id.rbRespuesta1);
         rbRespuesta2=(RadioButton) findViewById(R.id.rbRespuesta2);
         rbRespuesta3=(RadioButton) findViewById(R.id.rbRespuesta3);
@@ -181,6 +184,28 @@ public class Pista5 extends AppCompatActivity {
         arrayListPiezas.add(ivPieza8);
         arrayListFondos.add(ivFondo9);
         arrayListPiezas.add(ivPieza9);
+
+        rgPregunta.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if(rbRespuesta2.isChecked()){
+                    LayoutInflater inflater = getLayoutInflater();
+                    View layout = inflater.inflate(R.layout.acierto,
+                            (ViewGroup) findViewById(R.id.clAcierto));
+                    //Creamos el toast
+                    toast = new Toast(getApplicationContext());
+                    //Lo centramos
+                    toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+                    //Le ponemos duración corta
+                    toast.setDuration(Toast.LENGTH_SHORT);
+                    //Le asignamos el layout
+                    toast.setView(layout);
+                    //Lo mostramos
+                    toast.show();
+                    finish();
+                }
+            }
+        });
 
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -282,23 +307,6 @@ public class Pista5 extends AppCompatActivity {
                     return true;
                 }
             });
-        }
-
-        if(rbRespuesta2.isChecked()){
-            LayoutInflater inflater = getLayoutInflater();
-            View layout = inflater.inflate(R.layout.acierto,
-                    (ViewGroup) findViewById(R.id.clAcierto));
-            //Creamos el toast
-            toast = new Toast(getApplicationContext());
-            //Lo centramos
-            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-            //Le ponemos duración corta
-            toast.setDuration(Toast.LENGTH_SHORT);
-            //Le asignamos el layout
-            toast.setView(layout);
-            //Lo mostramos
-            toast.show();
-            finish();
         }
     }
     public Boolean acabado(){
