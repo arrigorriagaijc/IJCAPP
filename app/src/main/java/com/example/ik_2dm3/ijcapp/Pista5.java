@@ -110,6 +110,9 @@ public class Pista5 extends AppCompatActivity {
     //Creamos el boton siguiente que pasa del enunciado al puzzle
     private Button btnSiguiente;
 
+    //Creamos el boton para salir del activity
+    private Button btnFin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -118,6 +121,8 @@ public class Pista5 extends AppCompatActivity {
         //Traemos todas las variables desde los recursos al codigo
 
         btnSiguiente=(Button) findViewById(R.id.btnSiguiente);
+
+        btnFin=(Button) findViewById(R.id.btnFin);
 
         rgPregunta=(RadioGroup) findViewById(R.id.rgPregunta);
         rbRespuesta1=(RadioButton) findViewById(R.id.rbRespuesta1);
@@ -239,8 +244,11 @@ public class Pista5 extends AppCompatActivity {
                     toast.setView(layout);
                     //Lo mostramos
                     toast.show();
-                    //Acabamos el activity
-                    finish();
+                    //Ocultamos la pregunta
+                    clPregunta.setVisibility(View.GONE);
+                    //Mostramos el boton de fin
+                    btnFin.setVisibility(View.VISIBLE);
+
                 }
             }
         });
@@ -252,6 +260,14 @@ public class Pista5 extends AppCompatActivity {
             public void onClick(View view) {
                 clEnunciadoPista5.setVisibility(View.GONE);
                 clPuzzlePista5.setVisibility(View.VISIBLE);
+            }
+        });
+
+        //Ponemos el listener a btnfin para acabar el activity
+        btnFin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
 
