@@ -23,11 +23,13 @@ import java.util.ArrayList;
 
 public class Pista5 extends AppCompatActivity {
 
+    //Creamos el radiogroup que nos dejara seleccionar la respuesta correcta
     private RadioGroup rgPregunta;
     private RadioButton rbRespuesta1;
     private RadioButton rbRespuesta2;
     private RadioButton rbRespuesta3;
-    private ImageView ivFondo;
+
+    //Creamos los imageviews tanto de las piezas como de los fondos donde van colocadas
     private ImageView ivFondo1;
     private ImageView ivPieza1;
     private ImageView ivFondo2;
@@ -46,6 +48,11 @@ public class Pista5 extends AppCompatActivity {
     private ImageView ivPieza8;
     private ImageView ivFondo9;
     private ImageView ivPieza9;
+
+    //Creamos el imageview del puzzle ya montado
+    private ImageView ivFondo;
+
+    //Creamos una etiqueta para cada pieza
     private static final String IMAGEVIEW_TAG1 = "im1";
     private static final String IMAGEVIEW_TAG2 = "im2";
     private static final String IMAGEVIEW_TAG3 = "im3";
@@ -55,7 +62,11 @@ public class Pista5 extends AppCompatActivity {
     private static final String IMAGEVIEW_TAG7 = "im7";
     private static final String IMAGEVIEW_TAG8 = "im8";
     private static final String IMAGEVIEW_TAG9 = "im9";
+
+    //Creamos una etiqueta para busqueda de errores
     private static final String TAG = "TAG";
+
+    //Creamos variables que comprueben que cada pieza esta bien o mal colocada
     private boolean acertado1=false;
     private boolean acertado2=false;
     private boolean acertado3=false;
@@ -65,26 +76,46 @@ public class Pista5 extends AppCompatActivity {
     private boolean acertado7=false;
     private boolean acertado8=false;
     private boolean acertado9=false;
+
+    //Creamos la variable que nos diga si el puzzle esta resuelto
     private boolean solucionado=false;
+
+    //Creamos un arraylist con las piezas
     private ArrayList<ImageView> arrayListPiezas;
+    //Creamos un arraylist con los fondos de las piezas (Azules)
     private ArrayList<ImageView> arrayListFondos;
+    //Creamos un arraylist con las etiquetas de las piezas
     private ArrayList<String> arrayListEtiquetas;
+    //Creamos un arraylist con el recurso (integer) drawable de cada pieza
     private ArrayList<Integer> arrayListDrawablesPiezas;
+    //Creamos un arraylist con el recurso (integer) drawable de cada fondo de cada pieza
     private ArrayList<Integer> arrayListDrawablesFondos;
+    //Creamos un arraylist con los booleanos que comprueban si cada pieza esta colocada
     private ArrayList<Boolean> arrayListAcertado;
+
+    //Creamos uan variable vista que será donde guardemos la que estemos arrastrando
     private View vista;
+
+    //Creamos los contraintlayout correspondientes a cada cometido que se ve en el XML
     private ConstraintLayout clSolucion;
     private ConstraintLayout clPiezas;
     private ConstraintLayout clEnunciadoPista5;
     private ConstraintLayout clPregunta;
     private ConstraintLayout clPuzzlePista5;
+    private ConstraintLayout clFondo;
+
+    //Creamos una variable toast que de final al ejercicio
     private Toast toast;
+
+    //Creamos el boton siguiente que pasa del enunciado al puzzle
     private Button btnSiguiente;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pista5);
+
+        //Traemos todas las variables desde los recursos al codigo
 
         btnSiguiente=(Button) findViewById(R.id.btnSiguiente);
 
@@ -105,6 +136,7 @@ public class Pista5 extends AppCompatActivity {
         clPiezas=(ConstraintLayout) findViewById(R.id.clPiezas);
         clEnunciadoPista5=(ConstraintLayout) findViewById(R.id.clEnunciadoPista5);
         clPuzzlePista5=(ConstraintLayout) findViewById(R.id.clPuzzlePista5);
+        clFondo=(ConstraintLayout) findViewById(R.id.clFondo);
 
         arrayListDrawablesPiezas.add(R.drawable.p1);
         arrayListDrawablesPiezas.add(R.drawable.p2);
@@ -146,7 +178,7 @@ public class Pista5 extends AppCompatActivity {
         arrayListEtiquetas.add(IMAGEVIEW_TAG8);
         arrayListEtiquetas.add(IMAGEVIEW_TAG9);
 
-        ivFondo=(ImageView) findViewById(R.id.imageView16);
+        ivFondo=(ImageView) findViewById(R.id.ivFondo);
         ivFondo1=(ImageView) findViewById(R.id.ivFondo1);
         ivPieza1=(ImageView) findViewById(R.id.ivPieza1);
         ivFondo2=(ImageView) findViewById(R.id.ivFondo2);
@@ -185,10 +217,15 @@ public class Pista5 extends AppCompatActivity {
         arrayListFondos.add(ivFondo9);
         arrayListPiezas.add(ivPieza9);
 
+
+        //Pongo un listener al radiogroup para que cuando se seleccione la opcion correcta salte un toast con
+        // un tick de correcto
         rgPregunta.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                //Solo compruebo el caso dos que es el correcto, con los otros dos no hago nada
                 if(rbRespuesta2.isChecked()){
+                    //Cargamos el layout del tick
                     LayoutInflater inflater = getLayoutInflater();
                     View layout = inflater.inflate(R.layout.acierto,
                             (ViewGroup) findViewById(R.id.clAcierto));
@@ -202,11 +239,14 @@ public class Pista5 extends AppCompatActivity {
                     toast.setView(layout);
                     //Lo mostramos
                     toast.show();
+                    //Acabamos el activity
                     finish();
                 }
             }
         });
 
+        //Ponemos un listener al boton siguiente para que oculte el enunciado y muestre las piezas
+        //y los fondos de éstas
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -215,44 +255,45 @@ public class Pista5 extends AppCompatActivity {
             }
         });
 
-        //Usando el onTouch tenemos el problema de que con dos toques muy seguidos el startdrag hace colapsar
-        //el ondraglistener y no reaparece la imagen. Pasa a veces. Queda de comprobar en el móvil.
+        //POnemos un ontouchlistener en cada pieza para que al ser tocada le indiquemos que comience el
+        //startdraganddrop o el startdrag dependiendo de la version de API, esto creara una sombra
+        //y mandara al draglistener una señal que recibirá
         for(int i=0;i<arrayListPiezas.size();i++){
+            //A cada pieza le añadimos su etiqueta ya que para crear la sombra se necesita
             arrayListPiezas.get(i).setTag(arrayListEtiquetas.get(i));
+            //Añadimos a cada pieza su touchlistener
             arrayListPiezas.get(i).setOnTouchListener(new View.OnTouchListener() {
                 @Override
                 public boolean onTouch(View vOT, MotionEvent motionEvent) {
+                    //Asignamos a vista la pieza que se esta tocando para trabajar con ella
+                    // en el draglistener y que éste no compruebe todas las piezas
                     vista = vOT;
                     switch(motionEvent.getAction()) {
+                        //Si tocamos la pieza
                         case MotionEvent.ACTION_DOWN:
-                            // Create a new ClipData.
-                            // This is done in two steps to provide clarity. The convenience method
-                            // ClipData.newPlainText() can create a plain text ClipData in one step.
-                            // Create a new ClipData.Item from the ImageView object's tag
+                            // Creamos un ClipData.Item con la etiqueta de la pieza que estamos tocando
                             ClipData.Item item = new ClipData.Item((String) vOT.getTag());
-                            // Create a new ClipData using the tag as a label, the plain text MIME type, and
-                            // the already-created item. This will create a new ClipDescription object within the
-                            // ClipData, and set its MIME type entry to "text/plain"
+                            // Creamos un ClipData usando la etiqueta, el texto plano de tipo MIME, y
+                            // el item creado. Estos son datos que necesita la sombra para crearse
                             ClipData dragData = new ClipData((CharSequence) vOT.getTag(), new String[]{ClipDescription.MIMETYPE_TEXT_PLAIN}, item);
-                            Log.d(TAG, (String) vOT.getTag());
-                            // Instantiates the drag shadow builder.
+                            // Instanciamos el constructor de la sombra de la pieza
                             View.DragShadowBuilder myShadow = new View.DragShadowBuilder(vOT);
-                            vOT.setVisibility(View.INVISIBLE);
-                            Log.d(TAG, "Ocultado");
-                            // Starts the drag
+                            // Empezamos el arrastre
                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                                vOT.startDragAndDrop(dragData,  // the data to be dragged
-                                        myShadow,  // the drag shadow builder
-                                        null,      // no need to use local data
-                                        0          // flags (not currently used, set to 0)
+                                vOT.startDragAndDrop(dragData,  // los datos a ser arrastrados
+                                        myShadow,  // el constructor de la sombra arrastrada
+                                        null,      // no es necesario usar datos locales
+                                        0          // no se usa, poner a 0
                                 );
                             } else if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N){
-                                vOT.startDrag(dragData,  // the data to be dragged
-                                        myShadow,  // the drag shadow builder
-                                        null,      // no need to use local data
-                                        0          // flags (not currently used, set to 0)
+                                vOT.startDrag(dragData,  // los datos a ser arrastrados
+                                        myShadow,  // el constructor de la sombra arrastrada
+                                        null,      // no es necesario usar datos locales
+                                        0          // no se usa, poner a 0
                                 );
                             }
+                            //Hacemos invisible la vista ya que ya tenemos la sombra
+                            vOT.setVisibility(View.INVISIBLE);
                             break;
                         default:
                             break;
@@ -262,26 +303,46 @@ public class Pista5 extends AppCompatActivity {
             });
         }
 
+        //Asigno a cada fondo de las piezas un draglistener para que si reciben la pieza que les
+        //Corresponde cambien su imagen. En lugar de recuperar el dragdata recupero los datos de la
+        //pieza arrastrada con "vista". Es similar
         for(int j=0;j<arrayListFondos.size();j++){
+            //Hay que crear una variable final con el valor de j porque tenemos que acceder a el
+            // desde clases que estan dentro de el mismo for
             final int finalJ = j;
+            //Asigno los draglisteners
             arrayListFondos.get(finalJ).setOnDragListener(new View.OnDragListener() {
                 @Override
                 public boolean onDrag(View vOD, DragEvent dragEvent) {
+                    //Esto funciona para cualquier sombra, es decir, con cualquier sombra que entre
+                    //A cualquier fondo de pieza que tenga un draglistener asignado se activara
+                    //por eso se comprueba despues que es el que me interesa para que cambie
+                    //De imagen
                     switch(dragEvent.getAction()){
+                        //Si estamos dentro del fondo con una sombra
                         case DragEvent.ACTION_DRAG_ENTERED:
+                            //Comprobamos si la etiqueta de la sombra coincide con la de la pieza
+                            //en la que esté
                             if(vista.getTag().equals(arrayListEtiquetas.get(finalJ))){
+                                //Cambio su imagen a la de la pieza
                                 ((ImageView)vOD).setImageResource(arrayListDrawablesPiezas.get(finalJ));
+                                //Cambio el estado de acertado de esa pieza a true
                                 arrayListAcertado.set(finalJ,true);
                             }
                             break;
+                            //Si salgo del fondo con la sombra
                         case DragEvent.ACTION_DRAG_EXITED:
+                            //Compruebo de nuevo que coinciden fondo y sombra
                             if(vista.getTag().equals(arrayListEtiquetas.get(finalJ))) {
-                                Log.d(TAG,"deberia poner el fondo");
+                                //Cambio su imagen al fondo
                                 ((ImageView)vOD).setImageResource(arrayListDrawablesFondos.get(finalJ));
+                                //Cambio el estado de acertado de esa pieza a false
                                 arrayListAcertado.set(finalJ,false);
                             }
                             break;
+                            //Si termina el arrastre, es decir, si levanto la mano
                         case DragEvent.ACTION_DRAG_ENDED:
+                            //Si coincide la etiqueta y si no está acertado
                             if(vista.getTag().equals(arrayListEtiquetas.get(finalJ)) && arrayListAcertado.get(finalJ)==false){
                                 //En las api anteriores a la 24 se dan problemas de concurrencia, ya que la vista a la que se está intentando
                                 //modificar la visibilidad, está siendo arrastrada a la vez y por tanto está siendo excluida de la collecion interna
@@ -292,12 +353,12 @@ public class Pista5 extends AppCompatActivity {
                                     }
                                 });
                             }
+                            //Comprobamos si esta terminado el puzzle y si es asi borramos tod
+                            //lo que esta en pantalla, mostramos el puzzle resuelto y la pregunta
                             if(acabado()==true){
-                                for(int i=0; i<arrayListFondos.size();i++){
-                                    arrayListFondos.get(i).setVisibility(View.GONE);
-                                }
-                                ivFondo.setVisibility(View.VISIBLE);
+                                clSolucion.setVisibility(View.GONE);
                                 clPiezas.setVisibility(View.GONE);
+                                clFondo.setVisibility(View.VISIBLE);
                                 clPregunta.setVisibility(View.VISIBLE);
                             }
                             break;
@@ -309,6 +370,7 @@ public class Pista5 extends AppCompatActivity {
             });
         }
     }
+    //La funcion acabado comprueba que todas las piezas estan acertadas
     public Boolean acabado(){
         int contador=0;
         for(int z=0;z<arrayListAcertado.size();z++){

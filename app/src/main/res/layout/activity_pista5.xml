@@ -26,7 +26,7 @@
 
         <ImageView
             android:id="@+id/ivEnunciadoPista5"
-            android:layout_width="300dp"
+            android:layout_width="280dp"
             android:layout_height="200dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
@@ -95,13 +95,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/imageView16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                app:srcCompat="@drawable/fondopista5" />
 
             <ImageView
                 android:id="@+id/ivFondo1"
@@ -308,6 +301,28 @@
         </android.support.constraint.ConstraintLayout>
 
         <android.support.constraint.ConstraintLayout
+            android:id="@+id/clFondo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="40dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clPiezas">
+
+            <ImageView
+                android:id="@+id/ivFondo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:srcCompat="@drawable/fondopista5"
+                tools:layout_editor_absoluteY="0dp" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
             android:id="@+id/clPregunta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -319,7 +334,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/clPiezas">
+            app:layout_constraintTop_toBottomOf="@+id/clFondo">
 
             <RadioGroup
                 android:id="@+id/rgPregunta"
