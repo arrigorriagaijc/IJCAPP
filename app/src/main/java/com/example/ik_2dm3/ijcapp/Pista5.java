@@ -230,7 +230,7 @@ public class Pista5 extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 //Solo compruebo el caso dos que es el correcto, con los otros dos no hago nada
                 if(rbRespuesta2.isChecked()){
-                    //Cargamos el layout del tick
+                    //CCCargamos el layout del tick
                     LayoutInflater inflater = getLayoutInflater();
                     View layout = inflater.inflate(R.layout.acierto,
                             (ViewGroup) findViewById(R.id.clAcierto));
