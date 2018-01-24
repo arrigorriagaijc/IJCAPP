@@ -282,7 +282,7 @@
                 app:srcCompat="@drawable/preguntasazules" />
 
             <TextView
-                android:id="@+id/tvPregunta2"
+                android:id="@+id/rgPregunta2"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginBottom="8dp"
