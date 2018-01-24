@@ -2,8 +2,310 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clPista6"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.ik_2dm3.ijcapp.Pista6">
+    android:background="@drawable/pantallaidiomas"
+    tools:context="com.example.ik_2dm3.ijcapp.Pista5">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/clEnunciadoPista6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:id="@+id/ivEnunciadoPista6"
+            android:layout_width="280dp"
+            android:layout_height="200dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="50dp"
+            android:alpha="0.8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/pergaminoverde" />
+
+        <TextView
+            android:id="@+id/tvEnunciadoPista6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:paddingEnd="14dp"
+            android:paddingStart="14dp"
+            android:text="@string/pista6"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivEnunciadoPista6"
+            app:layout_constraintEnd_toEndOf="@+id/ivEnunciadoPista6"
+            app:layout_constraintStart_toStartOf="@+id/ivEnunciadoPista6"
+            app:layout_constraintTop_toTopOf="@+id/ivEnunciadoPista6" />
+
+        <Button
+            android:id="@+id/btnSiguiente6"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/btnsiguiente"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEnunciadoPista6"
+            app:layout_constraintVertical_bias="0.651" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/clPuzzlePista6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/clSolucion6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="40dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivFondo61"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/ivFondo62"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/pfondo" />
+
+            <ImageView
+                android:id="@+id/ivFondo62"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/ivFondo63"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/pfondo" />
+
+            <ImageView
+                android:id="@+id/ivFondo63"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/pfondo" />
+
+            <ImageView
+                android:id="@+id/ivFondo64"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/ivFondo65"
+                app:layout_constraintTop_toBottomOf="@+id/ivFondo61"
+                app:srcCompat="@drawable/pfondo" />
+
+            <ImageView
+                android:id="@+id/ivFondo65"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/ivFondo66"
+                app:layout_constraintTop_toBottomOf="@+id/ivFondo62"
+                app:srcCompat="@drawable/pfondo" />
+
+            <ImageView
+                android:id="@+id/ivFondo66"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivFondo63"
+                app:srcCompat="@drawable/pfondo" />
+
+            <ImageView
+                android:id="@+id/ivFondo67"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/ivFondo68"
+                app:layout_constraintTop_toBottomOf="@+id/ivFondo64"
+                app:srcCompat="@drawable/pfondo" />
+
+            <ImageView
+                android:id="@+id/ivFondo68"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/ivFondo69"
+                app:layout_constraintTop_toBottomOf="@+id/ivFondo65"
+                app:srcCompat="@drawable/pfondo" />
+
+            <ImageView
+                android:id="@+id/ivFondo69"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivFondo66"
+                app:srcCompat="@drawable/pfondo" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/clPiezas6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="40dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clSolucion6"
+            app:layout_constraintVertical_bias="1.0">
+
+            <ImageView
+                android:id="@+id/ivPieza16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/ivPieza56"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivPieza96"
+                app:srcCompat="@drawable/p16" />
+
+            <ImageView
+                android:id="@+id/ivPieza26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/ivPieza36"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivPieza66"
+                app:srcCompat="@drawable/p26" />
+
+            <ImageView
+                android:id="@+id/ivPieza36"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:layout_marginStart="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/p36" />
+
+            <ImageView
+                android:id="@+id/ivPieza46"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ivPieza56"
+                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintStart_toEndOf="@+id/ivPieza36"
+                app:srcCompat="@drawable/p46" />
+
+            <ImageView
+                android:id="@+id/ivPieza56"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:layout_marginEnd="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/p56" />
+
+            <ImageView
+                android:id="@+id/ivPieza66"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="40dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/p66" />
+
+            <ImageView
+                android:id="@+id/ivPieza76"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/ivPieza46"
+                app:layout_constraintEnd_toStartOf="@+id/ivPieza16"
+                app:layout_constraintStart_toEndOf="@+id/ivPieza26"
+                app:layout_constraintTop_toBottomOf="@+id/ivPieza86"
+                app:srcCompat="@drawable/p76" />
+
+            <ImageView
+                android:id="@+id/ivPieza86"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="40dp"
+                app:layout_constraintEnd_toStartOf="@+id/ivPieza96"
+                app:layout_constraintStart_toEndOf="@+id/ivPieza66"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/p86" />
+
+            <ImageView
+                android:id="@+id/ivPieza96"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="40dp"
+                android:layout_marginTop="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/p96" />
+        </android.support.constraint.ConstraintLayout>
+
+        <Button
+            android:id="@+id/btnFin6"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="32dp"
+            android:layout_marginEnd="36dp"
+            android:background="@drawable/btnsiguiente"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>
