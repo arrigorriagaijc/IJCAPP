@@ -19,7 +19,7 @@ import java.util.Random;
 import pl.droidsonroids.gif.GifImageView;
 
 
-public class SopaLetras extends AppCompatActivity {
+public class Activity_Pantalla2 extends AppCompatActivity {
 
     //private static final String TAG = "TAG";
     private final Rect mHitRect = new Rect();
@@ -58,12 +58,12 @@ public class SopaLetras extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sopaletras);
+        setContentView(R.layout.activity_pantalla2);
 
         givMikel=(GifImageView) findViewById(R.id.givMikel);
         ConstraintLayout llPlaza=(ConstraintLayout) findViewById(R.id.llPlaza);
         btnAudio2=(Button) findViewById(R.id.btnAudio2);
-        mediaPlayer= MediaPlayer.create(SopaLetras.this, R.raw.udaletxeaerdaraz);
+        mediaPlayer= MediaPlayer.create(Activity_Pantalla2.this, R.raw.udaletxeaerdaraz);
         clMikel=(ConstraintLayout) findViewById(R.id.clMikel);
         llSopa=(LinearLayout) findViewById(R.id.llSopa);
         tvMensaje=(TextView) findViewById(R.id.tvMensaje);
@@ -90,7 +90,7 @@ public class SopaLetras extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
                 btnAudio2.setEnabled(true);
-                mediaPlayer=MediaPlayer.create(SopaLetras.this, R.raw.udaletxeaerdaraz);
+                mediaPlayer=MediaPlayer.create(Activity_Pantalla2.this, R.raw.udaletxeaerdaraz);
                 //Volvemos a desactivar el gif asignando la imagen
                 givMikel.setBackgroundResource(R.drawable.mikel);
                 //Cambiamos la visibilidad de este constraintlayout a gone
@@ -688,7 +688,7 @@ public class SopaLetras extends AppCompatActivity {
 
     public void dialogo(){
         //Establecemos la ventana actual como contexto de nuestro dialog
-        customDialog=new Dialog(SopaLetras.this);
+        customDialog=new Dialog(Activity_Pantalla2.this);
         //Asignamos a nuestro dialogo el layout que hemos creado
         customDialog.setContentView(R.layout.dialog_sopaletras);
         //Accedemos a las variables del layout y las modificamos

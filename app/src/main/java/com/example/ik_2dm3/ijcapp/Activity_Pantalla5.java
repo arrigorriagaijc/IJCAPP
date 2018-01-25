@@ -3,7 +3,6 @@ package com.example.ik_2dm3.ijcapp;
 import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -13,11 +12,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class activity_pantalla4 extends AppCompatActivity {
+public class Activity_Pantalla5 extends AppCompatActivity {
 
     private Dialog customDialog = null;
     private String titulo;
@@ -44,7 +42,7 @@ public class activity_pantalla4 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pantalla4);
+        setContentView(R.layout.activity_pantalla5);
 
         btnSiguiente = (Button) findViewById(R.id.btnSiguiente);
         btnPista1 = (Button) findViewById(R.id.btnPista1);
@@ -157,7 +155,7 @@ public class activity_pantalla4 extends AppCompatActivity {
     }
         public void dialogo () {
             //Establecemos la ventana actual como contexto de nuestro dialog
-            customDialog = new Dialog(activity_pantalla4.this);
+            customDialog = new Dialog(Activity_Pantalla5.this);
             //Asignamos a nuestro dialogo el layout que hemos creado
             customDialog.setContentView(R.layout.dialog_pista);
             //Accedemos a las variables del layout y las modificamos

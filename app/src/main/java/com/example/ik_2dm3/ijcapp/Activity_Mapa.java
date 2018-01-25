@@ -1,33 +1,17 @@
 package com.example.ik_2dm3.ijcapp;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
-import android.content.res.Resources;
-import android.graphics.Color;
-import android.graphics.drawable.LayerDrawable;
 import android.location.Location;
-import android.location.LocationManager;
-import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.util.AttributeSet;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.android.gms.common.api.ApiException;
@@ -41,33 +25,20 @@ import com.google.android.gms.location.LocationSettingsStates;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.GoogleMapOptions;
-import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.maps.android.kml.KmlLayer;
 
-import org.json.JSONObject;
 import org.xmlpull.v1.XmlPullParserException;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallback {
 
@@ -124,12 +95,13 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
         LatLng AyuntamientoArrigorriaga = new LatLng(43.205918, -2.887718);
         Marker AyArrigo= mMap.addMarker(new  MarkerOptions().position(AyuntamientoArrigorriaga).title("Arrigorriagako Udaletxea").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
 
-        Uri gmmIntentUri = Uri.parse("google.navigation:q=43.256998, -2.903901&mode=w");
+
+        /*Uri gmmIntentUri = Uri.parse("google.navigation:q=43.256998, -2.903901&mode=w");
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
         mapIntent.setPackage("com.google.android.apps.maps");
         if (mapIntent.resolveActivity(getPackageManager()) != null) {
             startActivity(mapIntent);
-        }
+        }*/
 
 
 
@@ -163,17 +135,17 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
             public boolean onMarkerClick(Marker marker) {
                 if(marker.getTitle().equals("Arrigorriagako Udaletxea")) {
                     marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ayunatmientoarrigorriagaredondo));
-                    Intent intent=new Intent(Activity_Mapa.this, SopaLetras.class);
+                    Intent intent=new Intent(Activity_Mapa.this, Activity_Pantalla2.class);
                     startActivity(intent);
                 }
                 if(marker.getTitle().equals("Arrigorriagako Etxetzarrak")) {
                     marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.arrigorriagakoetxetzarrrakredondo));
-                    Intent intent=new Intent(Activity_Mapa.this, Activity_Plaza.class);
+                    Intent intent=new Intent(Activity_Mapa.this, Activity_Pantalla1.class);
                     startActivity(intent);
                 }
                 if(marker.getTitle().equals("Baruako Jauregia (Kultur Etxea)")) {
                     marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.baruakojauregiaredondo));
-                    Intent intent=new Intent(Activity_Mapa.this, Activity_Santamaria.class);
+                    Intent intent=new Intent(Activity_Mapa.this, Activity_Pantalla3.class);
                     startActivity(intent);
                 }
                 if(marker.getTitle().equals("Santa Maria Magdalena eliza")) {

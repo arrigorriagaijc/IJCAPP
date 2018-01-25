@@ -8,7 +8,7 @@
     android:background="@drawable/santamariafondo"
     android:orientation="vertical"
     android:weightSum="1"
-    tools:context="com.example.ik_2dm3.ijcapp.Activity_Santamaria">
+    tools:context="com.example.ik_2dm3.ijcapp.Activity_Pantalla3">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/clEnunciado"

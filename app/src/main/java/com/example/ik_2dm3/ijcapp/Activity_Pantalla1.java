@@ -1,25 +1,16 @@
 package com.example.ik_2dm3.ijcapp;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.VideoView;
-
-import java.io.IOException;
-import java.io.InputStream;
 
 import pl.droidsonroids.gif.GifImageView;
 
 
-public class Activity_Plaza extends AppCompatActivity {
+public class Activity_Pantalla1 extends AppCompatActivity {
 
     private MediaPlayer mediaPlayer;
     private Button btnAudio1;
@@ -28,12 +19,12 @@ public class Activity_Plaza extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_plaza);
+        setContentView(R.layout.activity_pantalla1);
 
         givMikel=(GifImageView) findViewById(R.id.givMikel);
         ConstraintLayout llPlaza=(ConstraintLayout) findViewById(R.id.llPlaza);
         btnAudio1=(Button) findViewById(R.id.btnAudio1);
-        mediaPlayer=MediaPlayer.create(Activity_Plaza.this, R.raw.arrigorriagahistoriacastellano);
+        mediaPlayer=MediaPlayer.create(Activity_Pantalla1.this, R.raw.arrigorriagahistoriacastellano);
 
         //Hacemos que empiece parado poniendo la imagen
         givMikel.setBackgroundResource(R.drawable.mikel);
@@ -55,7 +46,7 @@ public class Activity_Plaza extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
                 btnAudio1.setEnabled(true);
-                mediaPlayer=MediaPlayer.create(Activity_Plaza.this, R.raw.arrigorriagahistoriacastellano);
+                mediaPlayer=MediaPlayer.create(Activity_Pantalla1.this, R.raw.arrigorriagahistoriacastellano);
                 //Volvemos a desactivar el gif asignando la imagen
                 givMikel.setBackgroundResource(R.drawable.mikel);
             }

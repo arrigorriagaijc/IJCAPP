@@ -13,7 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Activity_Santamaria extends AppCompatActivity {
+public class Activity_Pantalla3 extends AppCompatActivity {
 
     private Button btnSiguiente;
     private ConstraintLayout clEnunciado;
@@ -61,7 +61,7 @@ public class Activity_Santamaria extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity__santamaria);
+        setContentView(R.layout.activity__pantalla3);
 
         //Enunciado del ejercicio
         llSantaMaria=(LinearLayout) findViewById(R.id.llSantaMaria);

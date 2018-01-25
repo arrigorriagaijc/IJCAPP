@@ -4,13 +4,12 @@ import android.media.MediaPlayer;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import pl.droidsonroids.gif.GifImageView;
 
-public class Final extends AppCompatActivity {
+public class Activity_Final extends AppCompatActivity {
 
 
     private MediaPlayer mediaPlayer;
@@ -30,6 +29,6 @@ public class Final extends AppCompatActivity {
         IVFinal2=(ImageView) findViewById(R.id.IVFinal2);
         TVFianal=(TextView) findViewById(R.id.TVFinal);
         ConstraintLayout CLFinal=(ConstraintLayout) findViewById(R.id.CLFinal);
-        mediaPlayer=MediaPlayer.create(Final.this, R.raw.arrigorriagahistoriacastellano);
+        mediaPlayer=MediaPlayer.create(Activity_Final.this, R.raw.arrigorriagahistoriacastellano);
     }
 }

@@ -8,7 +8,7 @@
     android:background="@drawable/ayuntamientoarrigorriaga"
     android:orientation="vertical"
     android:weightSum="11"
-    tools:context="com.example.ik_2dm3.ijcapp.SopaLetras">
+    tools:context="com.example.ik_2dm3.ijcapp.Activity_Pantalla2">
 
 
     <android.support.constraint.ConstraintLayout

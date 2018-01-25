@@ -8,7 +8,7 @@
     android:background="@drawable/plazaarrigorriaga"
     android:orientation="vertical"
     android:weightSum="10"
-    tools:context="com.example.ik_2dm3.ijcapp.Activity_Plaza">
+    tools:context="com.example.ik_2dm3.ijcapp.Activity_Pantalla1">
 
     <TextView
         android:id="@+id/tvZona2"

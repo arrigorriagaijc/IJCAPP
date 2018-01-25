@@ -30,26 +30,42 @@
             android:value="AIzaSyDJLbTD5raAfzk0kqCrrjtR22I0RqpHfUI" />
 
         <activity
-            android:name=".Activity_Mapa"
-            android:label="@string/title_activity__mapa" />
-        <activity
-            android:name=".SopaLetras"
-            android:screenOrientation="portrait" />
-        <activity android:name=".Activity_Idiomas" />
-        <activity android:name=".Activity_Plaza" />
-        <activity android:name=".Pista3" />
-        <activity android:name=".Pista4" />
-        <activity
-            android:name=".Activity_Santamaria"
-            android:screenOrientation="portrait" />
-        <activity android:name=".Pista5" />
-        <activity android:name=".activity_pantalla4" />
-        <activity android:name=".Pista6">
+            android:name=".Activity_Idiomas"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Activity_Mapa"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity__mapa"/>
+        <activity
+            android:name=".Activity_Pantalla1"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activity_Pantalla2"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Pista3"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activity_Pantalla3"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Pista4"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Pista5"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activity_Pantalla5"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Pista6"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>

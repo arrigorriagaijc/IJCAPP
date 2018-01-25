@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#fcd5b4"
     android:backgroundTint="#fcd5b4"
-    tools:context="com.example.ik_2dm3.ijcapp.Final">
+    tools:context="com.example.ik_2dm3.ijcapp.Activity_Final">
 
     <ImageView
         android:id="@+id/IVFinal"
