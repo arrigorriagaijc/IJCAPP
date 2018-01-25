@@ -58,6 +58,7 @@ public class Activity_Pantalla5 extends AppCompatActivity {
         rbRespuesta32 = (RadioButton) findViewById(R.id.rbRespuesta32);
         rbRespuesta33 = (RadioButton) findViewById(R.id.rbRespuesta33);
 
+        //codigo para corregir las preguntas
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -110,6 +111,7 @@ public class Activity_Pantalla5 extends AppCompatActivity {
                     View layout = inflater.inflate(R.layout.acierto,
                             (ViewGroup) findViewById(R.id.clAcierto));
 
+
                     //Creamos el toast
                     toast = new Toast(getApplicationContext());
                     //Lo centramos
@@ -153,6 +155,8 @@ public class Activity_Pantalla5 extends AppCompatActivity {
         });
 
     }
+
+    // codigo para crear el dialog
         public void dialogo () {
             //Establecemos la ventana actual como contexto de nuestro dialog
             customDialog = new Dialog(Activity_Pantalla5.this);
