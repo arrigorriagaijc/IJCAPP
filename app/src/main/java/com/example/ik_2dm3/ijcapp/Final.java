@@ -30,7 +30,7 @@ public class Final extends AppCompatActivity {
 
 
         clInicial=(ConstraintLayout) findViewById(R.id.clInicial);
-        ConstraintLayout CLFinal=(ConstraintLayout) findViewById(R.id.clFinal);
+        clFinal=(ConstraintLayout) findViewById(R.id.clFinal);
         givMikelfinal=(GifImageView) findViewById(R.id.givMikelfinal);
         ivInicial=(ImageView) findViewById(R.id.ivInicial);
         ivFinal=(ImageView) findViewById(R.id.ivFinal);
@@ -45,8 +45,7 @@ public class Final extends AppCompatActivity {
                 clFinal.setVisibility(View.VISIBLE);
             }
         };
-
-        clInicial.postDelayed(runnable,10000);
+        clInicial.postDelayed(runnable,3000);
 
     }
 }
