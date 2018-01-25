@@ -14,42 +14,31 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class Pista5 extends AppCompatActivity {
-
-    //Creamos el radiogroup que nos dejara seleccionar la respuesta correcta
-    private RadioGroup rgPregunta;
-    private RadioButton rbRespuesta1;
-    private RadioButton rbRespuesta2;
-    private RadioButton rbRespuesta3;
+public class Pista6 extends AppCompatActivity {
 
     //Creamos los imageviews tanto de las piezas como de los fondos donde van colocadas
-    private ImageView ivFondo1;
-    private ImageView ivPieza1;
-    private ImageView ivFondo2;
-    private ImageView ivPieza2;
-    private ImageView ivFondo3;
-    private ImageView ivPieza3;
-    private ImageView ivFondo4;
-    private ImageView ivPieza4;
-    private ImageView ivFondo5;
-    private ImageView ivPieza5;
-    private ImageView ivFondo6;
-    private ImageView ivPieza6;
-    private ImageView ivFondo7;
-    private ImageView ivPieza7;
-    private ImageView ivFondo8;
-    private ImageView ivPieza8;
-    private ImageView ivFondo9;
-    private ImageView ivPieza9;
-
-    //Creamos el imageview del puzzle ya montado
-    private ImageView ivFondo;
+    private ImageView ivFondo61;
+    private ImageView ivPieza61;
+    private ImageView ivFondo62;
+    private ImageView ivPieza62;
+    private ImageView ivFondo63;
+    private ImageView ivPieza63;
+    private ImageView ivFondo64;
+    private ImageView ivPieza64;
+    private ImageView ivFondo65;
+    private ImageView ivPieza65;
+    private ImageView ivFondo66;
+    private ImageView ivPieza66;
+    private ImageView ivFondo67;
+    private ImageView ivPieza67;
+    private ImageView ivFondo68;
+    private ImageView ivPieza68;
+    private ImageView ivFondo69;
+    private ImageView ivPieza69;
 
     //Creamos una etiqueta para cada pieza
     private static final String IMAGEVIEW_TAG1 = "im1";
@@ -96,37 +85,29 @@ public class Pista5 extends AppCompatActivity {
     private View vista;
 
     //Creamos los contraintlayout correspondientes a cada cometido que se ve en el XML
-    private ConstraintLayout clSolucion;
-    private ConstraintLayout clPiezas;
-    private ConstraintLayout clEnunciadoPista5;
-    private ConstraintLayout clPregunta;
-    private ConstraintLayout clPuzzlePista5;
-    private ConstraintLayout clFondo;
+    private ConstraintLayout clSolucion6;
+    private ConstraintLayout clPiezas6;
+    private ConstraintLayout clEnunciadoPista6;
+    private ConstraintLayout clPuzzlePista6;
 
     //Creamos una variable toast que de final al ejercicio
     private Toast toast;
 
-    //Creamos el boton siguiente que pasa del enunciado al puzzle
-    private Button btnSiguiente;
-
     //Creamos el boton para salir del activity
-    private Button btnFin;
+    private Button btnFin6;
+
+    //Creamos el boton para pasar del enunciado al puzzle
+    private Button btnSiguiente6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pista5);
+        setContentView(R.layout.activity_pista6);
 
         //Traemos todas las variables desde los recursos al codigo
 
-        btnSiguiente=(Button) findViewById(R.id.btnSiguiente);
-
-        btnFin=(Button) findViewById(R.id.btnFin);
-
-        rgPregunta=(RadioGroup) findViewById(R.id.rgPregunta);
-        rbRespuesta1=(RadioButton) findViewById(R.id.rbRespuesta1);
-        rbRespuesta2=(RadioButton) findViewById(R.id.rbRespuesta2);
-        rbRespuesta3=(RadioButton) findViewById(R.id.rbRespuesta3);
+        btnFin6=(Button) findViewById(R.id.btnFin6);
+        btnSiguiente6=(Button) findViewById(R.id.btnSiguiente6);
 
         arrayListPiezas=new ArrayList<>();
         arrayListFondos=new ArrayList<>();
@@ -135,32 +116,30 @@ public class Pista5 extends AppCompatActivity {
         arrayListDrawablesFondos=new ArrayList<>();
         arrayListAcertado=new ArrayList<>();
 
-        clSolucion=(ConstraintLayout) findViewById(R.id.clSolucion);
-        clPregunta=(ConstraintLayout) findViewById(R.id.clPregunta);
-        clPiezas=(ConstraintLayout) findViewById(R.id.clPiezas);
-        clEnunciadoPista5=(ConstraintLayout) findViewById(R.id.clEnunciadoPista5);
-        clPuzzlePista5=(ConstraintLayout) findViewById(R.id.clPuzzlePista5);
-        clFondo=(ConstraintLayout) findViewById(R.id.clFondo);
+        clSolucion6=(ConstraintLayout) findViewById(R.id.clSolucion6);
+        clPiezas6=(ConstraintLayout) findViewById(R.id.clPiezas6);
+        clEnunciadoPista6=(ConstraintLayout) findViewById(R.id.clEnunciadoPista6);
+        clPuzzlePista6=(ConstraintLayout) findViewById(R.id.clPuzzlePista6);
 
-        arrayListDrawablesPiezas.add(R.drawable.p1);
-        arrayListDrawablesPiezas.add(R.drawable.p2);
-        arrayListDrawablesPiezas.add(R.drawable.p3);
-        arrayListDrawablesPiezas.add(R.drawable.p4);
-        arrayListDrawablesPiezas.add(R.drawable.p5);
-        arrayListDrawablesPiezas.add(R.drawable.p6);
-        arrayListDrawablesPiezas.add(R.drawable.p7);
-        arrayListDrawablesPiezas.add(R.drawable.p8);
-        arrayListDrawablesPiezas.add(R.drawable.p9);
+        arrayListDrawablesPiezas.add(R.drawable.p16);
+        arrayListDrawablesPiezas.add(R.drawable.p26);
+        arrayListDrawablesPiezas.add(R.drawable.p36);
+        arrayListDrawablesPiezas.add(R.drawable.p46);
+        arrayListDrawablesPiezas.add(R.drawable.p56);
+        arrayListDrawablesPiezas.add(R.drawable.p66);
+        arrayListDrawablesPiezas.add(R.drawable.p76);
+        arrayListDrawablesPiezas.add(R.drawable.p86);
+        arrayListDrawablesPiezas.add(R.drawable.p96);
 
-        arrayListDrawablesFondos.add(R.drawable.p1fondo);
-        arrayListDrawablesFondos.add(R.drawable.p2fondo);
-        arrayListDrawablesFondos.add(R.drawable.p3fondo);
-        arrayListDrawablesFondos.add(R.drawable.p4fondo);
-        arrayListDrawablesFondos.add(R.drawable.p5fondo);
-        arrayListDrawablesFondos.add(R.drawable.p6fondo);
-        arrayListDrawablesFondos.add(R.drawable.p7fondo);
-        arrayListDrawablesFondos.add(R.drawable.p8fondo);
-        arrayListDrawablesFondos.add(R.drawable.p9fondo);
+        arrayListDrawablesFondos.add(R.drawable.pfondo);
+        arrayListDrawablesFondos.add(R.drawable.pfondo);
+        arrayListDrawablesFondos.add(R.drawable.pfondo);
+        arrayListDrawablesFondos.add(R.drawable.pfondo);
+        arrayListDrawablesFondos.add(R.drawable.pfondo);
+        arrayListDrawablesFondos.add(R.drawable.pfondo);
+        arrayListDrawablesFondos.add(R.drawable.pfondo);
+        arrayListDrawablesFondos.add(R.drawable.pfondo);
+        arrayListDrawablesFondos.add(R.drawable.pfondo);
 
         arrayListAcertado.add(acertado1);
         arrayListAcertado.add(acertado2);
@@ -182,91 +161,59 @@ public class Pista5 extends AppCompatActivity {
         arrayListEtiquetas.add(IMAGEVIEW_TAG8);
         arrayListEtiquetas.add(IMAGEVIEW_TAG9);
 
-        ivFondo=(ImageView) findViewById(R.id.ivFondo);
-        ivFondo1=(ImageView) findViewById(R.id.ivFondo1);
-        ivPieza1=(ImageView) findViewById(R.id.ivPieza1);
-        ivFondo2=(ImageView) findViewById(R.id.ivFondo2);
-        ivPieza2=(ImageView) findViewById(R.id.ivPieza2);
-        ivFondo3=(ImageView) findViewById(R.id.ivFondo3);
-        ivPieza3=(ImageView) findViewById(R.id.ivPieza3);
-        ivFondo4=(ImageView) findViewById(R.id.ivFondo4);
-        ivPieza4=(ImageView) findViewById(R.id.ivPieza4);
-        ivFondo5=(ImageView) findViewById(R.id.ivFondo5);
-        ivPieza5=(ImageView) findViewById(R.id.ivPieza5);
-        ivFondo6=(ImageView) findViewById(R.id.ivFondo6);
-        ivPieza6=(ImageView) findViewById(R.id.ivPieza6);
-        ivFondo7=(ImageView) findViewById(R.id.ivFondo7);
-        ivPieza7=(ImageView) findViewById(R.id.ivPieza7);
-        ivFondo8=(ImageView) findViewById(R.id.ivFondo8);
-        ivPieza8=(ImageView) findViewById(R.id.ivPieza8);
-        ivFondo9=(ImageView) findViewById(R.id.ivFondo9);
-        ivPieza9=(ImageView) findViewById(R.id.ivPieza9);
+        ivFondo61=(ImageView) findViewById(R.id.ivFondo61);
+        ivPieza61=(ImageView) findViewById(R.id.ivPieza16);
+        ivFondo62=(ImageView) findViewById(R.id.ivFondo62);
+        ivPieza62=(ImageView) findViewById(R.id.ivPieza26);
+        ivFondo63=(ImageView) findViewById(R.id.ivFondo63);
+        ivPieza63=(ImageView) findViewById(R.id.ivPieza36);
+        ivFondo64=(ImageView) findViewById(R.id.ivFondo64);
+        ivPieza64=(ImageView) findViewById(R.id.ivPieza46);
+        ivFondo65=(ImageView) findViewById(R.id.ivFondo65);
+        ivPieza65=(ImageView) findViewById(R.id.ivPieza56);
+        ivFondo66=(ImageView) findViewById(R.id.ivFondo66);
+        ivPieza66=(ImageView) findViewById(R.id.ivPieza66);
+        ivFondo67=(ImageView) findViewById(R.id.ivFondo67);
+        ivPieza67=(ImageView) findViewById(R.id.ivPieza76);
+        ivFondo68=(ImageView) findViewById(R.id.ivFondo68);
+        ivPieza68=(ImageView) findViewById(R.id.ivPieza86);
+        ivFondo69=(ImageView) findViewById(R.id.ivFondo69);
+        ivPieza69=(ImageView) findViewById(R.id.ivPieza96);
 
-        arrayListFondos.add(ivFondo1);
-        arrayListPiezas.add(ivPieza1);
-        arrayListFondos.add(ivFondo2);
-        arrayListPiezas.add(ivPieza2);
-        arrayListFondos.add(ivFondo3);
-        arrayListPiezas.add(ivPieza3);
-        arrayListFondos.add(ivFondo4);
-        arrayListPiezas.add(ivPieza4);
-        arrayListFondos.add(ivFondo5);
-        arrayListPiezas.add(ivPieza5);
-        arrayListFondos.add(ivFondo6);
-        arrayListPiezas.add(ivPieza6);
-        arrayListFondos.add(ivFondo7);
-        arrayListPiezas.add(ivPieza7);
-        arrayListFondos.add(ivFondo8);
-        arrayListPiezas.add(ivPieza8);
-        arrayListFondos.add(ivFondo9);
-        arrayListPiezas.add(ivPieza9);
-
-
-        //Pongo un listener al radiogroup para que cuando se seleccione la opcion correcta salte un toast con
-        // un tick de correcto
-        rgPregunta.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                //Solo compruebo el caso dos que es el correcto, con los otros dos no hago nada
-                if(rbRespuesta2.isChecked()){
-                    //CCCargamos el layout del tick
-                    LayoutInflater inflater = getLayoutInflater();
-                    View layout = inflater.inflate(R.layout.acierto,
-                            (ViewGroup) findViewById(R.id.clAcierto));
-                    //Creamos el toast
-                    toast = new Toast(getApplicationContext());
-                    //Lo centramos
-                    toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-                    //Le ponemos duración corta
-                    toast.setDuration(Toast.LENGTH_SHORT);
-                    //Le asignamos el layout
-                    toast.setView(layout);
-                    //Lo mostramos
-                    toast.show();
-                    //Ocultamos la pregunta
-                    clPregunta.setVisibility(View.GONE);
-                    //Mostramos el boton de fin
-                    btnFin.setVisibility(View.VISIBLE);
-
-                }
-            }
-        });
-
-        //Ponemos un listener al boton siguiente para que oculte el enunciado y muestre las piezas
-        //y los fondos de éstas
-        btnSiguiente.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                clEnunciadoPista5.setVisibility(View.GONE);
-                clPuzzlePista5.setVisibility(View.VISIBLE);
-            }
-        });
+        arrayListFondos.add(ivFondo61);
+        arrayListPiezas.add(ivPieza61);
+        arrayListFondos.add(ivFondo62);
+        arrayListPiezas.add(ivPieza62);
+        arrayListFondos.add(ivFondo63);
+        arrayListPiezas.add(ivPieza63);
+        arrayListFondos.add(ivFondo64);
+        arrayListPiezas.add(ivPieza64);
+        arrayListFondos.add(ivFondo65);
+        arrayListPiezas.add(ivPieza65);
+        arrayListFondos.add(ivFondo66);
+        arrayListPiezas.add(ivPieza66);
+        arrayListFondos.add(ivFondo67);
+        arrayListPiezas.add(ivPieza67);
+        arrayListFondos.add(ivFondo68);
+        arrayListPiezas.add(ivPieza68);
+        arrayListFondos.add(ivFondo69);
+        arrayListPiezas.add(ivPieza69);
 
         //Ponemos el listener a btnfin para acabar el activity
-        btnFin.setOnClickListener(new View.OnClickListener() {
+        btnFin6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                tick();
                 finish();
+            }
+        });
+
+        //Ponemos un listener al boton para pasar del enunciado al puzzle
+        btnSiguiente6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clEnunciadoPista6.setVisibility(View.GONE);
+                clPuzzlePista6.setVisibility(View.VISIBLE);
             }
         });
 
@@ -345,7 +292,7 @@ public class Pista5 extends AppCompatActivity {
                                 arrayListAcertado.set(finalJ,true);
                             }
                             break;
-                            //Si salgo del fondo con la sombra
+                        //Si salgo del fondo con la sombra
                         case DragEvent.ACTION_DRAG_EXITED:
                             //Compruebo de nuevo que coinciden fondo y sombra
                             if(vista.getTag().equals(arrayListEtiquetas.get(finalJ))) {
@@ -355,7 +302,7 @@ public class Pista5 extends AppCompatActivity {
                                 arrayListAcertado.set(finalJ,false);
                             }
                             break;
-                            //Si termina el arrastre, es decir, si levanto la mano
+                        //Si termina el arrastre, es decir, si levanto la mano
                         case DragEvent.ACTION_DRAG_ENDED:
                             //Si coincide la etiqueta y si no está acertado
                             if(vista.getTag().equals(arrayListEtiquetas.get(finalJ)) && arrayListAcertado.get(finalJ)==false){
@@ -371,10 +318,7 @@ public class Pista5 extends AppCompatActivity {
                             //Comprobamos si esta terminado el puzzle y si es asi borramos tod
                             //lo que esta en pantalla, mostramos el puzzle resuelto y la pregunta
                             if(acabado()==true){
-                                clSolucion.setVisibility(View.GONE);
-                                clPiezas.setVisibility(View.GONE);
-                                clFondo.setVisibility(View.VISIBLE);
-                                clPregunta.setVisibility(View.VISIBLE);
+                                btnFin6.setVisibility(View.VISIBLE);
                             }
                             break;
                         default:
@@ -399,5 +343,22 @@ public class Pista5 extends AppCompatActivity {
             solucionado=false;
         }
         return solucionado;
+    }
+
+    public void tick(){
+        //CCCargamos el layout del tick
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.acierto,
+                (ViewGroup) findViewById(R.id.clAcierto));
+        //Creamos el toast
+        toast = new Toast(getApplicationContext());
+        //Lo centramos
+        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+        //Le ponemos duración corta
+        toast.setDuration(Toast.LENGTH_SHORT);
+        //Le asignamos el layout
+        toast.setView(layout);
+        //Lo mostramos
+        toast.show();
     }
 }

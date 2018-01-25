@@ -25,7 +25,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <ImageView
-            android:id="@+id/ivEnunciadoPista5"
+            android:id="@+id/ivEnunciadoPista6"
             android:layout_width="280dp"
             android:layout_height="200dp"
             android:layout_marginEnd="8dp"
@@ -38,7 +38,7 @@
             app:srcCompat="@drawable/preguntasverdes" />
 
         <TextView
-            android:id="@+id/tvEnunciadoPista5"
+            android:id="@+id/tvEnunciadoPista6"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginBottom="8dp"
@@ -49,10 +49,10 @@
             android:text="@string/enunciado_pista5"
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="@+id/ivEnunciadoPista5"
-            app:layout_constraintEnd_toEndOf="@+id/ivEnunciadoPista5"
-            app:layout_constraintStart_toStartOf="@+id/ivEnunciadoPista5"
-            app:layout_constraintTop_toTopOf="@+id/ivEnunciadoPista5" />
+            app:layout_constraintBottom_toBottomOf="@+id/ivEnunciadoPista6"
+            app:layout_constraintEnd_toEndOf="@+id/ivEnunciadoPista6"
+            app:layout_constraintStart_toStartOf="@+id/ivEnunciadoPista6"
+            app:layout_constraintTop_toTopOf="@+id/ivEnunciadoPista6" />
 
         <Button
             android:id="@+id/btnSiguiente"
@@ -66,7 +66,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvEnunciadoPista5"
+            app:layout_constraintTop_toBottomOf="@+id/tvEnunciadoPista6"
             app:layout_constraintVertical_bias="0.651" />
 
     </android.support.constraint.ConstraintLayout>
