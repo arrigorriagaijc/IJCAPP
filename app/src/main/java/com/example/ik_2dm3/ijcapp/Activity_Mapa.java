@@ -130,6 +130,7 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
         LatLng LandaederragakoKristoSantuarenBaseliza = new LatLng(43.2093, -2.8937);
         Marker LandaBas=mMap.addMarker(new MarkerOptions().position(LandaederragakoKristoSantuarenBaseliza).title("Landaederragako Kristo Santuaren baseliza").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
 
+
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
