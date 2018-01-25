@@ -30,7 +30,7 @@ public class Pista3 extends AppCompatActivity {
 
 
 
-        //Coprobacion de la pregunta si esta bien al darle al boton
+        //Coprobacion de la pregunta si esta bien al darle al boton y crear el toast
 
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
