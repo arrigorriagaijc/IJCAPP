@@ -20,16 +20,22 @@ public class Activity_Idiomas extends AppCompatActivity {
         btnCastellano.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Activity_Idiomas.this, Activity_Mapa.class);
+                Intent intent=new Intent(Activity_Idiomas.this, Pista3.class);
                 startActivity(intent);
             }
         });
         btnEuskera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Activity_Idiomas.this, Activity_Mapa.class);
+                Intent intent=new Intent(Activity_Idiomas.this, Pista1.class);
                 startActivity(intent);
+                finish();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed (){
+
     }
 }

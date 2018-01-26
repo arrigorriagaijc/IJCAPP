@@ -2,6 +2,7 @@ package com.example.ik_2dm3.ijcapp;
 
 import android.content.ClipData;
 import android.content.ClipDescription;
+import android.content.Intent;
 import android.os.Build;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -266,6 +267,9 @@ public class Pista5 extends AppCompatActivity {
         btnFin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent=new Intent(Pista5.this, Activity_Mapa.class);
+                intent.putExtra("Pista5", "Pista5");
+                startActivity(intent);
                 finish();
             }
         });
@@ -399,5 +403,9 @@ public class Pista5 extends AppCompatActivity {
             solucionado=false;
         }
         return solucionado;
+    }
+    @Override
+    public void onBackPressed (){
+
     }
 }

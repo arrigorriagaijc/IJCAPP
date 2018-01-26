@@ -1,6 +1,7 @@
 package com.example.ik_2dm3.ijcapp;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
@@ -122,6 +123,8 @@ public class Activity_Pantalla5 extends AppCompatActivity {
                     toast.setView(layout);
                     //Lo mostramos
                     toast.show();
+                    Intent intent=new Intent(Activity_Pantalla5.this, Pista6.class);
+                    startActivity(intent);
                     finish();
                 }
             }
@@ -177,6 +180,10 @@ public class Activity_Pantalla5 extends AppCompatActivity {
             //mostramos el dialogo
             customDialog.show();
         }
+    @Override
+    public void onBackPressed (){
+
+    }
 
 }
 

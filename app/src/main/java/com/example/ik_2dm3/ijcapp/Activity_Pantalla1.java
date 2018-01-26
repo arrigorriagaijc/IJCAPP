@@ -1,5 +1,6 @@
 package com.example.ik_2dm3.ijcapp;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -49,8 +50,15 @@ public class Activity_Pantalla1 extends AppCompatActivity {
                 mediaPlayer=MediaPlayer.create(Activity_Pantalla1.this, R.raw.arrigorriagahistoriacastellano);
                 //Volvemos a desactivar el gif asignando la imagen
                 givMikel.setBackgroundResource(R.drawable.mikel);
+                Intent intent=new Intent(Activity_Pantalla1.this, Pista2.class);
+                startActivity(intent);
+                finish();
             }
         });
+
+    }
+    @Override
+    public void onBackPressed (){
 
     }
 }

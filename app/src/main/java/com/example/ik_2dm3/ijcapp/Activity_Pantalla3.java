@@ -1,5 +1,6 @@
 package com.example.ik_2dm3.ijcapp;
 
+import android.content.Intent;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -549,9 +550,15 @@ public class Activity_Pantalla3 extends AppCompatActivity {
         btnPregunta5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent=new Intent(Activity_Pantalla3.this, Pista4.class);
+                startActivity(intent);
                 finish();
             }
         });
+
+    }
+    @Override
+    public void onBackPressed (){
 
     }
 }

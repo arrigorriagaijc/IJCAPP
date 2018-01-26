@@ -1,5 +1,6 @@
 package com.example.ik_2dm3.ijcapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
@@ -67,6 +68,9 @@ public class Pista4 extends AppCompatActivity {
                     toast.setView(layout);
                     //Lo mostramos
                     toast.show();
+                    Intent intent=new Intent(Pista4.this, Activity_Mapa.class);
+                    intent.putExtra("Pista4", "Pista4");
+                    startActivity(intent);
                     finish();
                 } else
                 if (radioButton3.isChecked()==true) {
@@ -93,4 +97,8 @@ public class Pista4 extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed (){
+
+    }
 }

@@ -1,6 +1,7 @@
 package com.example.ik_2dm3.ijcapp;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.media.MediaPlayer;
@@ -313,6 +314,8 @@ public class Activity_Pantalla2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Finalizo este activity, esto lo tendremos que cambiar porque habra que volver con un onrequestactivitya activity_mapa
+                Intent intent=new Intent(Activity_Pantalla2.this, Pista3.class);
+                startActivity(intent);
                 finish();
             }
         });
@@ -705,6 +708,11 @@ public class Activity_Pantalla2 extends AppCompatActivity {
         });
         //mostramos el dialogo
         customDialog.show();
+    }
+
+    @Override
+    public void onBackPressed (){
+
     }
 }
 

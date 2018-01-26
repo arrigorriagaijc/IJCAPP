@@ -7,11 +7,13 @@ import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Build;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.gms.common.api.ApiException;
@@ -51,6 +53,13 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
     private double latitude;
     private double longitude;
     private LatLng UbicacionActual;
+    private boolean plazaencontrada=false;
+    private boolean ayuntamientoencontrado=false;
+    private boolean santamariaencontrado=false;
+    private boolean lonboencontrado=false;
+    private boolean etxetzarrakencontrado=false;
+    private boolean kulturetxeaencontrado=false;
+    private Handler handler=new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,15 +95,8 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
         ActivarGps();
         //Lo segundo pido los permisos.
         EstablecerPermisos();
-        //Surge un error, que es que si giras la pantalla en medio del establecimiento de los permisos se cierra la app y
-        //no puede solucionarse poniendo las funciones en el oncreate porque da no acepta el gps y acepta los permisos, la
-        //segunda vez que abre la app se cierra.
 
-        //Añadimos los marcadores que se soliciten:
-        //Arrigorriagako Udaletxea:
-        LatLng AyuntamientoArrigorriaga = new LatLng(43.205918, -2.887718);
-        Marker AyArrigo= mMap.addMarker(new  MarkerOptions().position(AyuntamientoArrigorriaga).title("Arrigorriagako Udaletxea").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
-
+        //Codigo para instanciar el navegador de google maps, en desuso
 
         /*Uri gmmIntentUri = Uri.parse("google.navigation:q=43.256998, -2.903901&mode=w");
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
@@ -104,62 +106,85 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
         }*/
 
 
-
-
-
-
-
-
         /*String url = obtenerDireccionesURL(UbicacionActual, AyuntamientoArrigorriaga);
         DownloadTask downloadTask = new DownloadTask();
         downloadTask.execute(url);*/
 
-        //Arrigorriagako Etxetzarrak
-        LatLng ArrigorriagakoEtxetzarrak = new LatLng(43.2097, -2.88835);
-        Marker ArrigoEtxe=mMap.addMarker(new MarkerOptions().position(ArrigorriagakoEtxetzarrak).title("Arrigorriagako Etxetzarrak").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
+        //Añadimos los marcadores que se soliciten:
+        //Arrigorriagako Plaza
+        LatLng PlazaArrigorriaga = new LatLng(43.206097, -2.888043);
+        final Marker PlArrigo= mMap.addMarker(new  MarkerOptions().position(PlazaArrigorriaga).title("Arrigorriagako plaza").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
+        PlArrigo.setVisible(false);
 
-        //Baruako Jauregia(Kultur Extea)
-        LatLng KulturEtxea = new LatLng(43.20947, -2.88836);
-        Marker KulturEtxe=mMap.addMarker(new MarkerOptions().position(KulturEtxea).title("Baruako Jauregia (Kultur Etxea)").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
+        //Arrigorriagako Udaletxea:
+        LatLng AyuntamientoArrigorriaga = new LatLng(43.205918, -2.887718);
+        final Marker AyArrigo= mMap.addMarker(new  MarkerOptions().position(AyuntamientoArrigorriaga).title("Arrigorriagako Udaletxea").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
+        AyArrigo.setVisible(false);
 
         //Santa Maria Magdalena eliza
         LatLng SantaMariaMagdalenaEliza = new LatLng(43.2056, -2.88866);
-        Marker MariaEliza=mMap.addMarker(new MarkerOptions().position(SantaMariaMagdalenaEliza).title("Santa Maria Magdalena eliza").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
+        final Marker MariaEliza=mMap.addMarker(new MarkerOptions().position(SantaMariaMagdalenaEliza).title("Santa Maria Magdalena eliza").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
+        MariaEliza.setVisible(false);
 
-        //Landaederragako Kristo Santuaren baseliza
-        LatLng LandaederragakoKristoSantuarenBaseliza = new LatLng(43.2093, -2.8937);
-        Marker LandaBas=mMap.addMarker(new MarkerOptions().position(LandaederragakoKristoSantuarenBaseliza).title("Landaederragako Kristo Santuaren baseliza").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
+        //Lonbo Aretoa poner coordenadas
+        LatLng LonboAretoa = new LatLng(43.211879, -2.888431);
+        final Marker LonAretoa=mMap.addMarker(new MarkerOptions().position(LonboAretoa).title("Lonbo Aretoa").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
+        LonAretoa.setVisible(false);
 
+        //Arrigorriagako Etxetzarrak
+        LatLng ArrigorriagakoEtxetzarrak = new LatLng(43.209679, -2.888369);
+        final Marker ArrigoEtxe=mMap.addMarker(new MarkerOptions().position(ArrigorriagakoEtxetzarrak).title("Arrigorriagako Etxetzarrak").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
+        ArrigoEtxe.setVisible(false);
+
+        //Baruako Jauregia(Kultur Extea)
+        LatLng KulturEtxea = new LatLng(43.209462, -2.888372);
+        final Marker KulturEtxe=mMap.addMarker(new MarkerOptions().position(KulturEtxea).title("Baruako Jauregia (Kultur Etxea)").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
+        KulturEtxe.setVisible(false);
+
+        //Creamos un intent en el que recogeremos el intent del que vengamos ya que
+        //Siempre que llegamos al mapa llegamos desde una pista
+        final Intent intent = getIntent();
+
+        //Solo añadiremos los listener en los marcadores que correspondan, por ejemplo,
+        //si venimos de pista3 activariamos el marcador de activity_pantalla3, que
+        //seria el marcador 3.
+        //El resto no tendrán el listener ya que este codigo se cativa cada vez que se llama a
+        //Activity_Mapa
 
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
-                if(marker.getTitle().equals("Arrigorriagako Udaletxea")) {
+                if(intent.getStringExtra("Pista1")!=null && intent.getStringExtra("Pista1").equals("Pista1") && marker.getTitle().equals("Arrigorriagako plaza")) {
+                    marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.plazaarrigorriagaredondo));
+                    Intent intent=new Intent(Activity_Mapa.this, Activity_Pantalla1.class);
+                    startActivity(intent);
+                }
+                else if(intent.getStringExtra("Pista2")!=null && intent.getStringExtra("Pista2").equals("Pista2") && marker.getTitle().equals("Arrigorriagako Udaletxea")) {
+                    Log.d(TAG,intent.getStringExtra("Pista2") );
                     marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ayunatmientoarrigorriagaredondo));
                     Intent intent=new Intent(Activity_Mapa.this, Activity_Pantalla2.class);
                     startActivity(intent);
                 }
-                if(marker.getTitle().equals("Arrigorriagako Etxetzarrak")) {
-                    marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.arrigorriagakoetxetzarrrakredondo));
-                    Intent intent=new Intent(Activity_Mapa.this, Activity_Pantalla1.class);
-                    startActivity(intent);
-                }
-                if(marker.getTitle().equals("Baruako Jauregia (Kultur Etxea)")) {
-                    marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.baruakojauregiaredondo));
+                else if(intent.getStringExtra("Pista3")!=null && intent.getStringExtra("Pista3").equals("Pista3") && marker.getTitle().equals("Santa Maria Magdalena eliza")) {
+                    marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.santamariamagdalenaredondo));
                     Intent intent=new Intent(Activity_Mapa.this, Activity_Pantalla3.class);
                     startActivity(intent);
                 }
-                if(marker.getTitle().equals("Santa Maria Magdalena eliza")) {
-                    marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.santamariamagdalenaredondo));
-                    Intent intent=new Intent(Activity_Mapa.this, Pista3.class);
+                else if(intent.getStringExtra("Pista4")!=null && intent.getStringExtra("Pista4").equals("Pista4") && marker.getTitle().equals("Lonbo Aretoa")) {
+                    marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.lonboaretoaredondo));
+                    Intent intent=new Intent(Activity_Mapa.this, Activity_Pantalla4.class);
                     startActivity(intent);
                 }
-                if(marker.getTitle().equals("Landaederragako Kristo Santuaren baseliza")) {
-                    marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.landaederragakokirstosantuarenbaseliza));
-                    Intent intent=new Intent(Activity_Mapa.this, Pista5.class);
+                else if(intent.getStringExtra("Pista5")!=null && intent.getStringExtra("Pista5").equals("Pista5") && marker.getTitle().equals("Arrigorriagako Etxetzarrak")) {
+                    marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.arrigorriagakoetxetzarrrakredondo));
+                    Intent intent=new Intent(Activity_Mapa.this, Activity_Pantalla5.class);
                     startActivity(intent);
                 }
-
+                else if(intent.getStringExtra("Pista6")!=null && intent.getStringExtra("Pista6").equals("Pista6") && marker.getTitle().equals("Baruako Jauregia (Kultur Etxea)")) {
+                    marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.baruakojauregiaredondo));
+                    Intent intent=new Intent(Activity_Mapa.this, Activity_Pantalla6.class);
+                    startActivity(intent);
+                }
                 return false;
             }
         });
@@ -181,14 +206,6 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
        }
        */
 
-        //Este código es para añadir la capa que muestra hasta donde llega Arrigorriaga:
-        try {
-            KmlLayer layer = new KmlLayer(mMap, R.raw.arrigorriagamunicipio, getApplicationContext());
-            layer.addLayerToMap();
-        } catch (XmlPullParserException | IOException e) {
-            Log.e(TAG, " Error: ", e);
-        }
-
         //Ponemos un código para que si hacemos click en el boton my location nos deje en el mismo zoom que con el fusedlocation(sino nos
         //deja mas arriba):
         mMap.setOnMyLocationButtonClickListener(new GoogleMap.OnMyLocationButtonClickListener() {
@@ -198,6 +215,79 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
                 return false;
             }
         });
+
+        //Aqui los marcadores que ya deben estar resueltos se les cambiará el icono de la
+        //pregunta por su icono propio.
+        //Se haran visibles éstos últimos y el que vamos a ejecutar.
+        handler.post(new Runnable() {
+                         @Override
+                         public void run() {
+                             if (intent.getStringExtra("Pista1")!=null && intent.getStringExtra("Pista1").equals("Pista1")) {
+                                 PlArrigo.setVisible(true);
+                             }
+                             else if (intent.getStringExtra("Pista2")!=null && intent.getStringExtra("Pista2").equals("Pista2")) {
+                                 PlArrigo.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.plazaarrigorriagaredondo));
+                                 PlArrigo.setVisible(true);
+                                 AyArrigo.setVisible(true);
+                             }
+                             else if (intent.getStringExtra("Pista3")!=null && intent.getStringExtra("Pista3").equals("Pista3")) {
+                                 PlArrigo.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.plazaarrigorriagaredondo));
+                                 PlArrigo.setVisible(true);
+                                 AyArrigo.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ayunatmientoarrigorriagaredondo));
+                                 AyArrigo.setVisible(true);
+                                 MariaEliza.setVisible(true);
+                             }
+                             else if (intent.getStringExtra("Pista4")!=null && intent.getStringExtra("Pista4").equals("Pista4")) {
+                                 PlArrigo.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.plazaarrigorriagaredondo));
+                                 PlArrigo.setVisible(true);
+                                 AyArrigo.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ayunatmientoarrigorriagaredondo));
+                                 AyArrigo.setVisible(true);
+                                 MariaEliza.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.santamariamagdalenaredondo));
+                                 MariaEliza.setVisible(true);
+                                 LonAretoa.setVisible(true);
+                             }
+                             else if (intent.getStringExtra("Pista5")!=null && intent.getStringExtra("Pista5").equals("Pista5")) {
+                                 PlArrigo.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.plazaarrigorriagaredondo));
+                                 PlArrigo.setVisible(true);
+                                 AyArrigo.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ayunatmientoarrigorriagaredondo));
+                                 AyArrigo.setVisible(true);
+                                 MariaEliza.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.santamariamagdalenaredondo));
+                                 MariaEliza.setVisible(true);
+                                 LonAretoa.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.lonboaretoaredondo));
+                                 LonAretoa.setVisible(true);
+                                 ArrigoEtxe.setVisible(true);
+                             }
+                             else if (intent.getStringExtra("Pista6")!=null && intent.getStringExtra("Pista6").equals("Pista6")) {
+                                 PlArrigo.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.plazaarrigorriagaredondo));
+                                 PlArrigo.setVisible(true);
+                                 AyArrigo.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ayunatmientoarrigorriagaredondo));
+                                 AyArrigo.setVisible(true);
+                                 MariaEliza.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.santamariamagdalenaredondo));
+                                 MariaEliza.setVisible(true);
+                                 LonAretoa.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.lonboaretoaredondo));
+                                 LonAretoa.setVisible(true);
+                                 ArrigoEtxe.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.arrigorriagakoetxetzarrrakredondo));
+                                 ArrigoEtxe.setVisible(true);
+                                 KulturEtxe.setVisible(true);
+                             }
+
+                         }
+                     });
+
+        //Este código es para añadir la capa que muestra hasta donde llega Arrigorriaga:
+        try {
+            KmlLayer layer = new KmlLayer(mMap, R.raw.arrigorriagamunicipio, getApplicationContext());
+            layer.addLayerToMap();
+        } catch (XmlPullParserException | IOException e) {
+            Log.e(TAG, " Error: ", e);
+        }
+
+
+    }
+
+    @Override
+    public void onBackPressed (){
+
     }
 
     //Creamos una sentencia para activar el GPS si es necesario
