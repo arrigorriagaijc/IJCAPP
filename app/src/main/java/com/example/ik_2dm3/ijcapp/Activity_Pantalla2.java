@@ -81,8 +81,6 @@ public class Activity_Pantalla2 extends AppCompatActivity {
                 btnAudio2.setEnabled(false);
                 //Activamos el gif, asignandolo al src
                 givMikel.setBackgroundResource(R.drawable.mikelgif);
-
-
             }
         });
 
@@ -314,7 +312,7 @@ public class Activity_Pantalla2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Finalizo este activity, esto lo tendremos que cambiar porque habra que volver con un onrequestactivitya activity_mapa
-                Intent intent=new Intent(Activity_Pantalla2.this, Pista3.class);
+                Intent intent=new Intent(getApplicationContext(), Pista3.class);
                 startActivity(intent);
                 finish();
             }
@@ -708,6 +706,12 @@ public class Activity_Pantalla2 extends AppCompatActivity {
         });
         //mostramos el dialogo
         customDialog.show();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        finish();
     }
 
     @Override

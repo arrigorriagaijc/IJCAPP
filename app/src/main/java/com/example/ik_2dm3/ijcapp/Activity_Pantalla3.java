@@ -550,13 +550,20 @@ public class Activity_Pantalla3 extends AppCompatActivity {
         btnPregunta5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Activity_Pantalla3.this, Pista4.class);
+                Intent intent=new Intent(getApplicationContext(), Pista4.class);
                 startActivity(intent);
                 finish();
             }
         });
 
     }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        finish();
+    }
+
     @Override
     public void onBackPressed (){
 

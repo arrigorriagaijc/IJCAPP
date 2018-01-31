@@ -156,33 +156,33 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
             public boolean onMarkerClick(Marker marker) {
                 if(intent.getStringExtra("Pista1")!=null && intent.getStringExtra("Pista1").equals("Pista1") && marker.getTitle().equals("Arrigorriagako plaza")) {
                     marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.plazaarrigorriagaredondo));
-                    Intent intent=new Intent(Activity_Mapa.this, Activity_Pantalla1.class);
+                    Intent intent=new Intent(getApplicationContext(), Activity_Pantalla1.class);
                     startActivity(intent);
                 }
                 else if(intent.getStringExtra("Pista2")!=null && intent.getStringExtra("Pista2").equals("Pista2") && marker.getTitle().equals("Arrigorriagako Udaletxea")) {
                     Log.d(TAG,intent.getStringExtra("Pista2") );
                     marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ayunatmientoarrigorriagaredondo));
-                    Intent intent=new Intent(Activity_Mapa.this, Activity_Pantalla2.class);
+                    Intent intent=new Intent(getApplicationContext(), Activity_Pantalla2.class);
                     startActivity(intent);
                 }
                 else if(intent.getStringExtra("Pista3")!=null && intent.getStringExtra("Pista3").equals("Pista3") && marker.getTitle().equals("Santa Maria Magdalena eliza")) {
                     marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.santamariamagdalenaredondo));
-                    Intent intent=new Intent(Activity_Mapa.this, Activity_Pantalla3.class);
+                    Intent intent=new Intent(getApplicationContext(), Activity_Pantalla3.class);
                     startActivity(intent);
                 }
                 else if(intent.getStringExtra("Pista4")!=null && intent.getStringExtra("Pista4").equals("Pista4") && marker.getTitle().equals("Lonbo Aretoa")) {
                     marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.lonboaretoaredondo));
-                    Intent intent=new Intent(Activity_Mapa.this, Activity_Pantalla4.class);
+                    Intent intent=new Intent(getApplicationContext(), Activity_Pantalla4.class);
                     startActivity(intent);
                 }
                 else if(intent.getStringExtra("Pista5")!=null && intent.getStringExtra("Pista5").equals("Pista5") && marker.getTitle().equals("Arrigorriagako Etxetzarrak")) {
                     marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.arrigorriagakoetxetzarrrakredondo));
-                    Intent intent=new Intent(Activity_Mapa.this, Activity_Pantalla5.class);
+                    Intent intent=new Intent(getApplicationContext(), Activity_Pantalla5.class);
                     startActivity(intent);
                 }
                 else if(intent.getStringExtra("Pista6")!=null && intent.getStringExtra("Pista6").equals("Pista6") && marker.getTitle().equals("Baruako Jauregia (Kultur Etxea)")) {
                     marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.baruakojauregiaredondo));
-                    Intent intent=new Intent(Activity_Mapa.this, Activity_Pantalla6.class);
+                    Intent intent=new Intent(getApplicationContext(), Activity_Pantalla6.class);
                     startActivity(intent);
                 }
                 return false;
@@ -432,6 +432,12 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
                 }
                 break;
         }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        finish();
     }
 
     /*private String obtenerDireccionesURL(LatLng origin,LatLng dest){

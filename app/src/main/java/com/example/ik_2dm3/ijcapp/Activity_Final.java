@@ -37,7 +37,7 @@ public class Activity_Final extends AppCompatActivity {
         tvFinal =(TextView) findViewById(R.id.tvTexto);
         clInicial=(ConstraintLayout) findViewById(R.id.clInicial);
         clFinal=(ConstraintLayout) findViewById(R.id.clFinal);
-        mediaPlayer=MediaPlayer.create(Activity_Final.this, R.raw.arrigorriagahistoriacastellano);
+        mediaPlayer=MediaPlayer.create(getApplicationContext(), R.raw.arrigorriagahistoriacastellano);
 
         handler.postDelayed(new Runnable() {
             @Override
@@ -47,6 +47,13 @@ public class Activity_Final extends AppCompatActivity {
             }
         },5000);
     }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        finish();
+    }
+
     @Override
     public void onBackPressed (){
 

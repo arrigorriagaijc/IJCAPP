@@ -68,7 +68,7 @@ public class Pista3 extends AppCompatActivity {
                     toast.setView(layout);
                     //Lo mostramos
                     toast.show();
-                    Intent intent=new Intent(Pista3.this, Activity_Mapa.class);
+                    Intent intent=new Intent(getApplicationContext(), Activity_Mapa.class);
                     intent.putExtra("Pista3", "Pista3");
                     startActivity(intent);
                     finish();
@@ -95,6 +95,12 @@ public class Pista3 extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        finish();
     }
 
     @Override

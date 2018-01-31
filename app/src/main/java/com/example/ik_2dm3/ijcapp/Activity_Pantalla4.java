@@ -19,12 +19,19 @@ public class Activity_Pantalla4 extends AppCompatActivity {
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Activity_Pantalla4.this, Pista5.class);
+                Intent intent=new Intent(getApplicationContext(), Pista5.class);
                 startActivity(intent);
                 finish();
             }
         });
     }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        finish();
+    }
+
     @Override
     public void onBackPressed (){
 

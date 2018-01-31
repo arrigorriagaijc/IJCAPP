@@ -123,7 +123,7 @@ public class Activity_Pantalla5 extends AppCompatActivity {
                     toast.setView(layout);
                     //Lo mostramos
                     toast.show();
-                    Intent intent=new Intent(Activity_Pantalla5.this, Pista6.class);
+                    Intent intent=new Intent(getApplicationContext(), Pista6.class);
                     startActivity(intent);
                     finish();
                 }
@@ -180,6 +180,13 @@ public class Activity_Pantalla5 extends AppCompatActivity {
             //mostramos el dialogo
             customDialog.show();
         }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        finish();
+    }
+
     @Override
     public void onBackPressed (){
 

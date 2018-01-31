@@ -50,13 +50,20 @@ public class Activity_Pantalla1 extends AppCompatActivity {
                 mediaPlayer=MediaPlayer.create(Activity_Pantalla1.this, R.raw.arrigorriagahistoriacastellano);
                 //Volvemos a desactivar el gif asignando la imagen
                 givMikel.setBackgroundResource(R.drawable.mikel);
-                Intent intent=new Intent(Activity_Pantalla1.this, Pista2.class);
+                Intent intent=new Intent(getApplicationContext(), Pista2.class);
                 startActivity(intent);
                 finish();
             }
         });
 
     }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        finish();
+    }
+
     @Override
     public void onBackPressed (){
 

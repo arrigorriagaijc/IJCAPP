@@ -19,12 +19,19 @@ public class Activity_Pantalla6 extends AppCompatActivity {
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Activity_Pantalla6.this, Activity_Final.class);
+                Intent intent=new Intent(getApplicationContext(), Activity_Final.class);
                 startActivity(intent);
                 finish();
             }
         });
     }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        finish();
+    }
+
     @Override
     public void onBackPressed (){
 

@@ -75,6 +75,23 @@
      Etxetzarra, ireganean euskal baserria izandako eraikina da, bertan, Arrigorriako biztanle ziren baserritarrak zirenak.
     Baserriak euskal kulturaren sinbolo dira</string>
     <string name="pista6">Haz el siguiente puzzle para saber a donde tenéis que ir.</string>
-
-
+    <string name="presentacion"><p>¡Hola! Bienvenidos a la APP para conocer Arrigorriaga. Soy Mikel Rico,
+jugador del Athletic Club de Bilbao, y como la mayoría de vosotros soy de
+Arrigorriaga. Esta mañana voy a acompañaros en esta excursión,
+ayudándoos a conocer mejor nuestro pueblo; antes de empezar os daré
+        algunos datos que pueden seros útiles. </p> \n \n<p>Arrigorriaga es un pueblo cercano a Bilbao, próximo al río Nervión y con
+alrededor de 12.000 ciudadanos.</p> \n \n<p>Nuestro objetivo de hoy va a ser conocer el patrimonio cultural de nuestro
+pueblo (en su mayoría patrimonio religioso: iglesias, ermitas..) pero también
+hay edificios civiles, los cuales ireis conociendo durante la mañana.</p>\n\n <p>Así que, sin más rodeos, haced CLICK en el mapa que está debajo de mi.
+Aquí empieza vuestra excursión!</p>
+    </string>
+<string name="pista1"> En las fiestas de nuestro pueblo venimos aquí a escuchar conciertos y
+hacer diferentes actividades.</string>
+    <string name="pista1opcion1"> Plaza de Argala</string>
+    <string name="pista1opcion2">Escuela</string>
+    <string name="pista1opcion3">Iglesia</string>
+    <string name="pista2">​En​ ​este​ ​edificio​ ​se​ ​deciden​ ​las​ ​leyes​ ​de​ ​Arrigorriaga</string>
+    <string name="pista2opcion1"> Ambulatorio</string>
+    <string name="pista2opcion2">Biblioteca</string>
+    <string name="pista2opcion3">Ayuntamiento</string>
 </resources>

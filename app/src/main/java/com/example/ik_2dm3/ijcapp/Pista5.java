@@ -267,7 +267,7 @@ public class Pista5 extends AppCompatActivity {
         btnFin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Pista5.this, Activity_Mapa.class);
+                Intent intent=new Intent(getApplicationContext(), Activity_Mapa.class);
                 intent.putExtra("Pista5", "Pista5");
                 startActivity(intent);
                 finish();
@@ -404,6 +404,13 @@ public class Pista5 extends AppCompatActivity {
         }
         return solucionado;
     }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        finish();
+    }
+
     @Override
     public void onBackPressed (){
 
