@@ -4,9 +4,11 @@ import android.content.ClipData;
 import android.content.ClipDescription;
 import android.content.Intent;
 import android.os.Build;
+import android.os.Handler;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.DragEvent;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -76,6 +78,9 @@ public class Pista5 extends AppCompatActivity {
     private boolean acertado7=false;
     private boolean acertado8=false;
     private boolean acertado9=false;
+
+    //Creamos una variable que solo deje ejecutar el codigo si hemos acabado 1 vez
+    private boolean acabado=false;
 
     //Creamos la variable que nos diga si el puzzle esta resuelto
     private boolean solucionado=false;
@@ -270,7 +275,6 @@ public class Pista5 extends AppCompatActivity {
                 Intent intent=new Intent(getApplicationContext(), Activity_Mapa.class);
                 intent.putExtra("Pista5", "Pista5");
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -374,11 +378,32 @@ public class Pista5 extends AppCompatActivity {
                             }
                             //Comprobamos si esta terminado el puzzle y si es asi borramos tod
                             //lo que esta en pantalla, mostramos el puzzle resuelto y la pregunta
-                            if(acabado()==true){
-                                clSolucion.setVisibility(View.GONE);
-                                clPiezas.setVisibility(View.GONE);
-                                clFondo.setVisibility(View.VISIBLE);
-                                clPregunta.setVisibility(View.VISIBLE);
+                            if(acabado()==true && acabado==false){
+                                clSolucion.post(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        clSolucion.setVisibility(View.GONE);
+                                    }
+                                });
+                                clPiezas.post(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        clPiezas.setVisibility(View.GONE);
+                                    }
+                                });
+                                clFondo.post(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        clFondo.setVisibility(View.VISIBLE);
+                                    }
+                                });
+                                clPregunta.post(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        clPregunta.setVisibility(View.VISIBLE);
+                                    }
+                                });
+                                acabado=true;
                             }
                             break;
                         default:

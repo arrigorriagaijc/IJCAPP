@@ -7,6 +7,7 @@ import android.os.Build;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.DragEvent;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -208,7 +209,6 @@ public class Pista6 extends AppCompatActivity {
                 Intent intent=new Intent(getApplicationContext(), Activity_Mapa.class);
                 intent.putExtra("Pista6", "Pista6");
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -322,7 +322,13 @@ public class Pista6 extends AppCompatActivity {
                             //Comprobamos si esta terminado el puzzle y si es asi borramos tod
                             //lo que esta en pantalla, mostramos el puzzle resuelto y la pregunta
                             if(acabado()==true){
-                                btnFin6.setVisibility(View.VISIBLE);
+                                btnFin6.post(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        btnFin6.setVisibility(View.VISIBLE);
+                                    }
+                                });
+                                Log.d(TAG,"1");
                             }
                             break;
                         default:

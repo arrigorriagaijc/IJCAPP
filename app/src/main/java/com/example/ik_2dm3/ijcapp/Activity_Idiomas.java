@@ -31,7 +31,8 @@ public class Activity_Idiomas extends AppCompatActivity {
         btnCastellano.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Activity_Idiomas.this, Activity_Inicio.class);
+                Intent intent=new Intent(getApplicationContext(), Activity_Inicio.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         });
@@ -40,7 +41,6 @@ public class Activity_Idiomas extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(getApplicationContext(), Activity_Inicio.class);
                 startActivity(intent);
-
             }
         });
 
@@ -75,6 +75,11 @@ public class Activity_Idiomas extends AppCompatActivity {
     public void onPause() {
         super.onPause();
         finish();
+    }
+
+    @Override
+    public void onBackPressed (){
+
     }
        // private Gson gson;
 

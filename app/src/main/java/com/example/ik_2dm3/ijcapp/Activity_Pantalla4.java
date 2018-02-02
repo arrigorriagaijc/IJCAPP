@@ -21,7 +21,6 @@ public class Activity_Pantalla4 extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(getApplicationContext(), Pista5.class);
                 startActivity(intent);
-                finish();
             }
         });
     }

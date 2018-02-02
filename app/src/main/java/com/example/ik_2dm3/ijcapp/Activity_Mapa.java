@@ -434,11 +434,18 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
         }
     }
 
+    /*@Override
+    public void onBackPressed(){
+
+    }*/
+
     @Override
     public void onPause() {
         super.onPause();
         finish();
     }
+
+
 
     /*private String obtenerDireccionesURL(LatLng origin,LatLng dest){
 

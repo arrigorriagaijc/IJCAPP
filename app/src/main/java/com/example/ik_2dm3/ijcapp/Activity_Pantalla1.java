@@ -37,8 +37,6 @@ public class Activity_Pantalla1 extends AppCompatActivity {
                 btnAudio1.setEnabled(false);
                 //Activamos el gif, asignandolo al src
                 givMikel.setBackgroundResource(R.drawable.mikelgif);
-
-
             }
         });
 
@@ -52,7 +50,6 @@ public class Activity_Pantalla1 extends AppCompatActivity {
                 givMikel.setBackgroundResource(R.drawable.mikel);
                 Intent intent=new Intent(getApplicationContext(), Pista2.class);
                 startActivity(intent);
-                finish();
             }
         });
 

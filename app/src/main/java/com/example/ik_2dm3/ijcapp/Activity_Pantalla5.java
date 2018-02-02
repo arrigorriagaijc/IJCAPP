@@ -125,7 +125,6 @@ public class Activity_Pantalla5 extends AppCompatActivity {
                     toast.show();
                     Intent intent=new Intent(getApplicationContext(), Pista6.class);
                     startActivity(intent);
-                    finish();
                 }
             }
         });

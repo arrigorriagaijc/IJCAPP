@@ -97,7 +97,8 @@ public class Activity_Pantalla2 extends AppCompatActivity {
                 tvMensaje.setVisibility(View.VISIBLE);
                 llSopa.setVisibility(View.VISIBLE);
                 btnSiguiente.setVisibility(View.INVISIBLE);
-
+                Intent intent=new Intent(getApplicationContext(), Pista3.class);
+                startActivity(intent);
             }
         });
 
@@ -313,8 +314,8 @@ public class Activity_Pantalla2 extends AppCompatActivity {
             public void onClick(View view) {
                 //Finalizo este activity, esto lo tendremos que cambiar porque habra que volver con un onrequestactivitya activity_mapa
                 Intent intent=new Intent(getApplicationContext(), Pista3.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
-                finish();
             }
         });
 

@@ -43,41 +43,41 @@
         <activity
             android:name=".Activity_Mapa"
             android:label="@string/title_activity__mapa"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Activity_Pantalla1"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Activity_Pantalla2"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity android:name=".Pista1"
         android:screenOrientation="portrait"/>
         <activity android:name=".Pista2"
             android:screenOrientation="portrait"/>
         <activity
             android:name=".Pista3"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Activity_Pantalla3"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Activity_Pantalla4"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Activity_Pantalla6"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Pista4"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Pista5"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Activity_Pantalla5"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Pista6"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity android:name=".Activity_Final"
             android:screenOrientation="portrait"/>
 

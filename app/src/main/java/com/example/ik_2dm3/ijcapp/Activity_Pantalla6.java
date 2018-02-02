@@ -21,7 +21,6 @@ public class Activity_Pantalla6 extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(getApplicationContext(), Activity_Final.class);
                 startActivity(intent);
-                finish();
             }
         });
     }

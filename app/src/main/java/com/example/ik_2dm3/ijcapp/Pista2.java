@@ -72,7 +72,6 @@ public class Pista2 extends AppCompatActivity {
                     Intent intent=new Intent(getApplicationContext(), Activity_Mapa.class);
                     intent.putExtra("Pista2", "Pista2");
                     startActivity(intent);
-                    finish();
                 } else
                 if (radioButton.isChecked()==true) {
                     //Cargamos el layout de la X
