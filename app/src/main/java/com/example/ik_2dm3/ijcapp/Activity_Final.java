@@ -38,7 +38,7 @@ public class Activity_Final extends AppCompatActivity {
         clInicial=(ConstraintLayout) findViewById(R.id.clInicial);
         clFinal=(ConstraintLayout) findViewById(R.id.clFinal);
         mediaPlayer=MediaPlayer.create(getApplicationContext(), R.raw.arrigorriagahistoriacastellano);
-
+//
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
