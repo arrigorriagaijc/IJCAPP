@@ -1,10 +1,54 @@
 <resources>
-    <string name="app_name">IJCAPP</string>
-    <string name="title_activity__mapa">Map</string>
-    <string name="mensaje_sopa">Hurrengo hizki sopan lau hitz hauek aurkitu behar dituzu: Alkatea, zinegotzia, legeak eta politika.</string>
-    <string name="letra">A</string>
+    //Activity Idiomas
     <string name="euskera">EUSKERA</string>
     <string name="español">CASTELLANO</string>
+    //Activity Inicio
+    <string name="presentacion">Kaixo guztioi! Ongi etorri Arrigorriaka ezagutzeko APP-r!. Mikel Rico naiz, Athletic Club-eko jokalaria eta zuek bezala, Arrigorriakoa naiz. Goiz honetan zehar, zuekin egongo naiz txango hau egiten eta herria hobeto ezagutzen laguntzen, baina txangoa hasi baino lehen, herriari buruz lagungarria izan daitekeen zenbait gauza kontatuko diskizuet. Arrigorriaga, Bilboaldean dagoen herria da, Nerbioi ibaiaren joanean eta 12000 biztanle inguru ditu.\n\nGaurko egunan, herriak duen kultur ondoaren inguruan izango denez, dakizuenez Arrigorriagako kultur ondare gehiena erligiosoa dena (elizak, baselizak, tailuak…) baina eraikin zibilak ere badaude, bidai honetan zehar ezagutuko dituzuenak.\n\nBeraz, besterik gabe, egin KLIK nire azpian dagoen mapan; zuen txangoa hastera doa!</string>
+    //Activity Pista 1
+    <string name="pista1"> Gure herriko jaietan, leku honetara goaz kontzertu zein jarduera desberdinetaz gozatzera.</string>
+    <string name="pista1opcion1"> Argala Plaza</string>
+    <string name="pista1opcion2">Eskola</string>
+    <string name="pista1opcion3">Eliza</string>
+    //Activity Pantalla 1
+    <string name="audiozona1">Arrigorriagako plazari buruzko audio hau entzun ezazu.</string>
+    <string name="audio">Audioa</string>
+    //Activity Pista 2
+    <string name="pista2">Eraikin honetan Arrigorriagako araudia adosten da</string>
+    <string name="pista2opcion1"> Anbulategia</string>
+    <string name="pista2opcion2">Liburutegia</string>
+    <string name="pista2opcion3">Udaletxea</string>
+    //Activity Pantalla 2
+    <string name="audiozona2">Arrigorriagako udaletxeari buruzko audio hau entzun ezazu.</string>
+    <string name="mensaje_sopa">Hurrengo hizki sopan lau hitz hauek aurkitu behar dituzu: Alkatea, zinegotzia, legeak eta politika.</string>
+    <string name="letra">A</string>
+    //Activity Pista 3
+    <string name="pista3">Igandeetan, Arrigorriagako auzokideak nora joaten dire otoitz egitera?</string>
+    <string name="casa_cultura">Kultur etxea</string>
+    <string name="iglesia">Eliza</string>
+    <string name="escuela">Eskola</string>
+    //Activity Pantalla 3
+    <string name="enunciado_Santa_Maria">Hurrengo ariketa honetan, banan-banan 4 esaldi desberdin agertuko zaizkizue.\nZuek egia ala gezurra diren adierzi behar duzue, esaldien behean agertzen zaizkizuen botoiei sakatuz.</string>
+    <string name="pregunta1_Santa_Maria">Arrigorriako parrokiaren izena…</string>
+    <string name="respuesta1_buena">SANTA MARIA MAGDALENA</string>
+    <string name="respuesta1_mala">SANTA TERESA MAGDALENA</string>
+    <string name="respuesta1corregida">Santa Maria Magdalena da.</string>
+    <string name="pregunta2_Santa_Maria">Santa Maria Magdalena parrokia XX. mendekoa da.</string>
+    <string name="respuesta2_buena">GEZURRA</string>
+    <string name="respuesta2_mala">EGIA</string>
+    <string name="respuesta2corregida">Parrokia IX. mendekoa da.</string>
+    <string name="pregunta3_Santa_Maria">Parrokiak bere garaiko aspektua mantentzen du.</string>
+    <string name="respuesta3_buena">GEZURRA</string>
+    <string name="respuesta3_mala">EGIA</string>
+    <string name="respuesta3corregida">Parrokia guztiz birmoldatu zuten.</string>
+    <string name="pregunta4_Santa_Maria">Argazki honetan Santa Maria Magdalena parrokiaren zati bat agertze da:</string>
+    <string name="respuesta4_buena">EGIA</string>
+    <string name="respuesta4_mala">GEZURRA</string>
+
+
+
+    <string name="app_name">IJCAPP</string>
+    <string name="title_activity__mapa">Map</string>
+
     <string name="aceptar">Onartu</string>
     <string name="cancelar">Ezeztatu</string>
     <string name="alcalde">Arrigorriagako alkatea Asier Albizua Manrique da.</string>
@@ -15,24 +59,11 @@
     <string name="ley">Legeak:</string>
     <string name="conce">Zinegotzia:</string>
     <string name="alca">Alkatea:</string>
-    <string name="audiozona1">Arrigorriagako plazari buruzko audio hau entzun ezazu.</string>
-    <string name="audiozona2">Arrigorriagako udaletxeari buruzko audio hau entzun ezazu.</string>
-    <string name="audio">Audioa</string>
-    <string name="enunciado_Santa_Maria">Hurrengo ariketa honetan, banan-banan 4 esaldi desberdin agertuko zaizkizue.\nZuek egia ala gezurra diren adierzi behar duzue, esaldien behean agertzen zaizkizuen botoiei sakatuz.</string>
     <string name="enunciado_pista5">Lotu itzazu puzzlearen piezak zuen hurrengo gunearen argazkia osatzeko:</string>
-    <string name="pregunta1_Santa_Maria">Arrigorriako parrokiaren izena…</string>
-    <string name="pregunta2_Santa_Maria">Santa Maria Magdalena parrokia XX. mendekoa da.</string>
-    <string name="pregunta3_Santa_Maria">Parrokiak bere garaiko aspektua mantentzen du.</string>
-    <string name="pregunta4_Santa_Maria">Argazki honetan Santa Maria Magdalena parrokiaren zati bat agertze da:</string>
     <string name="pregunta5_Santa_MAria">Ermita txiki bat da eta Abrisketa auzoan kokatuta dago. Zein da?</string>
-    <string name="respuesta1_buena">SANTA MARIA MAGDALENA</string>
-    <string name="respuesta1_mala">SANTA TERESA MAGDALENA</string>
-    <string name="respuesta2_buena">GEZURRA</string>
-    <string name="respuesta2_mala">EGIA</string>
-    <string name="respuesta3_buena">GEZURRA</string>
-    <string name="respuesta3_mala">EGIA</string>
-    <string name="respuesta4_buena">EGIA</string>
-    <string name="respuesta4_mala">GEZURRA</string>
+
+
+
     <string name="respuesta51_mala">Bilboko San Luis.</string>
     <string name="respuesta5_buena">Abrisketako San Pedro.</string>
     <string name="respuesta52_mala">Kurutzetako San Telmo.</string>
@@ -40,16 +71,10 @@
     <string name="rbRespuesta1">Udaletxea</string>
     <string name="rbRespuesta2">Etxetzarra</string>
     <string name="rbRespuesta3">Baserria</string>
-    <string name="respuesta1corregida">Santa Maria Magdalena da.</string>
-    <string name="respuesta2corregida">Parrokia IX. mendekoa da.</string>
-    <string name="respuesta3corregida">Parrokia guztiz birmoldatu zuten.</string>
     <string name="respuesta5corregida">Abrisketa auzoan kokatzen da eta bertan, ekainaren 29-aren hurrengo igandean, San Pedroren omenezko erromeria ospatzen dute.</string>
-    <string name="pista3">Igandeetan, Arrigorriagako auzokideak nora joaten dire otoitz egitera?</string>
     <string name="pista4">Bertan antzerkiak eta filmak ikuz ditzakegu.</string>
     <string name="explicacion">Badakizuenez, Arrigorriagan erligiosoak diren beste eraikin batzuk daude, adibidez baselizak.</string>
-    <string name="casa_cultura">Kultur etxea</string>
-    <string name="iglesia">Eliza</string>
-    <string name="escuela">Eskola</string>
+
     <string name="salalonbo">Lonbo Aretoa</string>
     <string name="ayuntamiento">Udaletxea</string>
     <string name="tvfinal">ZORIONAK! Gure herriko eraikin garrantzitsuenak ezagutzeko aukera izan duzue eta horrekin bat historia piska bat.\n\nEspero dut orain eraikin hauen garrantziaz gogoratzea hauen aldetik pasatzen zaretenean.\n\nOndo ibili lagunok!</string>
@@ -70,13 +95,6 @@
         Baserriak euskal kulturaren sinbolo dira, eta gaur egun hauetako asko euskaldunentzat ondare historiko bihurtzeko berezidunak dira, etxetzarra moduan. Eraikin hau gaur egun, kultur-etxearen alboan aurki dezakegu.
     </string>
     <string name="pista6">Osatu hurrengo puzzlea nora joan behar zareten jakiteko.</string>
-    <string name="presentacion">Kaixo guztioi! Ongi etorri Arrigorriaka ezagutzeko APP-r!. Mikel Rico naiz, Athletic Club-eko jokalaria eta zuek bezala, Arrigorriakoa naiz. Goiz honetan zehar, zuekin egongo naiz txango hau egiten eta herria hobeto ezagutzen laguntzen, baina txangoa hasi baino lehen, herriari buruz lagungarria izan daitekeen zenbait gauza kontatuko diskizuet. Arrigorriaga, Bilboaldean dagoen herria da, Nerbioi ibaiaren joanean eta 12000 biztanle inguru ditu.\n\nGaurko egunan, herriak duen kultur ondoaren inguruan izango denez, dakizuenez Arrigorriagako kultur ondare gehiena erligiosoa dena (elizak, baselizak, tailuak…) baina eraikin zibilak ere badaude, bidai honetan zehar ezagutuko dituzuenak.\n\nBeraz, besterik gabe, egin KLIK nire azpian dagoen mapan; zuen txangoa hastera doa!</string>
-    <string name="pista1"> Gure herriko jaietan, leku honetara goaz kontzertu zein jarduera desberdinetaz gozatzera.</string>
-    <string name="pista1opcion1"> Argala Plaza</string>
-    <string name="pista1opcion2">Eskola</string>
-    <string name="pista1opcion3">Eliza</string>
-    <string name="pista2">Eraikin honetan Arrigorriagako araudia adosten da</string>
-    <string name="pista2opcion1"> Anbulategia</string>
-    <string name="pista2opcion2">Liburutegia</string>
-    <string name="pista2opcion3">Udaletxea</string>
+
+
 </resources>

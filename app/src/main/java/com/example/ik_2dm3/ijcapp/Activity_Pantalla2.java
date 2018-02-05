@@ -361,165 +361,328 @@ public class Activity_Pantalla2 extends AppCompatActivity {
                             for (int g=0;g<arrayListLetrasSeleccionadas.size();g++){
                                 palabra=palabra+arrayListLetrasSeleccionadas.get(g).getText();
                             }
-                            //Si la palabra que tengo seleccionada coincide con alcalde y no ha sido acertada
-                            if (palabra.equals("ALCALDE") && alcalde==false){
-                                //Hago un bucle donde busco los textViews donde están las letras de esta palabra
-                                for(int z=0;z<99;z++){
-                                    for(int s=0; s<arrayListLetrasSeleccionadas.size();s++){
-                                        if(arrayListTextView.get(z).equals(arrayListLetrasSeleccionadas.get(s))){
-                                            //les cambio el color a azul clarito
-                                            arrayListTextView.get(z).setBackgroundColor(Color.parseColor("#00FFFF"));
-                                            //añado al array de letras acertadas los textViews de la palabra
-                                            arrayListLetrasAcertadas.add(arrayListTextView.get(z));
-                                        }
 
-                                    }
-
-                                }
-                                //Pongo el valor de alcalde a true para que no vuelva a contabilizarla
-                                alcalde=true;
-                                //Aumento en uno los aciertos
-                                aciertos++;
-
-                            }
-                            //Si la palabra que tengo seleccionada coincide con leyes y no ha sido acertada
-                            else if (palabra.equals("LEYES") && leyes==false){
-                                //Hago un bucle donde busco los textViews donde están las letras de esta palabra
-                                for(int z=0;z<99;z++){
-                                    for(int s=0; s<arrayListLetrasSeleccionadas.size();s++){
-                                        if(arrayListTextView.get(z).equals(arrayListLetrasSeleccionadas.get(s))){
-                                            //les cambio el color a azul clarito
-                                            arrayListTextView.get(z).setBackgroundColor(Color.parseColor("#00FFFF"));
-                                            //añado al array de letras acertadas los textViews de la palabra
-                                            arrayListLetrasAcertadas.add(arrayListTextView.get(z));
+                            //Compruebo en castellano primero
+                            if(btnAudio2.getText().equals("Audio")) {
+                                //Si la palabra que tengo seleccionada coincide con alcalde y no ha sido acertada
+                                if (palabra.equals("ALCALDE") && alcalde == false) {
+                                    //Hago un bucle donde busco los textViews donde están las letras de esta palabra
+                                    for (int z = 0; z < 99; z++) {
+                                        for (int s = 0; s < arrayListLetrasSeleccionadas.size(); s++) {
+                                            if (arrayListTextView.get(z).equals(arrayListLetrasSeleccionadas.get(s))) {
+                                                //les cambio el color a azul clarito
+                                                arrayListTextView.get(z).setBackgroundColor(Color.parseColor("#00FFFF"));
+                                                //añado al array de letras acertadas los textViews de la palabra
+                                                arrayListLetrasAcertadas.add(arrayListTextView.get(z));
+                                            }
 
                                         }
 
                                     }
+                                    //Pongo el valor de alcalde a true para que no vuelva a contabilizarla
+                                    alcalde = true;
+                                    //Aumento en uno los aciertos
+                                    aciertos++;
 
                                 }
-                                //Pongo el valor de leyes a true para que no vuelva a contabilizarla
-                                leyes=true;
-                                //Aumento en uno los aciertos
-                                aciertos++;
-                            }
-                            //Si la palabra que tengo seleccionada coincide con concejal y no ha sido acertada
-                            else if (palabra.equals("CONCEJAL") && concejal==false){
-                                //Hago un bucle donde busco los textViews donde están las letras de esta palabra
-                                for(int z=0;z<99;z++){
-                                    for(int s=0; s<arrayListLetrasSeleccionadas.size();s++){
-                                        if(arrayListTextView.get(z).equals(arrayListLetrasSeleccionadas.get(s))){
-                                            //les cambio el color a azul clarito
-                                            arrayListTextView.get(z).setBackgroundColor(Color.parseColor("#00FFFF"));
-                                            //añado al array de letras acertadas los textViews de la palabra
-                                            arrayListLetrasAcertadas.add(arrayListTextView.get(z));
+                                //Si la palabra que tengo seleccionada coincide con leyes y no ha sido acertada
+                                else if (palabra.equals("LEYES") && leyes == false) {
+                                    //Hago un bucle donde busco los textViews donde están las letras de esta palabra
+                                    for (int z = 0; z < 99; z++) {
+                                        for (int s = 0; s < arrayListLetrasSeleccionadas.size(); s++) {
+                                            if (arrayListTextView.get(z).equals(arrayListLetrasSeleccionadas.get(s))) {
+                                                //les cambio el color a azul clarito
+                                                arrayListTextView.get(z).setBackgroundColor(Color.parseColor("#00FFFF"));
+                                                //añado al array de letras acertadas los textViews de la palabra
+                                                arrayListLetrasAcertadas.add(arrayListTextView.get(z));
+
+                                            }
 
                                         }
 
                                     }
-
+                                    //Pongo el valor de leyes a true para que no vuelva a contabilizarla
+                                    leyes = true;
+                                    //Aumento en uno los aciertos
+                                    aciertos++;
                                 }
-                                //Pongo el valor de concejal a true para que no vuelva a contabilizarla
-                                concejal=true;
-                                //Aumento en uno los aciertos
-                                aciertos++;
-                            }
-                            //Si la palabra que tengo seleccionada coincide con politica y no ha sido acertada
-                            else if (palabra.equals("POLITICA") && politica==false){
-                                //Hago un bucle donde busco los textViews donde están las letras de esta palabra
-                                for(int z=0;z<99;z++){
-                                    for(int s=0; s<arrayListLetrasSeleccionadas.size();s++){
-                                        if(arrayListTextView.get(z).equals(arrayListLetrasSeleccionadas.get(s))){
-                                            //les cambio el color a azul clarito
-                                            arrayListTextView.get(z).setBackgroundColor(Color.parseColor("#00FFFF"));
-                                            //añado al array de letras acertadas los textViews de la palabra
-                                            arrayListLetrasAcertadas.add(arrayListTextView.get(z));
+                                //Si la palabra que tengo seleccionada coincide con concejal y no ha sido acertada
+                                else if (palabra.equals("CONCEJAL") && concejal == false) {
+                                    //Hago un bucle donde busco los textViews donde están las letras de esta palabra
+                                    for (int z = 0; z < 99; z++) {
+                                        for (int s = 0; s < arrayListLetrasSeleccionadas.size(); s++) {
+                                            if (arrayListTextView.get(z).equals(arrayListLetrasSeleccionadas.get(s))) {
+                                                //les cambio el color a azul clarito
+                                                arrayListTextView.get(z).setBackgroundColor(Color.parseColor("#00FFFF"));
+                                                //añado al array de letras acertadas los textViews de la palabra
+                                                arrayListLetrasAcertadas.add(arrayListTextView.get(z));
+
+                                            }
 
                                         }
 
                                     }
-
+                                    //Pongo el valor de concejal a true para que no vuelva a contabilizarla
+                                    concejal = true;
+                                    //Aumento en uno los aciertos
+                                    aciertos++;
                                 }
-                                //Pongo el valor de politica a true para que no vuelva a contabilizarla
-                                politica=true;
-                                //Aumento en uno los aciertos
-                                aciertos++;
-                            //Si no es ninguna de las 4 palabras
+                                //Si la palabra que tengo seleccionada coincide con politica y no ha sido acertada
+                                else if (palabra.equals("POLITICA") && politica == false) {
+                                    //Hago un bucle donde busco los textViews donde están las letras de esta palabra
+                                    for (int z = 0; z < 99; z++) {
+                                        for (int s = 0; s < arrayListLetrasSeleccionadas.size(); s++) {
+                                            if (arrayListTextView.get(z).equals(arrayListLetrasSeleccionadas.get(s))) {
+                                                //les cambio el color a azul clarito
+                                                arrayListTextView.get(z).setBackgroundColor(Color.parseColor("#00FFFF"));
+                                                //añado al array de letras acertadas los textViews de la palabra
+                                                arrayListLetrasAcertadas.add(arrayListTextView.get(z));
+
+                                            }
+
+                                        }
+
+                                    }
+                                    //Pongo el valor de politica a true para que no vuelva a contabilizarla
+                                    politica = true;
+                                    //Aumento en uno los aciertos
+                                    aciertos++;
+                                    //Si no es ninguna de las 4 palabras
+                                } else {
+                                    //Hago un bucle donde recorro el array de todos los textviews
+                                    for (int t = 0; t < 99; t++) {
+                                        //Si el arraydeletrasacertadas esta vacío pongo all blanco
+                                        if (arrayListLetrasAcertadas.isEmpty()) {
+                                            //Pongo el textView blanco
+                                            arrayListTextView.get(t).setBackgroundColor(Color.parseColor("#00000000"));
+                                        }
+                                        //Si no esta vacio
+                                        else {
+                                            //Hago un bucle donde recorro el array de letras acertadas
+                                            for (int l = 0; l < arrayListLetrasAcertadas.size(); l++) {
+                                                //si el textview de letras acertadas no coincide con el textview del array de todos los textviews
+                                                if (!arrayListTextView.get(t).equals(arrayListLetrasAcertadas.get(l))) {
+                                                    //Cambio el color a blanco
+                                                    arrayListTextView.get(t).setBackgroundColor(Color.parseColor("#00000000"));
+                                                } else {
+                                                    //cambio el color a azul clarito
+                                                    arrayListTextView.get(t).setBackgroundColor(Color.parseColor("#00FFFF"));
+                                                    //Salgo del bucle para que no me siga comparando porque si no me lo vuelve a poner blanco
+                                                    //ya que compara con todas las letras acertadas
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                //Si subrayo las letras cuantas veces quiera me sale la ventana emergente(bocadillo)
+                                if (palabra.equals("LEYES")) {
+                                    //Asigno a la variables titulo y mensaje su valor para que se ejecuten
+                                    //dentro del dialog
+                                    titulo = R.string.ley;
+                                    mensaje = R.string.leyes;
+                                    dialogo();
+                                } else if (palabra.equals("ALCALDE")) {
+                                    //Asigno a la variables titulo y mensaje su valor para que se ejecuten
+                                    //dentro del dialog
+                                    titulo = R.string.alca;
+                                    mensaje = R.string.alcalde;
+                                    dialogo();
+                                } else if (palabra.equals("CONCEJAL")) {
+                                    //Asigno a la variables titulo y mensaje su valor para que se ejecuten
+                                    //dentro del dialog
+                                    titulo = R.string.conce;
+                                    mensaje = R.string.concejal;
+                                    dialogo();
+                                } else if (palabra.equals("POLITICA")) {
+                                    //Asigno a la variables titulo y mensaje su valor para que se ejecuten
+                                    //dentro del dialog
+                                    titulo = R.string.pol;
+                                    mensaje = R.string.politica;
+                                    dialogo();
+                                }
+                                //Limpio el arraylist de letras seleccionadas
+                                arrayListLetrasSeleccionadas.clear();
+                                //Limpio el arraylist de letras anteriores
+                                arrayListLetraAnterior.clear();
+                                //Vacio la palabra
+                                palabra = new String("");
+                                //Hago un bucle recorriendo el array de letras acertadas
+                                for (int g = 0; g < arrayListLetrasAcertadas.size(); g++) {
+                                    //Asigno a palabra cada una de las letras de los textViews
+                                    palabra = palabra + arrayListLetrasAcertadas.get(g).getText();
+                                }
+                                //Si los aciertos son 4, (Estan todos acertados)
+                                if (aciertos == 4 && acertado == false) {
+                                    //Saco un mensaje de eres un crack por pantalla en un toast
+                                    Toast.makeText(getApplicationContext(), "Has acabado, pulsa la flecha", Toast.LENGTH_LONG).show();
+                                    //Visibilizo el boton
+                                    btnSiguiente.setVisibility(View.VISIBLE);
+                                    //Pongo la variable acertado a true para que no me haga estas ordenes mas veces
+                                    acertado = true;
+                                }
+                                break;
+                                //Compruebo en euskera despues
                             }else{
-                                //Hago un bucle donde recorro el array de todos los textviews
-                                for(int t=0; t<99;t++){
-                                    //Si el arraydeletrasacertadas esta vacío pongo all blanco
-                                    if(arrayListLetrasAcertadas.isEmpty()){
-                                        //Pongo el textView blanco
-                                        arrayListTextView.get(t).setBackgroundColor(Color.parseColor("#00000000"));
-                                    }
-                                    //Si no esta vacio
-                                    else {
-                                        //Hago un bucle donde recorro el array de letras acertadas
-                                        for (int l = 0; l < arrayListLetrasAcertadas.size(); l++) {
-                                            //si el textview de letras acertadas no coincide con el textview del array de todos los textviews
-                                            if (!arrayListTextView.get(t).equals(arrayListLetrasAcertadas.get(l))) {
-                                                //Cambio el color a blanco
-                                                arrayListTextView.get(t).setBackgroundColor(Color.parseColor("#00000000"));
+                                //Si la palabra que tengo seleccionada coincide con alcalde y no ha sido acertada
+                                if (palabra.equals("ALKATEA") && alcalde == false) {
+                                    //Hago un bucle donde busco los textViews donde están las letras de esta palabra
+                                    for (int z = 0; z < 99; z++) {
+                                        for (int s = 0; s < arrayListLetrasSeleccionadas.size(); s++) {
+                                            if (arrayListTextView.get(z).equals(arrayListLetrasSeleccionadas.get(s))) {
+                                                //les cambio el color a azul clarito
+                                                arrayListTextView.get(z).setBackgroundColor(Color.parseColor("#00FFFF"));
+                                                //añado al array de letras acertadas los textViews de la palabra
+                                                arrayListLetrasAcertadas.add(arrayListTextView.get(z));
                                             }
-                                            else{
-                                                //cambio el color a azul clarito
-                                                arrayListTextView.get(t).setBackgroundColor(Color.parseColor("#00FFFF"));
-                                                //Salgo del bucle para que no me siga comparando porque si no me lo vuelve a poner blanco
-                                                //ya que compara con todas las letras acertadas
-                                                break;
+
+                                        }
+
+                                    }
+                                    //Pongo el valor de alcalde a true para que no vuelva a contabilizarla
+                                    alcalde = true;
+                                    //Aumento en uno los aciertos
+                                    aciertos++;
+
+                                }
+                                //Si la palabra que tengo seleccionada coincide con leyes y no ha sido acertada
+                                else if (palabra.equals("LEGEAK") && leyes == false) {
+                                    //Hago un bucle donde busco los textViews donde están las letras de esta palabra
+                                    for (int z = 0; z < 99; z++) {
+                                        for (int s = 0; s < arrayListLetrasSeleccionadas.size(); s++) {
+                                            if (arrayListTextView.get(z).equals(arrayListLetrasSeleccionadas.get(s))) {
+                                                //les cambio el color a azul clarito
+                                                arrayListTextView.get(z).setBackgroundColor(Color.parseColor("#00FFFF"));
+                                                //añado al array de letras acertadas los textViews de la palabra
+                                                arrayListLetrasAcertadas.add(arrayListTextView.get(z));
+
+                                            }
+
+                                        }
+
+                                    }
+                                    //Pongo el valor de leyes a true para que no vuelva a contabilizarla
+                                    leyes = true;
+                                    //Aumento en uno los aciertos
+                                    aciertos++;
+                                }
+                                //Si la palabra que tengo seleccionada coincide con concejal y no ha sido acertada
+                                else if (palabra.equals("ZINEGOTZIA") && concejal == false) {
+                                    //Hago un bucle donde busco los textViews donde están las letras de esta palabra
+                                    for (int z = 0; z < 99; z++) {
+                                        for (int s = 0; s < arrayListLetrasSeleccionadas.size(); s++) {
+                                            if (arrayListTextView.get(z).equals(arrayListLetrasSeleccionadas.get(s))) {
+                                                //les cambio el color a azul clarito
+                                                arrayListTextView.get(z).setBackgroundColor(Color.parseColor("#00FFFF"));
+                                                //añado al array de letras acertadas los textViews de la palabra
+                                                arrayListLetrasAcertadas.add(arrayListTextView.get(z));
+
+                                            }
+
+                                        }
+
+                                    }
+                                    //Pongo el valor de concejal a true para que no vuelva a contabilizarla
+                                    concejal = true;
+                                    //Aumento en uno los aciertos
+                                    aciertos++;
+                                }
+                                //Si la palabra que tengo seleccionada coincide con politica y no ha sido acertada
+                                else if (palabra.equals("POLITIKA") && politica == false) {
+                                    //Hago un bucle donde busco los textViews donde están las letras de esta palabra
+                                    for (int z = 0; z < 99; z++) {
+                                        for (int s = 0; s < arrayListLetrasSeleccionadas.size(); s++) {
+                                            if (arrayListTextView.get(z).equals(arrayListLetrasSeleccionadas.get(s))) {
+                                                //les cambio el color a azul clarito
+                                                arrayListTextView.get(z).setBackgroundColor(Color.parseColor("#00FFFF"));
+                                                //añado al array de letras acertadas los textViews de la palabra
+                                                arrayListLetrasAcertadas.add(arrayListTextView.get(z));
+
+                                            }
+
+                                        }
+
+                                    }
+                                    //Pongo el valor de politica a true para que no vuelva a contabilizarla
+                                    politica = true;
+                                    //Aumento en uno los aciertos
+                                    aciertos++;
+                                    //Si no es ninguna de las 4 palabras
+                                } else {
+                                    //Hago un bucle donde recorro el array de todos los textviews
+                                    for (int t = 0; t < 99; t++) {
+                                        //Si el arraydeletrasacertadas esta vacío pongo all blanco
+                                        if (arrayListLetrasAcertadas.isEmpty()) {
+                                            //Pongo el textView blanco
+                                            arrayListTextView.get(t).setBackgroundColor(Color.parseColor("#00000000"));
+                                        }
+                                        //Si no esta vacio
+                                        else {
+                                            //Hago un bucle donde recorro el array de letras acertadas
+                                            for (int l = 0; l < arrayListLetrasAcertadas.size(); l++) {
+                                                //si el textview de letras acertadas no coincide con el textview del array de todos los textviews
+                                                if (!arrayListTextView.get(t).equals(arrayListLetrasAcertadas.get(l))) {
+                                                    //Cambio el color a blanco
+                                                    arrayListTextView.get(t).setBackgroundColor(Color.parseColor("#00000000"));
+                                                } else {
+                                                    //cambio el color a azul clarito
+                                                    arrayListTextView.get(t).setBackgroundColor(Color.parseColor("#00FFFF"));
+                                                    //Salgo del bucle para que no me siga comparando porque si no me lo vuelve a poner blanco
+                                                    //ya que compara con todas las letras acertadas
+                                                    break;
+                                                }
                                             }
                                         }
                                     }
                                 }
+                                //Si subrayo las letras cuantas veces quiera me sale la ventana emergente(bocadillo)
+                                if (palabra.equals("LEGEAK")) {
+                                    //Asigno a la variables titulo y mensaje su valor para que se ejecuten
+                                    //dentro del dialog
+                                    titulo = R.string.ley;
+                                    mensaje = R.string.leyes;
+                                    dialogo();
+                                } else if (palabra.equals("ALKATEA")) {
+                                    //Asigno a la variables titulo y mensaje su valor para que se ejecuten
+                                    //dentro del dialog
+                                    titulo = R.string.alca;
+                                    mensaje = R.string.alcalde;
+                                    dialogo();
+                                } else if (palabra.equals("ZINEGOTZIA")) {
+                                    //Asigno a la variables titulo y mensaje su valor para que se ejecuten
+                                    //dentro del dialog
+                                    titulo = R.string.conce;
+                                    mensaje = R.string.concejal;
+                                    dialogo();
+                                } else if (palabra.equals("POLITIKA")) {
+                                    //Asigno a la variables titulo y mensaje su valor para que se ejecuten
+                                    //dentro del dialog
+                                    titulo = R.string.pol;
+                                    mensaje = R.string.politica;
+                                    dialogo();
+                                }
+                                //Limpio el arraylist de letras seleccionadas
+                                arrayListLetrasSeleccionadas.clear();
+                                //Limpio el arraylist de letras anteriores
+                                arrayListLetraAnterior.clear();
+                                //Vacio la palabra
+                                palabra = new String("");
+                                //Hago un bucle recorriendo el array de letras acertadas
+                                for (int g = 0; g < arrayListLetrasAcertadas.size(); g++) {
+                                    //Asigno a palabra cada una de las letras de los textViews
+                                    palabra = palabra + arrayListLetrasAcertadas.get(g).getText();
+                                }
+                                //Si los aciertos son 4, (Estan todos acertados)
+                                if (aciertos == 4 && acertado == false) {
+                                    //Saco un mensaje de eres un crack por pantalla en un toast
+                                    Toast.makeText(getApplicationContext(), "Has acabado, pulsa la flecha", Toast.LENGTH_LONG).show();
+                                    //Visibilizo el boton
+                                    btnSiguiente.setVisibility(View.VISIBLE);
+                                    //Pongo la variable acertado a true para que no me haga estas ordenes mas veces
+                                    acertado = true;
+                                }
+                                break;
                             }
-                            //Si subrayo las letras cuantas veces quiera me sale la ventana emergente(bocadillo)
-                            if (palabra.equals("LEYES")){
-                                //Asigno a la variables titulo y mensaje su valor para que se ejecuten
-                                //dentro del dialog
-                                titulo=R.string.ley;
-                                mensaje=R.string.leyes;
-                                dialogo();
-                            }else if(palabra.equals("ALCALDE")){
-                                //Asigno a la variables titulo y mensaje su valor para que se ejecuten
-                                //dentro del dialog
-                                titulo=R.string.alca;
-                                mensaje=R.string.alcalde;
-                                dialogo();
-                            }else if(palabra.equals("CONCEJAL")){
-                                //Asigno a la variables titulo y mensaje su valor para que se ejecuten
-                                //dentro del dialog
-                                titulo=R.string.conce;
-                                mensaje=R.string.concejal;
-                                dialogo();
-                            }else if(palabra.equals("POLITICA")){
-                                //Asigno a la variables titulo y mensaje su valor para que se ejecuten
-                                //dentro del dialog
-                                titulo=R.string.pol;
-                                mensaje=R.string.politica;
-                                dialogo();
-                            }
-                            //Limpio el arraylist de letras seleccionadas
-                            arrayListLetrasSeleccionadas.clear();
-                            //Limpio el arraylist de letras anteriores
-                            arrayListLetraAnterior.clear();
-                            //Vacio la palabra
-                            palabra=new String("");
-                            //Hago un bucle recorriendo el array de letras acertadas
-                            for (int g=0;g<arrayListLetrasAcertadas.size();g++){
-                                //Asigno a palabra cada una de las letras de los textViews
-                                palabra=palabra+arrayListLetrasAcertadas.get(g).getText();
-                            }
-                            //Si los aciertos son 4, (Estan todos acertados)
-                            if(aciertos==4 && acertado==false){
-                                //Saco un mensaje de eres un crack por pantalla en un toast
-                                Toast.makeText(getApplicationContext(), "Has acabado, pulsa la flecha", Toast.LENGTH_LONG).show();
-                                //Visibilizo el boton
-                                btnSiguiente.setVisibility(View.VISIBLE);
-                                //Pongo la variable acertado a true para que no me haga estas ordenes mas veces
-                                acertado=true;
-                            }
-                            break;
                         //El tercer caso es cuando sin levantar el dedo de la pantalla lo arrastro
                         case MotionEvent.ACTION_MOVE:
                             //Esta es la posición actual del dedo
@@ -659,34 +822,69 @@ public class Activity_Pantalla2 extends AppCompatActivity {
         }
 
         //Declaro las letras que son fijas en sus correspondientes TextViews
-        arrayListTextView.get(2).setText(String.valueOf("L").toUpperCase());
-        arrayListTextView.get(3).setText(String.valueOf("E").toUpperCase());
-        arrayListTextView.get(4).setText(String.valueOf("Y").toUpperCase());
-        arrayListTextView.get(5).setText(String.valueOf("E").toUpperCase());
-        arrayListTextView.get(6).setText(String.valueOf("S").toUpperCase());
-        arrayListTextView.get(11).setText(String.valueOf("A").toUpperCase());
-        arrayListTextView.get(20).setText(String.valueOf("P").toUpperCase());
-        arrayListTextView.get(22).setText(String.valueOf("L").toUpperCase());
-        arrayListTextView.get(31).setText(String.valueOf("O").toUpperCase());
-        arrayListTextView.get(33).setText(String.valueOf("C").toUpperCase());
-        arrayListTextView.get(42).setText(String.valueOf("L").toUpperCase());
-        arrayListTextView.get(44).setText(String.valueOf("A").toUpperCase());
-        arrayListTextView.get(53).setText(String.valueOf("I").toUpperCase());
-        arrayListTextView.get(55).setText(String.valueOf("L").toUpperCase());
-        arrayListTextView.get(64).setText(String.valueOf("T").toUpperCase());
-        arrayListTextView.get(66).setText(String.valueOf("D").toUpperCase());
-        arrayListTextView.get(75).setText(String.valueOf("I").toUpperCase());
-        arrayListTextView.get(77).setText(String.valueOf("E").toUpperCase());
-        arrayListTextView.get(86).setText(String.valueOf("C").toUpperCase());
-        arrayListTextView.get(88).setText(String.valueOf("C").toUpperCase());
-        arrayListTextView.get(89).setText(String.valueOf("O").toUpperCase());
-        arrayListTextView.get(90).setText(String.valueOf("N").toUpperCase());
-        arrayListTextView.get(91).setText(String.valueOf("C").toUpperCase());
-        arrayListTextView.get(92).setText(String.valueOf("E").toUpperCase());
-        arrayListTextView.get(93).setText(String.valueOf("J").toUpperCase());
-        arrayListTextView.get(94).setText(String.valueOf("A").toUpperCase());
-        arrayListTextView.get(95).setText(String.valueOf("L").toUpperCase());
-        arrayListTextView.get(97).setText(String.valueOf("A").toUpperCase());
+        if(btnAudio2.getText().equals("Audio")) {
+            arrayListTextView.get(2).setText(String.valueOf("L").toUpperCase());
+            arrayListTextView.get(3).setText(String.valueOf("E").toUpperCase());
+            arrayListTextView.get(4).setText(String.valueOf("Y").toUpperCase());
+            arrayListTextView.get(5).setText(String.valueOf("E").toUpperCase());
+            arrayListTextView.get(6).setText(String.valueOf("S").toUpperCase());
+            arrayListTextView.get(11).setText(String.valueOf("A").toUpperCase());
+            arrayListTextView.get(20).setText(String.valueOf("P").toUpperCase());
+            arrayListTextView.get(22).setText(String.valueOf("L").toUpperCase());
+            arrayListTextView.get(31).setText(String.valueOf("O").toUpperCase());
+            arrayListTextView.get(33).setText(String.valueOf("C").toUpperCase());
+            arrayListTextView.get(42).setText(String.valueOf("L").toUpperCase());
+            arrayListTextView.get(44).setText(String.valueOf("A").toUpperCase());
+            arrayListTextView.get(53).setText(String.valueOf("I").toUpperCase());
+            arrayListTextView.get(55).setText(String.valueOf("L").toUpperCase());
+            arrayListTextView.get(64).setText(String.valueOf("T").toUpperCase());
+            arrayListTextView.get(66).setText(String.valueOf("D").toUpperCase());
+            arrayListTextView.get(75).setText(String.valueOf("I").toUpperCase());
+            arrayListTextView.get(77).setText(String.valueOf("E").toUpperCase());
+            arrayListTextView.get(86).setText(String.valueOf("C").toUpperCase());
+            arrayListTextView.get(88).setText(String.valueOf("C").toUpperCase());
+            arrayListTextView.get(89).setText(String.valueOf("O").toUpperCase());
+            arrayListTextView.get(90).setText(String.valueOf("N").toUpperCase());
+            arrayListTextView.get(91).setText(String.valueOf("C").toUpperCase());
+            arrayListTextView.get(92).setText(String.valueOf("E").toUpperCase());
+            arrayListTextView.get(93).setText(String.valueOf("J").toUpperCase());
+            arrayListTextView.get(94).setText(String.valueOf("A").toUpperCase());
+            arrayListTextView.get(95).setText(String.valueOf("L").toUpperCase());
+            arrayListTextView.get(97).setText(String.valueOf("A").toUpperCase());
+        }else{
+            arrayListTextView.get(2).setText(String.valueOf("L").toUpperCase());
+            arrayListTextView.get(3).setText(String.valueOf("E").toUpperCase());
+            arrayListTextView.get(4).setText(String.valueOf("G").toUpperCase());
+            arrayListTextView.get(5).setText(String.valueOf("E").toUpperCase());
+            arrayListTextView.get(6).setText(String.valueOf("A").toUpperCase());
+            arrayListTextView.get(7).setText(String.valueOf("K").toUpperCase());
+
+            arrayListTextView.get(11).setText(String.valueOf("A").toUpperCase());
+            arrayListTextView.get(20).setText(String.valueOf("P").toUpperCase());
+            arrayListTextView.get(22).setText(String.valueOf("L").toUpperCase());
+            arrayListTextView.get(31).setText(String.valueOf("O").toUpperCase());
+            arrayListTextView.get(33).setText(String.valueOf("K").toUpperCase());
+            arrayListTextView.get(42).setText(String.valueOf("L").toUpperCase());
+            arrayListTextView.get(44).setText(String.valueOf("A").toUpperCase());
+            arrayListTextView.get(53).setText(String.valueOf("I").toUpperCase());
+            arrayListTextView.get(55).setText(String.valueOf("T").toUpperCase());
+            arrayListTextView.get(64).setText(String.valueOf("T").toUpperCase());
+            arrayListTextView.get(66).setText(String.valueOf("E").toUpperCase());
+            arrayListTextView.get(75).setText(String.valueOf("I").toUpperCase());
+            arrayListTextView.get(77).setText(String.valueOf("A").toUpperCase());
+            arrayListTextView.get(86).setText(String.valueOf("K").toUpperCase());
+
+            arrayListTextView.get(88).setText(String.valueOf("Z").toUpperCase());
+            arrayListTextView.get(89).setText(String.valueOf("I").toUpperCase());
+            arrayListTextView.get(90).setText(String.valueOf("N").toUpperCase());
+            arrayListTextView.get(91).setText(String.valueOf("E").toUpperCase());
+            arrayListTextView.get(92).setText(String.valueOf("G").toUpperCase());
+            arrayListTextView.get(93).setText(String.valueOf("O").toUpperCase());
+            arrayListTextView.get(94).setText(String.valueOf("T").toUpperCase());
+            arrayListTextView.get(95).setText(String.valueOf("Z").toUpperCase());
+            arrayListTextView.get(96).setText(String.valueOf("I").toUpperCase());
+            arrayListTextView.get(97).setText(String.valueOf("A").toUpperCase());
+        }
     }
 
     public void dialogo(){
