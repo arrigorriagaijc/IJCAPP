@@ -64,7 +64,11 @@ public class Activity_Pantalla2 extends AppCompatActivity {
         givMikel=(GifImageView) findViewById(R.id.givMikel);
         ConstraintLayout llPlaza=(ConstraintLayout) findViewById(R.id.llPlaza);
         btnAudio2=(Button) findViewById(R.id.btnAudio2);
-        mediaPlayer= MediaPlayer.create(Activity_Pantalla2.this, R.raw.udaletxeaerdaraz);
+        if(btnAudio2.getText().equals("Audioa")){
+            mediaPlayer= MediaPlayer.create(Activity_Pantalla2.this, R.raw.udaletxeaeuskaraz);
+        }else{
+            mediaPlayer= MediaPlayer.create(Activity_Pantalla2.this, R.raw.udaletxeaerdaraz);
+        }
         clMikel=(ConstraintLayout) findViewById(R.id.clMikel);
         llSopa=(LinearLayout) findViewById(R.id.llSopa);
         tvMensaje=(TextView) findViewById(R.id.tvMensaje);
@@ -97,8 +101,6 @@ public class Activity_Pantalla2 extends AppCompatActivity {
                 tvMensaje.setVisibility(View.VISIBLE);
                 llSopa.setVisibility(View.VISIBLE);
                 btnSiguiente.setVisibility(View.INVISIBLE);
-                Intent intent=new Intent(getApplicationContext(), Pista3.class);
-                startActivity(intent);
             }
         });
 
@@ -314,7 +316,6 @@ public class Activity_Pantalla2 extends AppCompatActivity {
             public void onClick(View view) {
                 //Finalizo este activity, esto lo tendremos que cambiar porque habra que volver con un onrequestactivitya activity_mapa
                 Intent intent=new Intent(getApplicationContext(), Pista3.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         });

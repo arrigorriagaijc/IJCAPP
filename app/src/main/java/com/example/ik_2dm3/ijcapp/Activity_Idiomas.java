@@ -1,8 +1,11 @@
 package com.example.ik_2dm3.ijcapp;
 
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -12,8 +15,11 @@ import com.google.gson.Gson;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.util.Locale;
 
 public class Activity_Idiomas extends AppCompatActivity {
+
+    private Locale myLocale;
 
     public Activity_Idiomas() throws FileNotFoundException {
     }
@@ -39,6 +45,7 @@ public class Activity_Idiomas extends AppCompatActivity {
         btnEuskera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                setLocale("fr");
                 Intent intent=new Intent(getApplicationContext(), Activity_Inicio.class);
                 startActivity(intent);
             }
@@ -81,7 +88,20 @@ public class Activity_Idiomas extends AppCompatActivity {
     public void onBackPressed (){
 
     }
-       // private Gson gson;
 
+    public void setLocale(String lang) {
+        myLocale = new Locale(lang);
+        Resources res = getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.setLocale(myLocale);
+        res.updateConfiguration(conf, dm);
     }
+
+    // private Gson gson;
+
+    public Locale getMyLocale() {
+        return myLocale;
+    }
+}
 

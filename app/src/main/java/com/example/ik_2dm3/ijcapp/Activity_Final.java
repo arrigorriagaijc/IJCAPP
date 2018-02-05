@@ -1,5 +1,7 @@
 package com.example.ik_2dm3.ijcapp;
 
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.media.MediaPlayer;
 import android.os.Handler;
 import android.support.constraint.ConstraintLayout;
@@ -39,6 +41,11 @@ public class Activity_Final extends AppCompatActivity {
         clFinal=(ConstraintLayout) findViewById(R.id.clFinal);
         mediaPlayer=MediaPlayer.create(getApplicationContext(), R.raw.arrigorriagahistoriacastellano);
 //
+        //Comprobamos si estamos en euskera para cambiar la foto
+        if(tvFinal.getText().equals("ZORIONAK! Gure herriko eraikin garrantzitsuenak ezagutzeko aukera izan duzue eta horrekin bat historia piska bat.\n\nEspero dut orain eraikin hauen garrantziaz gogoratzea hauen aldetik pasatzen zaretenean.\n\nOndo ibili lagunok!")){
+            ivInicial.setImageDrawable(getResources().getDrawable(R.drawable.zorionak));
+        }
+
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {

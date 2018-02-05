@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,6 +40,8 @@ public class Activity_Pantalla5 extends AppCompatActivity {
     private boolean pregunta3Acertada=false;
     private Toast toast;
 
+    //Creamos una etiqueta para busqueda de errores
+    private static final String TAG = "TAG";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,12 +70,10 @@ public class Activity_Pantalla5 extends AppCompatActivity {
                     pregunta1Acertada=false;
                     rbRespuesta11.setBackgroundColor(Color.RED);
                     btnPista1.setVisibility(View.VISIBLE);
-                }
-                if (rbRespuesta12.isChecked()) {
+                }else if (rbRespuesta12.isChecked()) {
                     pregunta1Acertada=true;
                     rbRespuesta12.setBackgroundColor(Color.GREEN);
-                }
-                if (rbRespuesta13.isChecked()) {
+                } else if (rbRespuesta13.isChecked()) {
                     pregunta1Acertada=false;
                     rbRespuesta13.setBackgroundColor(Color.RED);
                     btnPista1.setVisibility(View.VISIBLE);
@@ -82,13 +83,11 @@ public class Activity_Pantalla5 extends AppCompatActivity {
                     pregunta2Acertada=false;
                     rbRespuesta21.setBackgroundColor(Color.RED);
                     btnPista2.setVisibility(View.VISIBLE);
-                }
-                if (rbRespuesta22.isChecked()) {
+                } else if (rbRespuesta22.isChecked()) {
                     pregunta2Acertada=false;
                     rbRespuesta22.setBackgroundColor(Color.RED);
                     btnPista2.setVisibility(View.VISIBLE);
-                }
-                if (rbRespuesta23.isChecked()) {
+                } else if (rbRespuesta23.isChecked()) {
                     pregunta2Acertada=true;
                     rbRespuesta23.setBackgroundColor(Color.GREEN);
                 }
@@ -97,13 +96,12 @@ public class Activity_Pantalla5 extends AppCompatActivity {
                     pregunta3Acertada=false;
                     rbRespuesta31.setBackgroundColor(Color.RED);
                     btnPista3.setVisibility(View.VISIBLE);
-                }
-                if (rbRespuesta32.isChecked()) {
+                } else if (rbRespuesta32.isChecked()) {
                     pregunta3Acertada=true;
                     rbRespuesta32.setBackgroundColor(Color.GREEN);
-                }
-                if (rbRespuesta33.isChecked()) {
+                } else if (rbRespuesta33.isChecked()) {
                     pregunta3Acertada=false;
+                    Log.d(TAG,"Funciona");
                     rbRespuesta33.setBackgroundColor(Color.RED);
                     btnPista3.setVisibility(View.VISIBLE);
                 }
@@ -167,8 +165,15 @@ public class Activity_Pantalla5 extends AppCompatActivity {
             //Accedemos a las variables del layout y las modificamos
             TextView tvPalabra = (TextView) customDialog.findViewById(R.id.tvPalabra);
             tvPalabra.setText(titulo);
+            TextView tvPista = (TextView) customDialog.findViewById(R.id.tvPista);
             ImageView ivImagenPista=(ImageView) customDialog.findViewById(R.id.ivImagenPista);
-            ivImagenPista.setImageDrawable(imagen);
+            if (titulo.equals("Pista 1:")) {
+                tvPista.setText(R.string.pista1pregunta4);
+                ivImagenPista.setVisibility(View.GONE);
+            }else{
+                tvPista.setVisibility(View.GONE);
+                ivImagenPista.setImageDrawable(imagen);
+            }
             Button btnAceptar = (Button) customDialog.findViewById(R.id.btnAceptar);
             btnAceptar.setOnClickListener(new View.OnClickListener() {
                 @Override

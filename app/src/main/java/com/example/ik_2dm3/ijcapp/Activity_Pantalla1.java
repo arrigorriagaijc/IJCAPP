@@ -25,8 +25,11 @@ public class Activity_Pantalla1 extends AppCompatActivity {
         givMikel=(GifImageView) findViewById(R.id.givMikel);
         ConstraintLayout llPlaza=(ConstraintLayout) findViewById(R.id.llPlaza);
         btnAudio1=(Button) findViewById(R.id.btnAudio1);
-        mediaPlayer=MediaPlayer.create(Activity_Pantalla1.this, R.raw.arrigorriagahistoriacastellano);
-
+        if(btnAudio1.getText().equals("Audioa")){
+            mediaPlayer=MediaPlayer.create(Activity_Pantalla1.this, R.raw.arrigorriagahistoriaeuskera);
+        }else {
+            mediaPlayer = MediaPlayer.create(Activity_Pantalla1.this, R.raw.arrigorriagahistoriacastellano);
+        }
         //Hacemos que empiece parado poniendo la imagen
         givMikel.setBackgroundResource(R.drawable.mikel);
         //Le ponemos al boton del audio un listener para que cuando hagamos click se reproduzca el audio y se seshavbilite el boton

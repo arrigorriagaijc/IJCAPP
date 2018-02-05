@@ -24,7 +24,11 @@ public class Activity_Inicio extends AppCompatActivity {
         setContentView(R.layout.activity__inicio);
         imgMikel = (findViewById(R.id.mikelRicoView));
         txtPresentacion = (findViewById(R.id.txtPresentacion));
-        mp = MediaPlayer.create(Activity_Inicio.this, R.raw.mikelricocastellano);
+        if(txtPresentacion.getText().equals("Kaixo guztioi! Ongi etorri Arrigorriaka ezagutzeko APP-r!. Mikel Rico naiz, Athletic Club-eko jokalaria eta zuek bezala, Arrigorriakoa naiz. Goiz honetan zehar, zuekin egongo naiz txango hau egiten eta herria hobeto ezagutzen laguntzen, baina txangoa hasi baino lehen, herriari buruz lagungarria izan daitekeen zenbait gauza kontatuko diskizuet. Arrigorriaga, Bilboaldean dagoen herria da, Nerbioi ibaiaren joanean eta 12000 biztanle inguru ditu.\n\nGaurko egunan, herriak duen kultur ondoaren inguruan izango denez, dakizuenez Arrigorriagako kultur ondare gehiena erligiosoa dena (elizak, baselizak, tailuak…) baina eraikin zibilak ere badaude, bidai honetan zehar ezagutuko dituzuenak.\n\nBeraz, besterik gabe, egin KLIK nire azpian dagoen mapan; zuen txangoa hastera doa!")){
+            mp = MediaPlayer.create(Activity_Inicio.this, R.raw.mikelricoeuskera);
+        }else{
+            mp = MediaPlayer.create(Activity_Inicio.this, R.raw.mikelricocastellano);
+        }
         txtPresentacion.setMovementMethod(new ScrollingMovementMethod());
         mp.start();
         btnMap = (findViewById(R.id.btnMapa));

@@ -21,6 +21,17 @@
         android:textSize="30sp"
         android:textStyle="italic" />
 
+    <TextView
+        android:id="@+id/tvPista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.8"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/pista1pregunta4"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="italic" />
+
     <ImageView
         android:id="@+id/ivImagenPista"
         android:layout_width="match_parent"
@@ -33,5 +44,6 @@
         android:layout_height="80dp"
         android:layout_gravity="center_horizontal"
         android:text="@string/aceptar"
-        android:textColor="@android:color/black" />
+        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+        android:textSize="18sp" />
 </android.widget.LinearLayout>
