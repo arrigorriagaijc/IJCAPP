@@ -1,6 +1,7 @@
 <resources>
     //Nombre de app
     <string name="app_name">Conociendo Arrigorriaga</string>
+    <string name="title_activity__mapa">map</string>
     //Activity Idiomas
     <string name="euskera">EUSKERA</string>
     <string name="español">CASTELLANO</string>

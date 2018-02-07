@@ -679,8 +679,13 @@ public class Activity_Pantalla2 extends AppCompatActivity {
                                 }
                                 //Si los aciertos son 4, (Estan todos acertados)
                                 if (aciertos == 4 && acertado == false) {
-                                    //Saco un mensaje de eres un crack por pantalla en un toast
-                                    Toast.makeText(getApplicationContext(), "Has acabado, pulsa la flecha", Toast.LENGTH_LONG).show();
+                                    if(btnAudio2.getText().equals("Audioa")){
+                                        //Saco un mensaje de eres un crack por pantalla en un toast
+                                        Toast.makeText(getApplicationContext(), "Amaitu duzu, gezia sakatu", Toast.LENGTH_LONG).show();
+                                    }else{
+                                        //Saco un mensaje de eres un crack por pantalla en un toast
+                                        Toast.makeText(getApplicationContext(), "Has acabado, pulsa la flecha", Toast.LENGTH_LONG).show();
+                                    }
                                     //Visibilizo el boton
                                     btnSiguiente.setVisibility(View.VISIBLE);
                                     //Pongo la variable acertado a true para que no me haga estas ordenes mas veces

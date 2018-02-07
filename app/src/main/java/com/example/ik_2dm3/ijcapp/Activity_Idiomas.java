@@ -70,13 +70,7 @@ public class Activity_Idiomas extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
-                System.out.println(json);
-                Toast toast = Toast.makeText(this,json,Toast.LENGTH_LONG);
-                toast.show();
-
-        }
+    }
 
     @Override
     public void onPause() {
