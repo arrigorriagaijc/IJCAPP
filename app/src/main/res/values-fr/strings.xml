@@ -1,4 +1,6 @@
 <resources>
+    //Nombre de app
+    <string name="app_name">Conociendo Arrigorriaga</string>
     //Activity Idiomas
     <string name="euskera">EUSKERA</string>
     <string name="español">CASTELLANO</string>
@@ -21,6 +23,16 @@
     <string name="audiozona2">Arrigorriagako udaletxeari buruzko audio hau entzun ezazu.</string>
     <string name="mensaje_sopa">Hurrengo hizki sopan lau hitz hauek aurkitu behar dituzu: Alkatea, zinegotzia, legeak eta politika.</string>
     <string name="letra">A</string>
+    <string name="aceptar">Onartu</string>
+    <string name="cancelar">Ezeztatu</string>
+    <string name="alcalde">Arrigorriagako alkatea Asier Albizua Manrique da.</string>
+    <string name="leyes">Udaletxeak legeak betearazten ditu.</string>
+    <string name="concejal">Arrigorriagako udaletxean 11 zinegotzi daude.</string>
+    <string name="politica">"EAJ-PNV, EH-Bildu, PSE-PSOE eta Arrigorriaga Gara udaletxean dauden 4 alderdi politikoak dira."</string>
+    <string name="pol">Politika:</string>
+    <string name="ley">Legeak:</string>
+    <string name="conce">Zinegotzia:</string>
+    <string name="alca">Alkatea:</string>
     //Activity Pista 3
     <string name="pista3">Igandeetan, Arrigorriagako auzokideak nora joaten dire otoitz egitera?</string>
     <string name="casa_cultura">Kultur etxea</string>
@@ -43,50 +55,33 @@
     <string name="pregunta4_Santa_Maria">Argazki honetan Santa Maria Magdalena parrokiaren zati bat agertze da:</string>
     <string name="respuesta4_buena">EGIA</string>
     <string name="respuesta4_mala">GEZURRA</string>
-
-    //Activity Pista 4
-
-    <string name="app_name">IJCAPP</string>
-    <string name="title_activity__mapa">Map</string>
-
-    <string name="aceptar">Onartu</string>
-    <string name="cancelar">Ezeztatu</string>
-    <string name="alcalde">Arrigorriagako alkatea Asier Albizua Manrique da.</string>
-    <string name="leyes">Udaletxeak legeak betearazten ditu.</string>
-    <string name="concejal">Arrigorriagako udaletxean 11 zinegotzi daude.</string>
-    <string name="politica">"EAJ-PNV, EH-Bildu, PSE-PSOE eta Arrigorriaga Gara udaletxean dauden 4 alderdi politikoak dira."</string>
-    <string name="pol">Politika:</string>
-    <string name="ley">Legeak:</string>
-    <string name="conce">Zinegotzia:</string>
-    <string name="alca">Alkatea:</string>
-    <string name="enunciado_pista5">Lotu itzazu puzzlearen piezak zuen hurrengo gunearen argazkia osatzeko:</string>
+    <string name="explicacion">Badakizuenez, Arrigorriagan erligiosoak diren beste eraikin batzuk daude, adibidez baselizak.</string>
     <string name="pregunta5_Santa_MAria">Ermita txiki bat da eta Abrisketa auzoan kokatuta dago. Zein da?</string>
-
-
-
     <string name="respuesta51_mala">Bilboko San Luis.</string>
     <string name="respuesta5_buena">Abrisketako San Pedro.</string>
     <string name="respuesta52_mala">Kurutzetako San Telmo.</string>
     <string name="respuesta53_mala">Donostiako Santa Marta.</string>
+    <string name="respuesta5corregida">Abrisketa auzoan kokatzen da eta bertan, ekainaren 29-aren hurrengo igandean, San Pedroren omenezko erromeria ospatzen dute.</string>
+    //Activity Pista 4
+    <string name="pista4">Bertan antzerkiak eta filmak ikuz ditzakegu.</string>
+    <string name="salalonbo">Lonbo Aretoa</string>
+    <string name="ayuntamiento">Udaletxea</string>
+    //Activity Pantalla 4
+    //Activity Pista 5
+    <string name="enunciado_pista5">Lotu itzazu puzzlearen piezak zuen hurrengo gunearen argazkia osatzeko:</string>
     <string name="rbRespuesta1">Udaletxea</string>
     <string name="rbRespuesta2">Etxetzarra</string>
     <string name="rbRespuesta3">Baserria</string>
-    <string name="respuesta5corregida">Abrisketa auzoan kokatzen da eta bertan, ekainaren 29-aren hurrengo igandean, San Pedroren omenezko erromeria ospatzen dute.</string>
-    <string name="pista4">Bertan antzerkiak eta filmak ikuz ditzakegu.</string>
-    <string name="explicacion">Badakizuenez, Arrigorriagan erligiosoak diren beste eraikin batzuk daude, adibidez baselizak.</string>
-
-    <string name="salalonbo">Lonbo Aretoa</string>
-    <string name="ayuntamiento">Udaletxea</string>
-    <string name="tvfinal">ZORIONAK! Gure herriko eraikin garrantzitsuenak ezagutzeko aukera izan duzue eta horrekin bat historia piska bat.\n\nEspero dut orain eraikin hauen garrantziaz gogoratzea hauen aldetik pasatzen zaretenean.\n\nOndo ibili lagunok!</string>
+    //Activity Pantalla 5
     <string name="pregunata1pag4">1.Zeren ondoan aurki dezakegu etxetzarra?</string>
-    <string name="pregunata2pag4">2. Zer motatako eraikina da etxetzarra?</string>
-    <string name="pregunata3pag4">3. Zeren errepresentazio dira baserriak?</string>
     <string name="respuesta11pag4">Herriko zinemaren ondoan.</string>
     <string name="respuesta12pag4">Kultur-etxearen ondoan.</string>
     <string name="respuesta13pag4">Herriko udaletxearen ondoan.</string>
+    <string name="pregunata2pag4">2. Zer motatako eraikina da etxetzarra?</string>
     <string name="respuesta21pag4">Errenazimenduko gaztelua.</string>
     <string name="respuesta22pag4">XX. mendeko eraikin modernoa.</string>
     <string name="respuesta23pag4">Antzinako euskal baserria.</string>
+    <string name="pregunata3pag4">3. Zeren errepresentazio dira baserriak?</string>
     <string name="respuesta31pag4">Erromatarren garaiko eraikina.</string>
     <string name="respuesta32pag4">Euskal kulturaren adierazpena.?</string>
     <string name="respuesta33pag4">Tradizioz harrizkoak ziren antzokiak.</string>
@@ -94,7 +89,9 @@
         Etxetzarra, ireganean euskal baserria izandako eraikina da, bertan, Arrigorriako biztanle ziren baserritarrak zirenak.
         Baserriak euskal kulturaren sinbolo dira, eta gaur egun hauetako asko euskaldunentzat ondare historiko bihurtzeko berezidunak dira, etxetzarra moduan. Eraikin hau gaur egun, kultur-etxearen alboan aurki dezakegu.
     </string>
+    //Activity Pista 6
     <string name="pista6">Osatu hurrengo puzzlea nora joan behar zareten jakiteko.</string>
-
-
+    //Activity Pantalla 6
+    //Activity Final
+    <string name="tvfinal">ZORIONAK! Gure herriko eraikin garrantzitsuenak ezagutzeko aukera izan duzue eta horrekin bat historia piska bat.\n\nEspero dut orain eraikin hauen garrantziaz gogoratzea hauen aldetik pasatzen zaretenean.\n\nOndo ibili lagunok!</string>
 </resources>
