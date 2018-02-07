@@ -54,6 +54,7 @@ public class Activity_Pantalla2 extends AppCompatActivity {
     private ConstraintLayout clMikel;
     private TextView tvMensaje;
     private LinearLayout llSopa;
+    private TextView tvZona2;
 
 
     @Override
@@ -108,6 +109,9 @@ public class Activity_Pantalla2 extends AppCompatActivity {
         char c;
         //Preparo una sentencia alatoria
         Random r = new Random();
+
+        //Añado el textviewzona2
+        tvZona2=(TextView) findViewById(R.id.tvZona1);
 
         //Añado todos los textViews a un arraylist - Código Espartano
         TextView tv1= findViewById(R.id.tv1);
@@ -363,7 +367,7 @@ public class Activity_Pantalla2 extends AppCompatActivity {
                             }
 
                             //Compruebo en castellano primero
-                            if(btnAudio2.getText().equals("Audio")) {
+                            if(tvZona2.getText().equals("Escucha este audio sobre el Ayuntamiento de Arrigorriaga.")) {
                                 //Si la palabra que tengo seleccionada coincide con alcalde y no ha sido acertada
                                 if (palabra.equals("ALCALDE") && alcalde == false) {
                                     //Hago un bucle donde busco los textViews donde están las letras de esta palabra

@@ -11,7 +11,7 @@
     tools:context="com.example.ik_2dm3.ijcapp.Activity_Pantalla1">
 
     <TextView
-        android:id="@+id/tvZona2"
+        android:id="@+id/tvZona1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -41,7 +41,7 @@
         app:layout_constraintBottom_toTopOf="@+id/givMikel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvZona2" />
+        app:layout_constraintTop_toBottomOf="@+id/tvZona1" />
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/givMikel"
