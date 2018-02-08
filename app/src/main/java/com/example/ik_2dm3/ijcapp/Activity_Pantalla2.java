@@ -54,7 +54,7 @@ public class Activity_Pantalla2 extends AppCompatActivity {
     private ConstraintLayout clMikel;
     private TextView tvMensaje;
     private LinearLayout llSopa;
-    private TextView tvZona2;
+    private TextView tvZona1;
 
 
     @Override
@@ -111,7 +111,7 @@ public class Activity_Pantalla2 extends AppCompatActivity {
         Random r = new Random();
 
         //Añado el textviewzona2
-        tvZona2=(TextView) findViewById(R.id.tvZona1);
+        tvZona1=(TextView) findViewById(R.id.tvZona1);
 
         //Añado todos los textViews a un arraylist - Código Espartano
         TextView tv1= findViewById(R.id.tv1);
@@ -367,7 +367,7 @@ public class Activity_Pantalla2 extends AppCompatActivity {
                             }
 
                             //Compruebo en castellano primero
-                            if(tvZona2.getText().equals("Escucha este audio sobre el Ayuntamiento de Arrigorriaga.")) {
+                            if(tvZona1.getText().equals("Escucha este audio sobre el Ayuntamiento de Arrigorriaga.")) {
                                 //Si la palabra que tengo seleccionada coincide con alcalde y no ha sido acertada
                                 if (palabra.equals("ALCALDE") && alcalde == false) {
                                     //Hago un bucle donde busco los textViews donde están las letras de esta palabra
@@ -518,13 +518,14 @@ public class Activity_Pantalla2 extends AppCompatActivity {
                                 }
                                 //Si los aciertos son 4, (Estan todos acertados)
                                 if (aciertos == 4 && acertado == false) {
-                                    if(btnAudio2.getText().equals("Audioa")){
-                                        //Saco un mensaje de eres un crack por pantalla en un toast
-                                        Toast.makeText(getApplicationContext(), "Amaitu duzu, gezia sakatu", Toast.LENGTH_LONG).show();
-                                    }else{
+                                    if(tvZona1.getText().equals("Escucha este audio sobre el Ayuntamiento de Arrigorriaga.")){
                                         //Saco un mensaje de eres un crack por pantalla en un toast
                                         Toast.makeText(getApplicationContext(), "Has acabado, pulsa la flecha", Toast.LENGTH_LONG).show();
-                                    }
+
+                                    }else{
+                                        //Saco un mensaje de eres un crack por pantalla en un toast
+                                        Toast.makeText(getApplicationContext(), "Amaitu duzu, gezia sakatu", Toast.LENGTH_LONG).show();
+                                        }
                                     //Visibilizo el boton
                                     btnSiguiente.setVisibility(View.VISIBLE);
                                     //Pongo la variable acertado a true para que no me haga estas ordenes mas veces
@@ -683,12 +684,12 @@ public class Activity_Pantalla2 extends AppCompatActivity {
                                 }
                                 //Si los aciertos son 4, (Estan todos acertados)
                                 if (aciertos == 4 && acertado == false) {
-                                    if(btnAudio2.getText().equals("Audioa")){
-                                        //Saco un mensaje de eres un crack por pantalla en un toast
-                                        Toast.makeText(getApplicationContext(), "Amaitu duzu, gezia sakatu", Toast.LENGTH_LONG).show();
-                                    }else{
+                                    if(tvZona1.getText().equals("Escucha este audio sobre el Ayuntamiento de Arrigorriaga.")){
                                         //Saco un mensaje de eres un crack por pantalla en un toast
                                         Toast.makeText(getApplicationContext(), "Has acabado, pulsa la flecha", Toast.LENGTH_LONG).show();
+                                        }else{
+                                        //Saco un mensaje de eres un crack por pantalla en un toast
+                                        Toast.makeText(getApplicationContext(), "Amaitu duzu, gezia sakatu", Toast.LENGTH_LONG).show();
                                     }
                                     //Visibilizo el boton
                                     btnSiguiente.setVisibility(View.VISIBLE);
@@ -836,7 +837,7 @@ public class Activity_Pantalla2 extends AppCompatActivity {
         }
 
         //Declaro las letras que son fijas en sus correspondientes TextViews
-        if(btnAudio2.getText().equals("Audio")) {
+        if(tvZona1.getText().equals("Escucha este audio sobre el Ayuntamiento de Arrigorriaga.")) {
             arrayListTextView.get(2).setText(String.valueOf("L").toUpperCase());
             arrayListTextView.get(3).setText(String.valueOf("E").toUpperCase());
             arrayListTextView.get(4).setText(String.valueOf("Y").toUpperCase());
