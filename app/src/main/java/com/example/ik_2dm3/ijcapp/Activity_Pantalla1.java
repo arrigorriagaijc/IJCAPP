@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import pl.droidsonroids.gif.GifImageView;
@@ -15,7 +16,7 @@ import pl.droidsonroids.gif.GifImageView;
 public class Activity_Pantalla1 extends AppCompatActivity {
 
     private MediaPlayer mediaPlayer;
-    private Button btnAudio1;
+    private ImageButton btnAudio1;
     private GifImageView givMikel;
     private TextView tvZona1;
 
@@ -29,7 +30,7 @@ public class Activity_Pantalla1 extends AppCompatActivity {
 
         givMikel=(GifImageView) findViewById(R.id.givMikel);
         ConstraintLayout llPlaza=(ConstraintLayout) findViewById(R.id.llPlaza);
-        btnAudio1=(Button) findViewById(R.id.btnAudio1);
+        btnAudio1=(ImageButton) findViewById(R.id.btnAudio1);
         if(tvZona1.getText().equals("Arrigorriagako plazari buruzko audio hau entzun ezazu.")){
             mediaPlayer=MediaPlayer.create(Activity_Pantalla1.this, R.raw.arrigorriagahistoriaeuskera);
         }else {

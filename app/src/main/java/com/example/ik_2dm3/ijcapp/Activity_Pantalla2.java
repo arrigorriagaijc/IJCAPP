@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -49,7 +50,7 @@ public class Activity_Pantalla2 extends AppCompatActivity {
     private  Button btnSiguiente;
     private LinearLayout llGeneral;
     private MediaPlayer mediaPlayer;
-    private Button btnAudio2;
+    private ImageButton btnAudio2;
     private GifImageView givMikel;
     private ConstraintLayout clMikel;
     private TextView tvMensaje;
@@ -62,13 +63,17 @@ public class Activity_Pantalla2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla2);
 
+        //Añado el textviewzona2
+        tvZona1=(TextView) findViewById(R.id.tvZona1);
+
         givMikel=(GifImageView) findViewById(R.id.givMikel);
         ConstraintLayout llPlaza=(ConstraintLayout) findViewById(R.id.llPlaza);
-        btnAudio2=(Button) findViewById(R.id.btnAudio2);
-        if(btnAudio2.getText().equals("Audioa")){
-            mediaPlayer= MediaPlayer.create(Activity_Pantalla2.this, R.raw.udaletxeaeuskaraz);
-        }else{
+        btnAudio2=(ImageButton) findViewById(R.id.btnAudio2);
+
+        if(tvZona1.getText().equals("Escucha este audio sobre el Ayuntamiento de Arrigorriaga.")){
             mediaPlayer= MediaPlayer.create(Activity_Pantalla2.this, R.raw.udaletxeaerdaraz);
+        }else{
+            mediaPlayer= MediaPlayer.create(Activity_Pantalla2.this, R.raw.udaletxeaeuskaraz);
         }
         clMikel=(ConstraintLayout) findViewById(R.id.clMikel);
         llSopa=(LinearLayout) findViewById(R.id.llSopa);
@@ -110,8 +115,7 @@ public class Activity_Pantalla2 extends AppCompatActivity {
         //Preparo una sentencia alatoria
         Random r = new Random();
 
-        //Añado el textviewzona2
-        tvZona1=(TextView) findViewById(R.id.tvZona1);
+
 
         //Añado todos los textViews a un arraylist - Código Espartano
         TextView tv1= findViewById(R.id.tv1);

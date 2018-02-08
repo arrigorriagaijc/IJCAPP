@@ -11,9 +11,12 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import pl.droidsonroids.gif.GifImageView;
+
 public class Activity_Inicio extends AppCompatActivity {
-    private ImageView imgMikel;
+    private GifImageView GifMikel;
     private TextView txtPresentacion;
+    private TextView txtIdioma;
     private ImageButton btnMap;
     private MediaPlayer mp ;
     private static final String TAG = "TAG";
@@ -22,15 +25,37 @@ public class Activity_Inicio extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__inicio);
-        imgMikel = (findViewById(R.id.mikelRicoView));
-        txtPresentacion = (findViewById(R.id.txtPresentacion));
-        if(txtPresentacion.getText().equals("Kaixo guztioi! Ongi etorri Arrigorriaka ezagutzeko APP-r!. Mikel Rico naiz, Athletic Club-eko jokalaria eta zuek bezala, Arrigorriakoa naiz. Goiz honetan zehar, zuekin egongo naiz txango hau egiten eta herria hobeto ezagutzen laguntzen, baina txangoa hasi baino lehen, herriari buruz lagungarria izan daitekeen zenbait gauza kontatuko diskizuet. Arrigorriaga, Bilboaldean dagoen herria da, Nerbioi ibaiaren joanean eta 12000 biztanle inguru ditu.\n\nGaurko egunan, herriak duen kultur ondoaren inguruan izango denez, dakizuenez Arrigorriagako kultur ondare gehiena erligiosoa dena (elizak, baselizak, tailuak…) baina eraikin zibilak ere badaude, bidai honetan zehar ezagutuko dituzuenak.\n\nBeraz, besterik gabe, egin KLIK nire azpian dagoen mapan; zuen txangoa hastera doa!")){
+
+        //El gif de mikel rico lo cargo
+        GifMikel = (findViewById(R.id.mikelRicoView));
+
+        //Creo un txt para pasarle el idioma ya que no se le puede pasar con txtPresentacion
+        txtIdioma=(TextView) (findViewById(R.id.txtIdioma));
+
+        //Cargo el txtPresentacion y le asigno la propiedad de que sea desplazable
+        txtPresentacion = (TextView) (findViewById(R.id.txtPresentacion));
+        txtPresentacion.setMovementMethod(new ScrollingMovementMethod());
+
+        //Miro el idioma y en base a el pongo un audio u otro
+        if(txtIdioma.getText().toString().equals("Onartu")){
             mp = MediaPlayer.create(Activity_Inicio.this, R.raw.mikelricoeuskera);
         }else{
             mp = MediaPlayer.create(Activity_Inicio.this, R.raw.mikelricocastellano);
         }
-        txtPresentacion.setMovementMethod(new ScrollingMovementMethod());
+
+        //Inicio el mediaplayer
         mp.start();
+
+        //Le ponemos al boton del audio un listener para que cuando complete el audio se vuelva a habilitar el boton
+        mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                //Volvemos a desactivar el gif asignando la imagen
+                GifMikel.setBackgroundResource(R.drawable.mikel);
+            }
+        });
+
+        //Asigno el boton de mapa y hago que al pulsar pase al siguiente activity
         btnMap = (findViewById(R.id.btnMapa));
         btnMap.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +66,7 @@ public class Activity_Inicio extends AppCompatActivity {
 
     }
 
+    //Aqui paro el mediaplayer y paso a otro intent
     protected void siguienteActivity(){
                 mp.stop();
                 Intent intent=new Intent(getApplicationContext(), Pista1.class);
@@ -51,7 +77,6 @@ public class Activity_Inicio extends AppCompatActivity {
     @Override
     public void onPause() {
         super.onPause();
-        Log.d(TAG,"REventado");
         finish();
     }
 
