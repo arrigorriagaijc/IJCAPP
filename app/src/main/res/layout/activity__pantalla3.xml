@@ -46,8 +46,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivEnunciado"
-            app:layout_constraintVertical_bias="0.646" />
+            app:layout_constraintTop_toBottomOf="@+id/ivEnunciado" />
 
         <TextView
             android:id="@+id/tvEnunciado"
@@ -60,8 +59,9 @@
             android:gravity="center_vertical|center_horizontal"
             android:paddingLeft="6dp"
             android:text="@string/enunciado_Santa_Maria"
-            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textColor="@color/colorAccent"
             android:textSize="22sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/ivEnunciado"
             app:layout_constraintEnd_toEndOf="@+id/ivEnunciado"
             app:layout_constraintStart_toStartOf="@+id/ivEnunciado"
@@ -123,6 +123,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="80dp"
             android:gravity="center_horizontal"
             android:orientation="horizontal"
             android:paddingBottom="10dp"
@@ -202,6 +203,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="25dp"
+            android:paddingTop="40dp"
             android:visibility="gone">
 
             <ImageView
@@ -243,6 +245,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginTop="10dp"
             android:accessibilityLiveRegion="none"
             android:background="@drawable/btnsiguiente"
             android:visibility="gone" />
@@ -303,6 +306,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="80dp"
             android:gravity="center_horizontal"
             android:orientation="horizontal"
             android:paddingBottom="10dp"
@@ -382,6 +386,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="25dp"
+            android:paddingTop="40dp"
             android:visibility="gone">
 
             <ImageView
@@ -424,6 +429,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginTop="10dp"
             android:background="@drawable/btnsiguiente"
             android:visibility="gone" />
 
@@ -442,6 +448,7 @@
             android:id="@+id/clPregunta3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:paddingBottom="25dp">
 
             <ImageView
@@ -482,6 +489,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="80dp"
             android:gravity="center_horizontal"
             android:orientation="horizontal"
             android:paddingBottom="10dp"
@@ -561,6 +569,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="25dp"
+            android:paddingTop="40dp"
             android:visibility="gone">
 
             <ImageView
@@ -594,6 +603,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginTop="10dp"
             android:background="@drawable/btnsiguiente"
             android:visibility="gone" />
 
@@ -670,6 +680,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
             android:gravity="center_horizontal"
             android:orientation="horizontal"
             android:paddingBottom="10dp"
@@ -750,7 +761,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center_vertical|center_horizontal"
-            android:layout_marginTop="220dp"
+            android:layout_marginTop="300dp"
             android:background="@drawable/btnsiguiente"
             android:visibility="gone" />
 
@@ -824,6 +835,7 @@
             android:id="@+id/clPregunta5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:paddingBottom="25dp"
             android:visibility="visible">
 
@@ -867,6 +879,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
             android:gravity="center_horizontal"
             android:orientation="horizontal"
             android:paddingBottom="10dp"
@@ -1025,20 +1038,20 @@
             android:id="@+id/clRespuestaCorregida5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:paddingBottom="25dp"
             android:visibility="gone">
 
             <ImageView
                 android:id="@+id/ivRespuestaCorregida5"
                 android:layout_width="0dp"
-                android:layout_height="300dp"
-                android:layout_marginBottom="8dp"
+                android:layout_height="320dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:alpha="0.6"
+                android:scaleType="fitXY"
                 android:scaleY="2"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -1071,6 +1084,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginTop="50dp"
             android:background="@drawable/btnsiguiente"
             android:visibility="gone" />
 
