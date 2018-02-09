@@ -56,6 +56,7 @@ public class Activity_Pantalla2 extends AppCompatActivity {
     private TextView tvMensaje;
     private LinearLayout llSopa;
     private TextView tvZona1;
+    private Button btnSaltarAudio;
 
 
     @Override
@@ -99,10 +100,26 @@ public class Activity_Pantalla2 extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
                 btnAudio2.setEnabled(true);
-                mediaPlayer=MediaPlayer.create(Activity_Pantalla2.this, R.raw.udaletxeaerdaraz);
                 //Volvemos a desactivar el gif asignando la imagen
                 givMikel.setBackgroundResource(R.drawable.mikel);
                 //Cambiamos la visibilidad de este constraintlayout a gone
+                clMikel.setVisibility(View.GONE);
+                tvMensaje.setVisibility(View.VISIBLE);
+                llSopa.setVisibility(View.VISIBLE);
+                btnSiguiente.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        //Añado el boton de saltar audio
+        btnSaltarAudio=(Button) findViewById(R.id.btnSaltarAudio);
+
+        //Añado el listener al boton de saltar el audio para que lo pare y aparezca la sopa de letras
+        btnSaltarAudio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(mediaPlayer.isPlaying()){
+                    mediaPlayer.stop();
+                }
                 clMikel.setVisibility(View.GONE);
                 tvMensaje.setVisibility(View.VISIBLE);
                 llSopa.setVisibility(View.VISIBLE);

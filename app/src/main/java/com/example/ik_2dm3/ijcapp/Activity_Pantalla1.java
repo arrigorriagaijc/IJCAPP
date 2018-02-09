@@ -19,6 +19,7 @@ public class Activity_Pantalla1 extends AppCompatActivity {
     private ImageButton btnAudio1;
     private GifImageView givMikel;
     private TextView tvZona1;
+    private Button btnSaltarAudio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +58,21 @@ public class Activity_Pantalla1 extends AppCompatActivity {
                 mediaPlayer=MediaPlayer.create(Activity_Pantalla1.this, R.raw.arrigorriagahistoriacastellano);
                 //Volvemos a desactivar el gif asignando la imagen
                 givMikel.setBackgroundResource(R.drawable.mikel);
+                Intent intent=new Intent(getApplicationContext(), Pista2.class);
+                startActivity(intent);
+            }
+        });
+
+        //Añado el boton de saltar audio
+        btnSaltarAudio=(Button) findViewById(R.id.btnSaltarAudio);
+
+        //Añado el listener al boton de saltar el audio para que lo pare y aparezca la sopa de letras
+        btnSaltarAudio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(mediaPlayer.isPlaying()){
+                    mediaPlayer.stop();
+                }
                 Intent intent=new Intent(getApplicationContext(), Pista2.class);
                 startActivity(intent);
             }
