@@ -50,8 +50,9 @@
             android:paddingEnd="24dp"
             android:paddingStart="18dp"
             android:text="@string/pista6"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textColor="@color/colorAccent"
             android:textSize="22sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/ivEnunciadoPista6"
             app:layout_constraintEnd_toEndOf="@+id/ivEnunciadoPista6"
             app:layout_constraintStart_toStartOf="@+id/ivEnunciadoPista6"
@@ -69,8 +70,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvEnunciadoPista6"
-            app:layout_constraintVertical_bias="0.651" />
+            app:layout_constraintTop_toBottomOf="@+id/ivEnunciadoPista6" />
 
     </android.support.constraint.ConstraintLayout>
 
@@ -301,11 +301,15 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginBottom="32dp"
-            android:layout_marginEnd="36dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/btnsiguiente"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clSolucion6" />
 
     </android.support.constraint.ConstraintLayout>
 

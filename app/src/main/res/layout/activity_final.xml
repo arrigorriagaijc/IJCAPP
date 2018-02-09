@@ -62,6 +62,7 @@
             android:text="@string/tvfinal"
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:textSize="@dimen/place_autocomplete_button_padding"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/ivFinal"
             app:layout_constraintEnd_toEndOf="@+id/ivFinal"
             app:layout_constraintHorizontal_bias="0.529"

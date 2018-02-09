@@ -35,6 +35,7 @@
         android:textAlignment="center"
         android:textColor="@color/colorAccent"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="@+id/imageView"
@@ -63,8 +64,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/pista2opcion1"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused"
-            android:textSize="20sp" />
+            android:textColor="@color/colorAccent"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/radioButton2"
@@ -72,8 +74,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/pista2opcion2"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused"
-            android:textSize="20sp" />
+            android:textColor="@color/colorAccent"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/radioButton3"
@@ -81,8 +84,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/pista2opcion3"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused"
-            android:textSize="20sp" />
+            android:textColor="@color/colorAccent"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
     </RadioGroup>
 

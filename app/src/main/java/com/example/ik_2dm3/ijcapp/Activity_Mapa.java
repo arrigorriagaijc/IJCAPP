@@ -47,7 +47,7 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
     private GoogleMap mMap;
     private final static int MY_PERMISSION_FINE_LOCATION = 101;
     private final static int REQUEST_CHECK_SETTINGS=102;
-    private static final String TAG = Activity_Mapa.class.getSimpleName();
+    private static final String TAG = "TAG";
     private static final String TAG1 = "ERROR";
     private FusedLocationProviderClient mFusedLocationClient;
     private double latitude;
@@ -60,6 +60,7 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
     private boolean etxetzarrakencontrado=false;
     private boolean kulturetxeaencontrado=false;
     private Handler handler=new Handler();
+    private Listeners_distancias_marcadores ldm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -145,12 +146,135 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
         //Siempre que llegamos al mapa llegamos desde una pista
         final Intent intent = getIntent();
 
+        //Si vengo de la pista 1...
+        if(intent.getStringExtra("Pista1")!=null && intent.getStringExtra("Pista1").equals("Pista1")) {
+            ldm=new Listeners_distancias_marcadores(mMap,this,43.206097,-2.888043);
+            ldm.start();
+        }
+        else if(intent.getStringExtra("Pista2")!=null && intent.getStringExtra("Pista2").equals("Pista2")) {
+            ldm=new Listeners_distancias_marcadores(mMap,this,43.205918,-2.887718);
+            ldm.start();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    if(ldm.isActivar()==true){
+                        ldm.setSalir(true);
+                        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+                            @Override
+                            public boolean onMarkerClick(Marker marker) {
+                                if (marker.getTitle().equals("Arrigorriagako Udaletxea")) {
+                                    marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ayunatmientoarrigorriagaredondo));
+                                    Intent intent = new Intent(getApplicationContext(), Activity_Pantalla2.class);
+                                    startActivity(intent);
+                                }
+                                return false;
+                            }
+                        });
+                    }
+                }
+            },500);
+
+        }
+        else if(intent.getStringExtra("Pista3")!=null && intent.getStringExtra("Pista3").equals("Pista3")) {
+            ldm=new Listeners_distancias_marcadores(mMap,this,43.2056,-2.88866);
+            ldm.start();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    if(ldm.isActivar()==true){
+                        ldm.setSalir(true);
+                        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+                            @Override
+                            public boolean onMarkerClick(Marker marker) {
+                                if (marker.getTitle().equals("Santa Maria Magdalena eliza")) {
+                                    marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.santamariamagdalenaredondo));
+                                    Intent intent = new Intent(getApplicationContext(), Activity_Pantalla3.class);
+                                    startActivity(intent);
+                                }
+                                return false;
+                            }
+                        });
+                    }
+                }
+            },500);
+
+        }
+        else if(intent.getStringExtra("Pista4")!=null && intent.getStringExtra("Pista4").equals("Pista4")) {
+            ldm=new Listeners_distancias_marcadores(mMap,this,43.211879,-2.888431);
+            ldm.start();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    if(ldm.isActivar()==true){
+                        ldm.setSalir(true);
+                        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+                            @Override
+                            public boolean onMarkerClick(Marker marker) {
+                                if (marker.getTitle().equals("Lonbo Aretoa")) {
+                                    marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.lonboaretoaredondo));
+                                    Intent intent = new Intent(getApplicationContext(), Activity_Pantalla4.class);
+                                    startActivity(intent);
+                                }
+                                return false;
+                            }
+                        });
+                    }
+                }
+            },500);
+        }
+        else if(intent.getStringExtra("Pista5")!=null && intent.getStringExtra("Pista5").equals("Pista5")) {
+            ldm=new Listeners_distancias_marcadores(mMap,this,43.209679,-2.888369);
+            ldm.start();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    if(ldm.isActivar()==true){
+                        ldm.setSalir(true);
+                        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+                            @Override
+                            public boolean onMarkerClick(Marker marker) {
+                                if (marker.getTitle().equals("Arrigorriagako Etxetzarrak")) {
+                                    marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.arrigorriagakoetxetzarrrakredondo));
+                                    Intent intent = new Intent(getApplicationContext(), Activity_Pantalla5.class);
+                                    startActivity(intent);
+                                }
+                                return false;
+                            }
+                        });
+                    }
+                }
+            },500);
+        }
+        else if(intent.getStringExtra("Pista6")!=null && intent.getStringExtra("Pista6").equals("Pista6")) {
+            ldm=new Listeners_distancias_marcadores(mMap,this,43.209462,-2.888372);
+            ldm.start();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    if(ldm.isActivar()==true){
+                        ldm.setSalir(true);
+                        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+                            @Override
+                            public boolean onMarkerClick(Marker marker) {
+                                if (marker.getTitle().equals("Baruako Jauregia (Kultur Etxea)")) {
+                                    marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.baruakojauregiaredondo));
+                                    Intent intent = new Intent(getApplicationContext(), Activity_Pantalla6.class);
+                                    startActivity(intent);
+                                }
+                                return false;
+                            }
+                        });
+                    }
+                }
+            },500);
+        }
         //Solo añadiremos los listener en los marcadores que correspondan, por ejemplo,
         //si venimos de pista3 activariamos el marcador de activity_pantalla3, que
         //seria el marcador 3.
         //El resto no tendrán el listener ya que este codigo se cativa cada vez que se llama a
         //Activity_Mapa
 
+        /*
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
@@ -160,7 +284,6 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
                     startActivity(intent);
                 }
                 else if(intent.getStringExtra("Pista2")!=null && intent.getStringExtra("Pista2").equals("Pista2") && marker.getTitle().equals("Arrigorriagako Udaletxea")) {
-                    Log.d(TAG,intent.getStringExtra("Pista2") );
                     marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ayunatmientoarrigorriagaredondo));
                     Intent intent=new Intent(getApplicationContext(), Activity_Pantalla2.class);
                     startActivity(intent);
@@ -188,6 +311,7 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
                 return false;
             }
         });
+        */
         //Este código es para meter el json al mapa:
        /*
        try {
@@ -388,6 +512,26 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
         }
     }
 
+    //Creo una funcion para obtener coordenadas y usarlas en el hilo
+    public void ObtenerCoordenadas(){
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            mFusedLocationClient.getLastLocation()
+                    .addOnSuccessListener(this, new OnSuccessListener<Location>() {
+                        @Override
+                        public void onSuccess(Location location) {
+                            // Obtiene la última ubicación, en algunos casos es nula (es raro)
+                            if (location != null) {
+                                latitude = location.getLatitude();
+                                longitude = location.getLongitude();
+                            } else {
+                                Log.d(TAG, "No recoge nada");
+                            }
+                        }
+                    });
+        }
+    }
+
     //Aquí le digo a la app que si los permisos están activados active la capa mylocation para que me encuentre la ubicación y me ponga
     //el botón my location. Si no están activados los pedimos pasandole una variable static int creada y el permido requerido, los activa. Esto
     //saltará a la función pública onRequestPermissionsResult:
@@ -445,9 +589,15 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
         finish();
     }
 
+    public double getLatitude() {
+        return latitude;
+    }
 
+    public double getLongitude() {
+        return longitude;
+    }
 
-    /*private String obtenerDireccionesURL(LatLng origin,LatLng dest){
+/*private String obtenerDireccionesURL(LatLng origin,LatLng dest){
 
         String str_origin = "origin="+origin.latitude+","+origin.longitude;
 

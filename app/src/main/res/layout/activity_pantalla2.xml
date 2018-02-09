@@ -31,6 +31,7 @@
             android:text="@string/audiozona2"
             android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:textSize="24sp"
+            android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="0dp" />
 
@@ -73,6 +74,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="@string/saltaraudio"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/givMikel"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/btnAudio2"
@@ -1283,6 +1285,7 @@
         android:layout_marginVertical="5dp"
         android:background="@drawable/btnsiguiente"
         android:gravity="center_vertical|center_horizontal"
+        android:textStyle="bold"
         android:visibility="gone" />
 
 </android.widget.LinearLayout>

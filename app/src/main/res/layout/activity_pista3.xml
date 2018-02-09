@@ -36,6 +36,7 @@
         android:text="@string/pista3"
         android:textColor="@color/colorAccent"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="@+id/imageView"
@@ -65,7 +66,8 @@
             android:layout_weight="1"
             android:text="@string/casa_cultura"
             android:textColor="@color/common_google_signin_btn_text_dark_default"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/radioButton2"
@@ -74,7 +76,8 @@
             android:layout_weight="1"
             android:text="@string/iglesia"
             android:textColor="@color/common_google_signin_btn_text_dark_default"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/radioButton3"
@@ -83,7 +86,8 @@
             android:layout_weight="1"
             android:text="@string/escuela"
             android:textColor="@color/common_google_signin_btn_text_dark_default"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
     </RadioGroup>
 

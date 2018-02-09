@@ -38,6 +38,7 @@
         android:text="@string/presentacion"
         android:textAlignment="center"
         android:textColor="@android:color/black"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:translationZ="2dp"
         android:visibility="visible"
