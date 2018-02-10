@@ -326,6 +326,8 @@ public class Pista5 extends AppCompatActivity {
             });
         }
 
+
+
         //Asigno a cada fondo de las piezas un draglistener para que si reciben la pieza que les
         //Corresponde cambien su imagen. En lugar de recuperar el dragdata recupero los datos de la
         //pieza arrastrada con "vista". Es similar

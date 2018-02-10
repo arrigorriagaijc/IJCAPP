@@ -77,6 +77,14 @@
     <string name="salalonbo">Sala Lonbo</string>
     <string name="ayuntamiento">Ayuntamiento</string>
     //Activity Pantalla 4
+
+    <string name="txtlonbo1">Industralización</string>
+    <string name="txtlonbo2">Teatro</string>
+    <string name="txtlonbo3">Tiendas</string>
+    <string name="txtlonbo4">Informática</string>
+    <string name="txtlonbo5">Trabajos</string>
+    <string name="txtlonbo6">Cine</string>
+
     //Activity Pista 5
     <string name="enunciado_pista5">Une las piezas del siguiente puzzle para crear la foto de la próxima sección.</string>
     <string name="rbRespuesta1">Ayuntamiento</string>
@@ -104,6 +112,27 @@
     //Activity Pista 6
     <string name="pista6">Haz el siguiente puzzle para saber a donde tenéis que ir.</string>
     //Activity Pantalla 6
+    //pregunta1
+    <string name="jrgPregunta1">¿Cual es la finalidad de este edificio hoy en día?</string>
+    <string name="jrgp1Opc1">Desarrollo cultural</string>
+    <string name="jrgp1Opc2">Aprender mediante Juegos</string>
+    <string name="jrgp1Opc3">Biblioteca</string>
+
+    //pregunta 2
+    <string name="jrgPregunta2">¿A que epoca hace referencia el palacio de Barua?</string>
+    <string name="jrgp2Opc1">Siglo XX</string>
+    <string name="jrgp2Opc2">Siglo XVI</string>
+    <string name="jrgp2Opc3">Siglo XIX</string>
+
+    //pregunta 3
+
+    <string name="jrgPregunta3">¿En que calle esta situada la casa de cultura?</string>
+    <string name="jrgp3Opc1">Calle Urgoriti</string>
+    <string name="jrgp3Opc2">Calle Lonbo</string>
+    <string name="jrgp3Opc3">Calle Kurutzea</string>
+
+
+
     //Activity Final
     <string name="tvfinal">¡FELICIDADES! Habéis tenido la oportunidad de conocer los edifios más importantes de nuestro pueblo y con ello un poco más de historia.\n\nEspero que cuando paséis al lado de ellos seáis conscientes de lo importante que son.¡Pasadlo bien!</string>
 </resources>

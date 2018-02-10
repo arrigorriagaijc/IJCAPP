@@ -69,6 +69,12 @@
     <string name="salalonbo">Lonbo Aretoa</string>
     <string name="ayuntamiento">Udaletxea</string>
     //Activity Pantalla 4
+    <string name="txtlonbo1">Industralización</string>
+    <string name="txtlonbo2">Teatro</string>
+    <string name="txtlonbo3">Tiendas</string>
+    <string name="txtlonbo4">Informática</string>
+    <string name="txtlonbo5">Trabajos</string>
+    <string name="txtlonbo6">Cine</string>
     //Activity Pista 5
     <string name="enunciado_pista5">Lotu itzazu puzzlearen piezak zuen hurrengo gunearen argazkia osatzeko:</string>
     <string name="rbRespuesta1">Udaletxea</string>
@@ -94,6 +100,24 @@
     //Activity Pista 6
     <string name="pista6">Osatu hurrengo puzzlea nora joan behar zareten jakiteko.</string>
     //Activity Pantalla 6
+    //pregunta1
+    <string name="jrgPregunta1">¿Cual es la finalidad de este edificio hoy en día?</string>
+    <string name="jrgp1Opc1">Desarrollo cultural</string>
+    <string name="jrgp1Opc2">Aprender mediante Juegos</string>
+    <string name="jrgp1Opc3">Biblioteca</string>
+
+    //pregunta 2
+    <string name="jrgPregunta2">¿A que epoca hace referencia el palacio de Barua?</string>
+    <string name="jrgp2Opc1">Siglo XX</string>
+    <string name="jrgp2Opc2">Siglo XVI</string>
+    <string name="jrgp2Opc3">Siglo XIX</string>
+
+    //pregunta 3
+
+    <string name="jrgPregunta3">¿En que calle esta situada la casa de cultura?</string>
+    <string name="jrgp3Opc1">Calle Urgoriti</string>
+    <string name="jrgp3Opc2">Calle Lonbo</string>
+    <string name="jrgp3Opc3">Calle Kurutzea</string>
     //Activity Final
     <string name="tvfinal">ZORIONAK! Gure herriko eraikin garrantzitsuenak ezagutzeko aukera izan duzue eta horrekin bat historia piska bat.\n\nEspero dut orain eraikin hauen garrantziaz gogoratzea hauen aldetik pasatzen zaretenean.\n\nOndo ibili lagunok!</string>
 </resources>
