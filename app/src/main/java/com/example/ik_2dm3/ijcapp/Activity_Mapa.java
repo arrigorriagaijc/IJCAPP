@@ -186,6 +186,7 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
                     startActivity(intent);
                 }
                 return false;
+
             }
         });
         //Este código es para meter el json al mapa:
