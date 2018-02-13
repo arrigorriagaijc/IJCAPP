@@ -113,39 +113,40 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
 
         //Añadimos los marcadores que se soliciten:
         //Arrigorriagako Plaza
-        LatLng PlazaArrigorriaga = new LatLng(43.206097, -2.888043);
-        final Marker PlArrigo= mMap.addMarker(new  MarkerOptions().position(PlazaArrigorriaga).title("Arrigorriagako plaza").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
+        LatLng PlazaArrigorriaga = new LatLng(Utilidades.getLMarcadores().getListaMarcadores().get(0).getLatitud(), Utilidades.getLMarcadores().getListaMarcadores().get(0).getLongitud());
+        final Marker PlArrigo= mMap.addMarker(new  MarkerOptions().position(PlazaArrigorriaga).title(Utilidades.getLMarcadores().getListaMarcadores().get(0).getTitle()).icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
         PlArrigo.setVisible(false);
 
         //Arrigorriagako Udaletxea:
-        LatLng AyuntamientoArrigorriaga = new LatLng(43.205918, -2.887718);
-        final Marker AyArrigo= mMap.addMarker(new  MarkerOptions().position(AyuntamientoArrigorriaga).title("Arrigorriagako Udaletxea").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
+        LatLng AyuntamientoArrigorriaga = new LatLng(Utilidades.getLMarcadores().getListaMarcadores().get(1).getLatitud(), Utilidades.getLMarcadores().getListaMarcadores().get(1).getLongitud());
+        final Marker AyArrigo= mMap.addMarker(new  MarkerOptions().position(AyuntamientoArrigorriaga).title(Utilidades.getLMarcadores().getListaMarcadores().get(1).getTitle()).icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
         AyArrigo.setVisible(false);
 
         //Santa Maria Magdalena eliza
-        LatLng SantaMariaMagdalenaEliza = new LatLng(43.2056, -2.88866);
-        final Marker MariaEliza=mMap.addMarker(new MarkerOptions().position(SantaMariaMagdalenaEliza).title("Santa Maria Magdalena eliza").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
+        LatLng SantaMariaMagdalenaEliza = new LatLng(Utilidades.getLMarcadores().getListaMarcadores().get(2).getLatitud(), Utilidades.getLMarcadores().getListaMarcadores().get(2).getLongitud());
+        final Marker MariaEliza=mMap.addMarker(new MarkerOptions().position(SantaMariaMagdalenaEliza).title(Utilidades.getLMarcadores().getListaMarcadores().get(2).getTitle()).icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
         MariaEliza.setVisible(false);
 
         //Lonbo Aretoa poner coordenadas
-        LatLng LonboAretoa = new LatLng(43.211879, -2.888431);
-        final Marker LonAretoa=mMap.addMarker(new MarkerOptions().position(LonboAretoa).title("Lonbo Aretoa").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
+        LatLng LonboAretoa = new LatLng(Utilidades.getLMarcadores().getListaMarcadores().get(3).getLatitud(), Utilidades.getLMarcadores().getListaMarcadores().get(3).getLongitud());
+        final Marker LonAretoa=mMap.addMarker(new MarkerOptions().position(LonboAretoa).title(Utilidades.getLMarcadores().getListaMarcadores().get(3).getTitle()).icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
         LonAretoa.setVisible(false);
 
         //Arrigorriagako Etxetzarrak
-        LatLng ArrigorriagakoEtxetzarrak = new LatLng(43.209679, -2.888369);
-        final Marker ArrigoEtxe=mMap.addMarker(new MarkerOptions().position(ArrigorriagakoEtxetzarrak).title("Arrigorriagako Etxetzarrak").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
+        LatLng ArrigorriagakoEtxetzarrak = new LatLng(Utilidades.getLMarcadores().getListaMarcadores().get(4).getLatitud(), Utilidades.getLMarcadores().getListaMarcadores().get(4).getLongitud());
+        final Marker ArrigoEtxe=mMap.addMarker(new MarkerOptions().position(ArrigorriagakoEtxetzarrak).title(Utilidades.getLMarcadores().getListaMarcadores().get(4).getTitle()).icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
         ArrigoEtxe.setVisible(false);
 
         //Baruako Jauregia(Kultur Extea)
-        LatLng KulturEtxea = new LatLng(43.209462, -2.888372);
-        final Marker KulturEtxe=mMap.addMarker(new MarkerOptions().position(KulturEtxea).title("Baruako Jauregia (Kultur Etxea)").icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
+        LatLng KulturEtxea = new LatLng(Utilidades.getLMarcadores().getListaMarcadores().get(5).getLatitud(), Utilidades.getLMarcadores().getListaMarcadores().get(5).getLongitud());
+        final Marker KulturEtxe=mMap.addMarker(new MarkerOptions().position(KulturEtxea).title(Utilidades.getLMarcadores().getListaMarcadores().get(5).getTitle()).icon(BitmapDescriptorFactory.fromResource(R.drawable.pregunta)));
         KulturEtxe.setVisible(false);
 
         //Creamos un intent en el que recogeremos el intent del que vengamos ya que
         //Siempre que llegamos al mapa llegamos desde una pista
         final Intent intent = getIntent();
 
+        /* Este es el codigo de activar el marcador si estamos a la distancia correcta
         //Si vengo de la pista 1...
         if(intent.getStringExtra("Pista1")!=null && intent.getStringExtra("Pista1").equals("Pista1")) {
             ldm=new Listeners_distancias_marcadores(mMap,this,43.206097,-2.888043);
@@ -273,7 +274,7 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
         //seria el marcador 3.
         //El resto no tendrán el listener ya que este codigo se cativa cada vez que se llama a
         //Activity_Mapa
-
+        */
         /*
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override

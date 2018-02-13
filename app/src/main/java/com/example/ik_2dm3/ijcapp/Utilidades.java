@@ -29,6 +29,7 @@ public class Utilidades {
     }
 
     public static void EmpezarLMarcadores() {
+        LMarcadores=new ListaMarcadores();
         ListaMarcadores temp = new ListaMarcadores();
         String[] campos= {"title","latitud","longitud","icon"};
         Cursor miCursor = conn.getReadableDatabase().query("marcadores",campos, null,null,null,null,null);
@@ -43,10 +44,12 @@ public class Utilidades {
 
 
         }while(miCursor.moveToNext());
+        /*
         miCursor = conn.getReadableDatabase().rawQuery("SELECT MAX (id) FROM versiones",null);
-        LMarcadores = temp;
-        LMarcadores.setVersion( miCursor.getInt(0));
 
+        LMarcadores.setVersion( miCursor.getInt(0));
+*/
+        LMarcadores = temp;
         miCursor.close();
         conn.close();
     }

@@ -42,7 +42,7 @@ public class Listeners_distancias_marcadores extends Thread {
             hipotenusa=Math.sqrt((latitude - activity_mapa.getLatitude())*(latitude - activity_mapa.getLatitude())+(longitude - activity_mapa.getLongitude())*(longitude - activity_mapa.getLongitude()));
             //Log.d(TAG,String.valueOf(hipotenusa));
             if (hipotenusa<=0.000282 && unavez==false){
-                activar=true;
+                /*activar=true;
                 googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                     @Override
                     public boolean onMarkerClick(Marker marker) {
@@ -56,7 +56,7 @@ public class Listeners_distancias_marcadores extends Thread {
                         }
                         return false;
                     }
-                });
+                });*/
                 unavez=true;
                 salir=true;
             }
