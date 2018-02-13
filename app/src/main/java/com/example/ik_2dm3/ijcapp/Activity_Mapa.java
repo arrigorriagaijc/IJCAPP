@@ -309,6 +309,7 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
                     startActivity(intent);
                 }
                 return false;
+
             }
         });
         */

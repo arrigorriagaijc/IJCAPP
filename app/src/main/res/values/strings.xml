@@ -15,7 +15,8 @@
         pueblo (en su mayoría patrimonio religioso: iglesias, ermitas..) pero también
         hay edificios civiles, los cuales ireis conociendo durante la mañana.</p>\n\n <p>Así que, sin más rodeos, haced CLICK en el mapa que está debajo de mi.
         Aquí empieza vuestra excursión!</p>
-    </string>    //Activity Pista 1
+    </string>
+    //Activity Pista 1
     <string name="pista1"> En las fiestas de nuestro pueblo venimos aquí a escuchar conciertos hacer diferentes actividades.</string>
     <string name="pista1opcion1"> Plaza de Argala</string>
     <string name="pista1opcion2">Escuela</string>
@@ -50,7 +51,7 @@
     <string name="escuela">Escuela</string>
     //Activity Pantalla 3
     <string name="enunciado_Santa_Maria">En el siguiente ejercicio aparecerán 4 diferentes oraciones. Tienes que elegir la respuesta correcta. Para empezar pulsa sobre la flecha.</string>
-    <string name="pregunta1_Santa_Maria">El nombre de la parroquia de Arrigorriaga es...</string>
+    <string name="pregunta1_Santa_Maria">El title de la parroquia de Arrigorriaga es...</string>
     <string name="respuesta1_buena">SANTA MARIA MAGDALENA</string>
     <string name="respuesta1_mala">SANTA TERESA MAGDALENA</string>
     <string name="respuesta1corregida">Es Santa Maria Magdalena.</string>
@@ -132,7 +133,9 @@
     <string name="jrgp3Opc3">Calle Kurutzea</string>
 
 
-
     //Activity Final
     <string name="tvfinal">¡FELICIDADES! Habéis tenido la oportunidad de conocer los edifios más importantes de nuestro pueblo y con ello un poco más de historia.\n\nEspero que cuando paséis al lado de ellos seáis conscientes de lo importante que son.¡Pasadlo bien!</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
