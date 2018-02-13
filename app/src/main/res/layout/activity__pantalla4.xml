@@ -8,8 +8,253 @@
     android:background="@drawable/wooden"
     tools:context="com.example.ik_2dm3.ijcapp.Activity_Pantalla4">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp"
+            android:orientation="horizontal"
+            android:padding="0dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:theme="@style/AppTheme">
+
+            <TextView
+                android:id="@+id/txtlonbo1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:background="@color/colorPrimaryDark"
+                android:fontFamily="casual"
+                android:padding="0dp"
+                android:text="@string/txtlonbo1"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/txtlonbo2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:background="@color/colorPrimaryDark"
+                android:fontFamily="casual"
+                android:padding="0dp"
+                android:text="@string/txtlonbo2"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp"
+            android:orientation="horizontal"
+            android:padding="0dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:theme="@style/AppTheme">
+
+            <TextView
+                android:id="@+id/txtlonbo3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:background="@color/colorPrimaryDark"
+                android:fontFamily="casual"
+                android:padding="0dp"
+                android:text="@string/txtlonbo3"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtlonbo4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:background="@color/colorPrimaryDark"
+                android:fontFamily="casual"
+                android:padding="0dp"
+                android:text="@string/txtlonbo4"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp"
+            android:orientation="horizontal"
+            android:padding="0dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:theme="@style/AppTheme">
+
+            <TextView
+                android:id="@+id/txtlonbo5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:background="@color/colorPrimaryDark"
+                android:fontFamily="casual"
+                android:padding="0dp"
+                android:text="@string/txtlonbo5"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtlonbo6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:background="@color/colorPrimaryDark"
+                android:fontFamily="casual"
+                android:padding="0dp"
+                android:text="@string/txtlonbo6"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="392dp"
+        android:padding="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/txtlonbo"
+            android:layout_width="357dp"
+            android:layout_height="388dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.022"
+            app:srcCompat="@drawable/textolombo" />
+
+        <ImageView
+            android:id="@+id/imgIndus"
+            android:layout_width="188dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="288dp"
+            android:contentDescription="@string/txtlonbo1"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/txtlonbo"
+            app:layout_constraintEnd_toEndOf="@+id/txtlonbo"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/txtlonbo"
+            app:srcCompat="@android:color/transparent" />
+
+        <ImageView
+            android:id="@+id/imgTrabajos"
+            android:layout_width="93dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="132dp"
+            android:contentDescription="@string/txtlonbo5"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="@+id/txtlonbo"
+            app:layout_constraintHorizontal_bias="0.306"
+            app:layout_constraintStart_toStartOf="@+id/txtlonbo"
+            app:layout_constraintTop_toTopOf="@+id/txtlonbo"
+            app:srcCompat="@android:color/transparent" />
+
+        <ImageView
+            android:id="@+id/imgTeatro"
+            android:layout_width="77dp"
+            android:layout_height="27dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="284dp"
+            android:contentDescription="@string/txtlonbo2"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="@+id/txtlonbo"
+            app:layout_constraintStart_toStartOf="@+id/txtlonbo"
+            app:layout_constraintTop_toTopOf="@+id/txtlonbo"
+            app:srcCompat="@android:color/transparent" />
+
+        <ImageView
+            android:id="@+id/imgInformatica"
+            android:layout_width="135dp"
+            android:layout_height="28dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="320dp"
+            android:contentDescription="@string/txtlonbo4"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="@+id/txtlonbo"
+            app:layout_constraintHorizontal_bias="0.218"
+            app:layout_constraintStart_toStartOf="@+id/txtlonbo"
+            app:layout_constraintTop_toTopOf="@+id/txtlonbo"
+            app:srcCompat="@android:color/transparent" />
+    </android.support.constraint.ConstraintLayout>
+
     <Button
         android:id="@+id/btnSiguiente"
+        style="@android:style/Widget.Holo.Button"
         android:layout_width="67dp"
         android:layout_height="71dp"
         android:layout_marginBottom="8dp"
@@ -18,7 +263,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/btnsiguiente"
-        android:text="Click"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.973"
@@ -27,16 +272,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.986" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="145dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></LinearLayout>
 </android.support.constraint.ConstraintLayout>
