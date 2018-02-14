@@ -49,7 +49,6 @@ public class Activity_Idiomas extends AppCompatActivity {
 
         Button btnEuskera=(Button) findViewById(R.id.btnEuskera);
         Button btnCastellano=(Button) findViewById(R.id.btnEspañol);
-        Button btnact4 = findViewById(R.id.btnact4);
 
         btnEuskera.setWidth(btnCastellano.getWidth());
 
@@ -75,13 +74,7 @@ public class Activity_Idiomas extends AppCompatActivity {
             }
         });
 
-        btnact4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(), Activity_Pantalla6.class);
-                startActivity(intent);
-            }
-        });
+
         Comprobando js = new Comprobando(new JsonResquest());
     }
 

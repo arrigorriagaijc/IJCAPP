@@ -145,13 +145,15 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
         //Siempre que llegamos al mapa llegamos desde una pista
         final Intent intent = getIntent();
 
+        /*
         if(ldm==null){
         ldm=new Listeners_distancias_marcadores(this);
         ldm.start();
         }else{
             ldm.setSalir(false);
-        }
-
+        }*/
+        ldm=new Listeners_distancias_marcadores(this);
+        ldm.start();
 
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override

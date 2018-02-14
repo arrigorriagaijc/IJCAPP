@@ -33,42 +33,43 @@ public class Listeners_distancias_marcadores extends Thread {
     }
 
     public void run() {
-        while (salir == false) {
-            activity_mapa.ObtenerCoordenadas();
-            hipotenusa1 = Math.sqrt((43.206097 - activity_mapa.getLatitude()) * (43.206097 - activity_mapa.getLatitude()) + (-2.88804 - activity_mapa.getLongitude()) * (-2.88804 - activity_mapa.getLongitude()));
-            hipotenusa2 = Math.sqrt((43.205918 - activity_mapa.getLatitude()) * (43.205918 - activity_mapa.getLatitude()) + (-2.887718 - activity_mapa.getLongitude()) * (-2.887718 - activity_mapa.getLongitude()));
-            hipotenusa3 = Math.sqrt((43.2056 - activity_mapa.getLatitude()) * (43.2056 - activity_mapa.getLatitude()) + (-2.88866 - activity_mapa.getLongitude()) * (-2.88866 - activity_mapa.getLongitude()));
-            hipotenusa4 = Math.sqrt((43.211879 - activity_mapa.getLatitude()) * (43.211879 - activity_mapa.getLatitude()) + (-2.888431 - activity_mapa.getLongitude()) * (-2.888431 - activity_mapa.getLongitude()));
-            hipotenusa5 = Math.sqrt((43.209679 - activity_mapa.getLatitude()) * (43.209679 - activity_mapa.getLatitude()) + (-2.888369 - activity_mapa.getLongitude()) * (-2.888369 - activity_mapa.getLongitude()));
-            hipotenusa6 = Math.sqrt((43.209462 - activity_mapa.getLatitude()) * (43.209462 - activity_mapa.getLatitude()) + (-2.888372 - activity_mapa.getLongitude()) * (-2.888372 - activity_mapa.getLongitude()));
-            //Log.d(TAG,String.valueOf(hipotenusa));
-           // if (hipotenusa1 <= 0.000282 && activity_mapa.isActivado1() == false) {
-                Log.d(TAG,"Activamos 1");
-                activity_mapa.setActivado1(true);
-                salir = true;
-           // }
-          // if (hipotenusa2 <= 0.000282 && activity_mapa.isActivado2() == false) {
-                activity_mapa.setActivado2(true);
-                salir = true;
-          //  }
-          //  if (hipotenusa3 <= 0.000282 && activity_mapa.isActivado3() == false) {
-                activity_mapa.setActivado3(true);
-                salir = true;
-          //  }
-          //  if (hipotenusa4 <= 0.000282 && activity_mapa.isActivado4() == false) {
-                activity_mapa.setActivado4(true);
-                salir = true;
-           // }
-         //  if (hipotenusa5 <= 0.000282 && activity_mapa.isActivado5() == false) {
-                activity_mapa.setActivado5(true);
-                salir = true;
-          //  }
-          //  if (hipotenusa6 <= 0.000282 && activity_mapa.isActivado6() == false) {
-                activity_mapa.setActivado6(true);
-                salir = true;
-          //  }
-        }
+            while (salir == false) {
+                activity_mapa.ObtenerCoordenadas();
+                hipotenusa1 = Math.sqrt((43.206097 - activity_mapa.getLatitude()) * (43.206097 - activity_mapa.getLatitude()) + (-2.88804 - activity_mapa.getLongitude()) * (-2.88804 - activity_mapa.getLongitude()));
+                hipotenusa2 = Math.sqrt((43.205918 - activity_mapa.getLatitude()) * (43.205918 - activity_mapa.getLatitude()) + (-2.887718 - activity_mapa.getLongitude()) * (-2.887718 - activity_mapa.getLongitude()));
+                hipotenusa3 = Math.sqrt((43.2056 - activity_mapa.getLatitude()) * (43.2056 - activity_mapa.getLatitude()) + (-2.88866 - activity_mapa.getLongitude()) * (-2.88866 - activity_mapa.getLongitude()));
+                hipotenusa4 = Math.sqrt((43.211879 - activity_mapa.getLatitude()) * (43.211879 - activity_mapa.getLatitude()) + (-2.888431 - activity_mapa.getLongitude()) * (-2.888431 - activity_mapa.getLongitude()));
+                hipotenusa5 = Math.sqrt((43.209679 - activity_mapa.getLatitude()) * (43.209679 - activity_mapa.getLatitude()) + (-2.888369 - activity_mapa.getLongitude()) * (-2.888369 - activity_mapa.getLongitude()));
+                hipotenusa6 = Math.sqrt((43.209462 - activity_mapa.getLatitude()) * (43.209462 - activity_mapa.getLatitude()) + (-2.888372 - activity_mapa.getLongitude()) * (-2.888372 - activity_mapa.getLongitude()));
+                //Log.d(TAG,String.valueOf(hipotenusa));
+                if (hipotenusa1 <= 0.000282 && activity_mapa.isActivado1() == false) {
+                    Log.d(TAG, "Activamos 1");
+                    activity_mapa.setActivado1(true);
+                    salir = true;
+                } else if (hipotenusa2 <= 0.000282 && activity_mapa.isActivado2() == false) {
+                    Log.d(TAG, "Activamos 2");
+                    activity_mapa.setActivado2(true);
+                    salir = true;
+                } else if (hipotenusa3 <= 0.000282 && activity_mapa.isActivado3() == false) {
+                    Log.d(TAG, "Activamos 3");
+                    activity_mapa.setActivado3(true);
+                    salir = true;
+                } else if (hipotenusa4 <= 0.000282 && activity_mapa.isActivado4() == false) {
+                    Log.d(TAG, "Activamos 4");
+                    activity_mapa.setActivado4(true);
+                    salir = true;
+                } else if (hipotenusa5 <= 0.000282 && activity_mapa.isActivado5() == false) {
+                    Log.d(TAG, "Activamos 5");
+                    activity_mapa.setActivado5(true);
+                    salir = true;
+                } else if (hipotenusa6 <= 0.000282 && activity_mapa.isActivado6() == false) {
+                    Log.d(TAG, "Activamos 6");
+                    activity_mapa.setActivado6(true);
+                    salir = true;
+                }
+            }
     }
+
 
     public void setSalir(boolean salir) {
         this.salir = salir;

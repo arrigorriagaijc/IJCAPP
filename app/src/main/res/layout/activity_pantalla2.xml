@@ -75,6 +75,7 @@
             android:layout_marginTop="8dp"
             android:text="@string/saltaraudio"
             android:textStyle="bold"
+            android:visibility="gone"
             app:layout_constraintBottom_toTopOf="@+id/givMikel"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/btnAudio2"
@@ -100,9 +101,9 @@
         android:layout_height="match_parent"
         android:layout_weight="3"
         android:orientation="vertical"
+        android:splitMotionEvents="false"
         android:visibility="gone"
-        android:weightSum="9"
-        android:splitMotionEvents="false">
+        android:weightSum="9">
 
         <LinearLayout
             android:id="@+id/llHFila1"

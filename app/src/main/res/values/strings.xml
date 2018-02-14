@@ -51,7 +51,7 @@
     <string name="escuela">Escuela</string>
     //Activity Pantalla 3
     <string name="enunciado_Santa_Maria">En el siguiente ejercicio aparecerán 4 diferentes oraciones. Tienes que elegir la respuesta correcta. Para empezar pulsa sobre la flecha.</string>
-    <string name="pregunta1_Santa_Maria">El title de la parroquia de Arrigorriaga es...</string>
+    <string name="pregunta1_Santa_Maria">El nombre de la parroquia de Arrigorriaga es...</string>
     <string name="respuesta1_buena">SANTA MARIA MAGDALENA</string>
     <string name="respuesta1_mala">SANTA TERESA MAGDALENA</string>
     <string name="respuesta1corregida">Es Santa Maria Magdalena.</string>
