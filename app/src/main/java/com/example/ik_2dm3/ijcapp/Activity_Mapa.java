@@ -156,37 +156,37 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
-                Log.d(TAG,String.valueOf(activado1));
+                Log.d(TAG,"1 "+String.valueOf(activado1));
                 if (marker.getTitle().equals("Arrigorriagako plaza") && activado1) {
                     marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.plazaarrigorriagaredondo));
                     Intent intent = new Intent(getApplicationContext(), Activity_Pantalla1.class);
                     startActivity(intent);
                 }
-                Log.d(TAG,String.valueOf(activado2));
+                Log.d(TAG,"2 "+String.valueOf(activado2));
                 if (marker.getTitle().equals("Arrigorriagako Udaletxea") && activado2) {
                     marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ayunatmientoarrigorriagaredondo));
                     Intent intent = new Intent(getApplicationContext(), Activity_Pantalla2.class);
                     startActivity(intent);
                 }
-                Log.d(TAG,String.valueOf(activado3));
+                //Log.d(TAG,String.valueOf(activado3));
                 if (marker.getTitle().equals("Santa Maria Magdalena eliza") && activado3) {
                     marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.santamariamagdalenaredondo));
                     Intent intent = new Intent(getApplicationContext(), Activity_Pantalla3.class);
                     startActivity(intent);
                 }
-                Log.d(TAG,String.valueOf(activado4));
+                //Log.d(TAG,String.valueOf(activado4));
                 if (marker.getTitle().equals("Lonbo Aretoa") && activado4) {
                     marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.lonboaretoaredondo));
                     Intent intent = new Intent(getApplicationContext(), Activity_Pantalla4.class);
                     startActivity(intent);
                 }
-                Log.d(TAG,String.valueOf(activado5));
+                //Log.d(TAG,String.valueOf(activado5));
                 if (marker.getTitle().equals("Arrigorriagako Etxetzarrak") && activado5) {
                     marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.arrigorriagakoetxetzarrrakredondo));
                     Intent intent = new Intent(getApplicationContext(), Activity_Pantalla5.class);
                     startActivity(intent);
                 }
-                Log.d(TAG,String.valueOf(activado6));
+                //Log.d(TAG,String.valueOf(activado6));
                 if (marker.getTitle().equals("Baruako Jauregia (Kultur Etxea)") && activado6) {
                     marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.baruakojauregiaredondo));
                     Intent intent = new Intent(getApplicationContext(), Activity_Pantalla6.class);
