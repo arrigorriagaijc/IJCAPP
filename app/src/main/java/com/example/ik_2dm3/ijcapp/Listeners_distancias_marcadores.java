@@ -48,6 +48,7 @@ public class Listeners_distancias_marcadores extends Thread {
                 salir = true;
             }
             if (hipotenusa2 <= 0.000282 && activity_mapa.isActivado2() == false) {
+                Log.d(TAG,"Ativamos 2");
                 activity_mapa.setActivado2(true);
                 salir = true;
             }
@@ -67,11 +68,16 @@ public class Listeners_distancias_marcadores extends Thread {
                 activity_mapa.setActivado6(true);
                 salir = true;
             }
+            if(salir) {
+                //android.os.Process.killProcess((int)this.getId());
+            }
         }
     }
 
     public void setSalir(boolean salir) {
         this.salir = salir;
     }
+
+
 
 }
