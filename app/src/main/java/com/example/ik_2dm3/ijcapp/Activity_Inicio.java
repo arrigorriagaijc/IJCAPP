@@ -77,7 +77,7 @@ public class Activity_Inicio extends AppCompatActivity {
     @Override
     public void onPause() {
         super.onPause();
-        finish();
+        mp.stop();
     }
 
     @Override

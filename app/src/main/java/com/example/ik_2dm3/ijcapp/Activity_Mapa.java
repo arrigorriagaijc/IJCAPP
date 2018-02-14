@@ -59,6 +59,7 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
     private boolean lonboencontrado=false;
     private boolean etxetzarrakencontrado=false;
     private boolean kulturetxeaencontrado=false;
+    public static boolean activado=false;
     private Handler handler=new Handler();
     private Listeners_distancias_marcadores ldm;
 
@@ -145,6 +146,19 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
         //Creamos un intent en el que recogeremos el intent del que vengamos ya que
         //Siempre que llegamos al mapa llegamos desde una pista
         final Intent intent = getIntent();
+
+
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                if (marker.getTitle().equals("Arrigorriagako Udaletxea") && activado) {
+                    marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ayunatmientoarrigorriagaredondo));
+                    Intent intent = new Intent(getApplicationContext(), Activity_Pantalla2.class);
+                    startActivity(intent);
+                }
+                return false;
+            }
+        });
 
         /* Este es el codigo de activar el marcador si estamos a la distancia correcta
         //Si vengo de la pista 1...

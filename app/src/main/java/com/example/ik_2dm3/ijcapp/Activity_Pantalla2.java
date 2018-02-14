@@ -947,7 +947,7 @@ public class Activity_Pantalla2 extends AppCompatActivity {
     @Override
     public void onPause() {
         super.onPause();
-        finish();
+        mediaPlayer.stop();
     }
 
     @Override

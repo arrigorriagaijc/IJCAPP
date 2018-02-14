@@ -101,23 +101,23 @@
     <string name="pista6">Osatu hurrengo puzzlea nora joan behar zareten jakiteko.</string>
     //Activity Pantalla 6
     //pregunta1
-    <string name="jrgPregunta1">¿Cual es la finalidad de este edificio hoy en día?</string>
-    <string name="jrgp1Opc1">Desarrollo cultural</string>
-    <string name="jrgp1Opc2">Aprender mediante Juegos</string>
-    <string name="jrgp1Opc3">Biblioteca</string>
+    <string name="jrgPregunta1">Z​ein​ ​da​ ​gaur​ ​egun​ ​eraikin​ ​honen​ ​helburu​ ​nagusia?</string>
+    <string name="jrgp1Opc1">Kultur garapena</string>
+    <string name="jrgp1Opc2">Jokuen bidez ikastea</string>
+    <string name="jrgp1Opc3"> Liburutegiaren funtzio izatea</string>
 
     //pregunta 2
-    <string name="jrgPregunta2">¿A que epoca hace referencia el palacio de Barua?</string>
-    <string name="jrgp2Opc1">Siglo XX</string>
-    <string name="jrgp2Opc2">Siglo XVI</string>
-    <string name="jrgp2Opc3">Siglo XIX</string>
+    <string name="jrgPregunta2">Zein menderi egiten dio erreferentzia Barua Jauregiak (kultur etxea)?</string>
+    <string name="jrgp2Opc1">XX. mendea</string>
+    <string name="jrgp2Opc2">XVI. mendea</string>
+    <string name="jrgp2Opc3">XIX. mendea</string>
 
     //pregunta 3
 
-    <string name="jrgPregunta3">¿En que calle esta situada la casa de cultura?</string>
-    <string name="jrgp3Opc1">Calle Urgoriti</string>
-    <string name="jrgp3Opc2">Calle Lonbo</string>
-    <string name="jrgp3Opc3">Calle Kurutzea</string>
+    <string name="jrgPregunta3">Zein kaleetan dago kokaturik kultur etxea? Izena aipatu.</string>
+    <string name="jrgp3Opc1">Urgoiti kalea</string>
+    <string name="jrgp3Opc2">Lonbo kalea</string>
+    <string name="jrgp3Opc3">Kurutzea kalea</string>
     //Activity Final
     <string name="tvfinal">ZORIONAK! Gure herriko eraikin garrantzitsuenak ezagutzeko aukera izan duzue eta horrekin bat historia piska bat.\n\nEspero dut orain eraikin hauen garrantziaz gogoratzea hauen aldetik pasatzen zaretenean.\n\nOndo ibili lagunok!</string>
 </resources>

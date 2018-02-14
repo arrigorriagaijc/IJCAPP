@@ -20,7 +20,6 @@ public class Listeners_distancias_marcadores extends Thread {
     private boolean salir=false;
     private boolean activar=false;
     private static final String TAG = "TAG";
-    private boolean unavez=false;
 
     public Listeners_distancias_marcadores(){
         this.googleMap=null;
@@ -41,23 +40,9 @@ public class Listeners_distancias_marcadores extends Thread {
             activity_mapa.ObtenerCoordenadas();
             hipotenusa=Math.sqrt((latitude - activity_mapa.getLatitude())*(latitude - activity_mapa.getLatitude())+(longitude - activity_mapa.getLongitude())*(longitude - activity_mapa.getLongitude()));
             //Log.d(TAG,String.valueOf(hipotenusa));
-            if (hipotenusa<=0.000282 && unavez==false){
-                /*activar=true;
-                googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
-                    @Override
-                    public boolean onMarkerClick(Marker marker) {
-                        if (marker.getTitle().equals("Arrigorriagako plaza")) {
-                            //CAmbio la imagen al marcador
-                            marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.plazaarrigorriagaredondo));
-                            //CReo el intent
-                            Intent intent = new Intent(activity_mapa, Activity_Pantalla1.class);
-                            //Inicio el activity nuevo
-                            startActivity(intent);
-                        }
-                        return false;
-                    }
-                });*/
-                unavez=true;
+            if (hipotenusa<=0.000282 && activar==false){
+
+                activar=true;
                 salir=true;
             }
         }
