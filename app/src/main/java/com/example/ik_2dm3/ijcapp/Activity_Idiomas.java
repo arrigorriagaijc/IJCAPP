@@ -54,7 +54,7 @@ public class Activity_Idiomas extends AppCompatActivity {
         btnEuskera.setWidth(btnCastellano.getWidth());
 
         // el numero de la version es solo una forma de controlar la informacion de la bd en caso de tener que resetear
-        Utilidades.setConn( new ConexionSQLiteHelper(this, "BDMarcadores",null,7));
+        Utilidades.setConn( new ConexionSQLiteHelper(this, "BDMarcadores",null,9));
         Utilidades.EmpezarLMarcadores();
 
 
@@ -134,7 +134,7 @@ public class Activity_Idiomas extends AppCompatActivity {
                     if(lista.getVersion()> Utilidades.getLMarcadores().getVersion()){
                         Utilidades.actualizarMarcadores(lista);
                     }
-                    response = "version de la base de datos "+Utilidades.getLMarcadores().getVersion();
+                    response = "Actualizado version:"+Utilidades.getLMarcadores().getVersion();
                     break;
             }
         }
@@ -175,7 +175,7 @@ public class Activity_Idiomas extends AppCompatActivity {
     public class JsonResquest extends AsyncTask<Void, Void, Void> {
 
 
-        private String url = "http://192.168.0.26:80/ProjectsFile/listas.json";
+        private String url = "http://192.168.0.26:80/ProjectsFile/Marcadores.json";
         String result ="";
         @Override
         protected void onPreExecute() {

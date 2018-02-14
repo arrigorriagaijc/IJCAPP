@@ -44,11 +44,12 @@ public class Utilidades {
 
 
         }while(miCursor.moveToNext());
-        /*
-        miCursor = conn.getReadableDatabase().rawQuery("SELECT MAX (id) FROM versiones",null);
+        Cursor miCursor2;
 
-        LMarcadores.setVersion( miCursor.getInt(0));
-*/
+        miCursor2 = conn.getReadableDatabase().rawQuery("SELECT MAX ('id') FROM versiones",null);
+        miCursor2.moveToFirst();
+        LMarcadores.setVersion( miCursor2.getInt(0));
+
         LMarcadores = temp;
         miCursor.close();
         conn.close();
@@ -64,7 +65,7 @@ public class Utilidades {
                     LMarcadores.getListaMarcadores().get(i).getIcon()+"')"
             );
         }
-        db.execSQL("INSERT INTO versiones VALUES ('"+LMarcadores.getVersion()+ "', '"+new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())+ "')");
+        db.execSQL("INSERT INTO versiones VALUES ('"+temporal.getVersion()+ "', '"+new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())+ "')");
         db.close();
         conn.close();
     }

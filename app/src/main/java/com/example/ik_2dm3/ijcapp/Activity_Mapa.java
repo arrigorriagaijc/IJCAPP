@@ -60,7 +60,7 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
     private static boolean activado5=false;
     private static boolean activado6=false;
     private Handler handler=new Handler();
-    private Listeners_distancias_marcadores ldm;
+    private static Listeners_distancias_marcadores ldm ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,7 +96,6 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
         ActivarGps();
         //Lo segundo pido los permisos.
         EstablecerPermisos();
-
         //Codigo para instanciar el navegador de google maps, en desuso
 
         /*Uri gmmIntentUri = Uri.parse("google.navigation:q=43.256998, -2.903901&mode=w");
@@ -146,9 +145,13 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
         //Siempre que llegamos al mapa llegamos desde una pista
         final Intent intent = getIntent();
 
-
+        if(ldm==null){
         ldm=new Listeners_distancias_marcadores(this);
         ldm.start();
+        }else{
+            ldm.setSalir(false);
+        }
+
 
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override

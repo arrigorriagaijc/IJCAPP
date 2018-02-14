@@ -42,31 +42,31 @@ public class Listeners_distancias_marcadores extends Thread {
             hipotenusa5 = Math.sqrt((43.209679 - activity_mapa.getLatitude()) * (43.209679 - activity_mapa.getLatitude()) + (-2.888369 - activity_mapa.getLongitude()) * (-2.888369 - activity_mapa.getLongitude()));
             hipotenusa6 = Math.sqrt((43.209462 - activity_mapa.getLatitude()) * (43.209462 - activity_mapa.getLatitude()) + (-2.888372 - activity_mapa.getLongitude()) * (-2.888372 - activity_mapa.getLongitude()));
             //Log.d(TAG,String.valueOf(hipotenusa));
-            if (hipotenusa1 <= 0.000282 && activity_mapa.isActivado1() == false) {
+           // if (hipotenusa1 <= 0.000282 && activity_mapa.isActivado1() == false) {
                 Log.d(TAG,"Activamos 1");
                 activity_mapa.setActivado1(true);
                 salir = true;
-            }
-            if (hipotenusa2 <= 0.000282 && activity_mapa.isActivado2() == false) {
+           // }
+          // if (hipotenusa2 <= 0.000282 && activity_mapa.isActivado2() == false) {
                 activity_mapa.setActivado2(true);
                 salir = true;
-            }
-            if (hipotenusa3 <= 0.000282 && activity_mapa.isActivado3() == false) {
+          //  }
+          //  if (hipotenusa3 <= 0.000282 && activity_mapa.isActivado3() == false) {
                 activity_mapa.setActivado3(true);
                 salir = true;
-            }
-            if (hipotenusa4 <= 0.000282 && activity_mapa.isActivado4() == false) {
+          //  }
+          //  if (hipotenusa4 <= 0.000282 && activity_mapa.isActivado4() == false) {
                 activity_mapa.setActivado4(true);
                 salir = true;
-            }
-            if (hipotenusa5 <= 0.000282 && activity_mapa.isActivado5() == false) {
+           // }
+         //  if (hipotenusa5 <= 0.000282 && activity_mapa.isActivado5() == false) {
                 activity_mapa.setActivado5(true);
                 salir = true;
-            }
-            if (hipotenusa6 <= 0.000282 && activity_mapa.isActivado6() == false) {
+          //  }
+          //  if (hipotenusa6 <= 0.000282 && activity_mapa.isActivado6() == false) {
                 activity_mapa.setActivado6(true);
                 salir = true;
-            }
+          //  }
         }
     }
 

@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class ConexionSQLiteHelper extends SQLiteOpenHelper {
     final String crear_tabla_marcadores ="CREATE TABLE marcadores (title TEXT PRIMARY KEY, latitud DOUBLE, longitud DOUBLE, icon INTEGER)";
-    final String crear_tabla_versiones ="CREATE TABLE  versiones (id  INTEGER PRIMARY KEY, fecha TEXT)";
+    final String crear_tabla_versiones ="CREATE TABLE  versiones (id  INTEGER , fecha TEXT)";
     final String insertarMarcador1 ="INSERT INTO marcadores  VALUES ('Arrigorriagako plaza', '43.206097', '-2.888043', '22')";
     final String insertarMarcador2 ="INSERT INTO marcadores  VALUES ('Arrigorriagako Udaletxea', '43.205918', '-2.887718', '22')";
     final String insertarMarcador3 ="INSERT INTO marcadores  VALUES ('Santa Maria Magdalena eliza', '43.2056', '-2.88866', '22')";

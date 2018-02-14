@@ -29,7 +29,8 @@ public class ListaMarcadores {
         private String title;
         private double latitud;
         private double longitud;
-        private int icon;
+        private int ID;
+
 
 
         public Marcador(){
@@ -37,7 +38,7 @@ public class ListaMarcadores {
         }
         public Marcador (String pNombre, double pLati, double pLongi, int icon){
             this.title = pNombre;
-            this.icon = icon;
+            this.ID = icon;
             this.latitud = pLati;
             this.longitud = pLongi;
         }
@@ -67,11 +68,11 @@ public class ListaMarcadores {
         }
 
         public int getIcon() {
-            return this.icon;
+            return this.ID;
         }
 
         public void setIcon(int icon) {
-            this.icon = icon;
+            this.ID = icon;
         }
     }
 }
