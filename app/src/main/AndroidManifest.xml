@@ -17,6 +17,8 @@
         android:roundIcon="@mipmap/ijcappico"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
+        //android:hardwareAccelerated="false"
+        //android:largeHeap="true">
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

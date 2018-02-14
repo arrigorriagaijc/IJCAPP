@@ -62,8 +62,9 @@ public class Activity_Final extends AppCompatActivity {
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                givMikelfinal.setBackgroundResource(R.drawable.mikel);
                 //Cerramos el programa completo
-               finish();
+               //finish();
             }
         });
     }
