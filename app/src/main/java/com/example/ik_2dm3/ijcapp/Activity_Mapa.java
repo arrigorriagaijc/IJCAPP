@@ -53,13 +53,12 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
     private double latitude;
     private double longitude;
     private LatLng UbicacionActual;
-    private boolean plazaencontrada=false;
-    private boolean ayuntamientoencontrado=false;
-    private boolean santamariaencontrado=false;
-    private boolean lonboencontrado=false;
-    private boolean etxetzarrakencontrado=false;
-    private boolean kulturetxeaencontrado=false;
-    public static boolean activado=false;
+    private static boolean activado1=false;
+    private static boolean activado2=false;
+    private static boolean activado3=false;
+    private static boolean activado4=false;
+    private static boolean activado5=false;
+    private static boolean activado6=false;
     private Handler handler=new Handler();
     private Listeners_distancias_marcadores ldm;
 
@@ -148,12 +147,46 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
         final Intent intent = getIntent();
 
 
+        ldm=new Listeners_distancias_marcadores(this);
+        ldm.start();
+
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
-                if (marker.getTitle().equals("Arrigorriagako Udaletxea") && activado) {
+                Log.d(TAG,String.valueOf(activado1));
+                if (marker.getTitle().equals("Arrigorriagako plaza") && activado1) {
+                    marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.plazaarrigorriagaredondo));
+                    Intent intent = new Intent(getApplicationContext(), Activity_Pantalla1.class);
+                    startActivity(intent);
+                }
+                Log.d(TAG,String.valueOf(activado2));
+                if (marker.getTitle().equals("Arrigorriagako Udaletxea") && activado2) {
                     marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ayunatmientoarrigorriagaredondo));
                     Intent intent = new Intent(getApplicationContext(), Activity_Pantalla2.class);
+                    startActivity(intent);
+                }
+                Log.d(TAG,String.valueOf(activado3));
+                if (marker.getTitle().equals("Santa Maria Magdalena eliza") && activado3) {
+                    marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.santamariamagdalenaredondo));
+                    Intent intent = new Intent(getApplicationContext(), Activity_Pantalla3.class);
+                    startActivity(intent);
+                }
+                Log.d(TAG,String.valueOf(activado4));
+                if (marker.getTitle().equals("Lonbo Aretoa") && activado4) {
+                    marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.lonboaretoaredondo));
+                    Intent intent = new Intent(getApplicationContext(), Activity_Pantalla4.class);
+                    startActivity(intent);
+                }
+                Log.d(TAG,String.valueOf(activado5));
+                if (marker.getTitle().equals("Arrigorriagako Etxetzarrak") && activado5) {
+                    marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.arrigorriagakoetxetzarrrakredondo));
+                    Intent intent = new Intent(getApplicationContext(), Activity_Pantalla5.class);
+                    startActivity(intent);
+                }
+                Log.d(TAG,String.valueOf(activado6));
+                if (marker.getTitle().equals("Baruako Jauregia (Kultur Etxea)") && activado6) {
+                    marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.baruakojauregiaredondo));
+                    Intent intent = new Intent(getApplicationContext(), Activity_Pantalla6.class);
                     startActivity(intent);
                 }
                 return false;
@@ -613,7 +646,54 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
         return longitude;
     }
 
-/*private String obtenerDireccionesURL(LatLng origin,LatLng dest){
+    public static boolean isActivado1() {
+        return activado1;
+    }
+
+    public static void setActivado1(boolean activado1) {
+        Activity_Mapa.activado1 = activado1;
+    }
+
+    public static boolean isActivado2() {
+        return activado2;
+    }
+
+    public static void setActivado2(boolean activado2) {
+        Activity_Mapa.activado2 = activado2;
+    }
+
+    public static boolean isActivado3() {
+        return activado3;
+    }
+
+    public static void setActivado3(boolean activado3) {
+        Activity_Mapa.activado3 = activado3;
+    }
+
+    public static boolean isActivado4() {
+        return activado4;
+    }
+
+    public static void setActivado4(boolean activado4) {
+        Activity_Mapa.activado4 = activado4;
+    }
+
+    public static boolean isActivado5() {
+        return activado5;
+    }
+
+    public static void setActivado5(boolean activado5) {
+        Activity_Mapa.activado5 = activado5;
+    }
+
+    public static boolean isActivado6() {
+        return activado6;
+    }
+
+    public static void setActivado6(boolean activado6) {
+        Activity_Mapa.activado6 = activado6;
+    }
+    /*private String obtenerDireccionesURL(LatLng origin,LatLng dest){
 
         String str_origin = "origin="+origin.latitude+","+origin.longitude;
 
