@@ -96,9 +96,6 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
         ActivarGps();
         //Lo segundo pido los permisos.
         EstablecerPermisos();
-        //Situo la camara en mi localizacion
-        ObtenerLocalizacion();
-
 
         //Codigo para instanciar el navegador de google maps, en desuso
 
@@ -619,7 +616,7 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
             mMap.setMyLocationEnabled(true);
 
             //Situo la cámara en mi ubicación actual
-            //ObtenerLocalizacion();
+            ObtenerLocalizacion();
         } else {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MY_PERMISSION_FINE_LOCATION);
