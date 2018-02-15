@@ -12,7 +12,7 @@ import com.google.android.gms.maps.model.Marker;
  */
 
 public class Listeners_distancias_marcadores extends Thread {
-  /*  private GoogleMap googleMap;
+    private GoogleMap googleMap;
     private Activity_Mapa activity_mapa;
     private double hipotenusa1;
     private double hipotenusa2;
@@ -36,7 +36,7 @@ public class Listeners_distancias_marcadores extends Thread {
 
     public void run() {
             while (salir == false) {
-                //Log.d(TAG, "hilo");
+                Log.d(TAG, "hilo");
 
                 activity_mapa.ObtenerCoordenadas();
                 if(this.activity==1){
@@ -82,13 +82,23 @@ public class Listeners_distancias_marcadores extends Thread {
                         salir = true;
                     }
                 }
+                try{
+                    Thread.sleep(100);
+                }catch(InterruptedException e){
+                    e.printStackTrace();
+                }
             }
     }
 
+    public void setActivity_mapa(Activity_Mapa activity_mapa) {
+        this.activity_mapa = activity_mapa;
+    }
+
+    public void setActivity(int activity) {
+        this.activity = activity;
+    }
 
     public void setSalir(boolean salir) {
         this.salir = salir;
     }
-*/
-
 }

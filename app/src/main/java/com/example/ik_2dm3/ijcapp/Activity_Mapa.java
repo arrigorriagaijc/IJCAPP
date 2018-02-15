@@ -96,6 +96,8 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
         ActivarGps();
         //Lo segundo pido los permisos.
         EstablecerPermisos();
+        //Situo la camara en mi localizacion
+        ObtenerLocalizacion();
 
 
         //Codigo para instanciar el navegador de google maps, en desuso
@@ -155,7 +157,7 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
             ldm.setSalir(false);
         }*/
 
-        /*
+
         if(intent.getStringExtra("Pista1")!=null && intent.getStringExtra("Pista1").equals("Pista1")) {
             ldm = new Listeners_distancias_marcadores(this, 1);
             ldm.start();
@@ -175,37 +177,37 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
             ldm = new Listeners_distancias_marcadores(this, 6);
             ldm.start();
         }
-        */
-/*
+
+
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
-                if (marker.getTitle().equals(Utilidades.getLMarcadores().getListaMarcadores().get(0).getTitle())) {
+                if (marker.getTitle().equals(Utilidades.getLMarcadores().getListaMarcadores().get(0).getTitle()) && activado1) {
                     marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.plazaarrigorriagaredondo));
                     Intent intent = new Intent(getApplicationContext(), Activity_Pantalla1.class);
                     startActivity(intent);
                 }
-                if (marker.getTitle().equals(Utilidades.getLMarcadores().getListaMarcadores().get(1).getTitle())) {
+                if (marker.getTitle().equals(Utilidades.getLMarcadores().getListaMarcadores().get(1).getTitle()) && activado2) {
                     marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ayunatmientoarrigorriagaredondo));
                     Intent intent = new Intent(getApplicationContext(), Activity_Pantalla2.class);
                     startActivity(intent);
                 }
-                if (marker.getTitle().equals(Utilidades.getLMarcadores().getListaMarcadores().get(2).getTitle())) {
+                if (marker.getTitle().equals(Utilidades.getLMarcadores().getListaMarcadores().get(2).getTitle()) && activado3) {
                     marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.santamariamagdalenaredondo));
                     Intent intent = new Intent(getApplicationContext(), Activity_Pantalla3.class);
                     startActivity(intent);
                 }
-                if (marker.getTitle().equals(Utilidades.getLMarcadores().getListaMarcadores().get(3).getTitle())) {
+                if (marker.getTitle().equals(Utilidades.getLMarcadores().getListaMarcadores().get(3).getTitle()) && activado4) {
                     marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.lonboaretoaredondo));
                     Intent intent = new Intent(getApplicationContext(), Activity_Pantalla4.class);
                     startActivity(intent);
                 }
-                if (marker.getTitle().equals(Utilidades.getLMarcadores().getListaMarcadores().get(4).getTitle())) {
+                if (marker.getTitle().equals(Utilidades.getLMarcadores().getListaMarcadores().get(4).getTitle()) && activado5) {
                     marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.arrigorriagakoetxetzarrrakredondo));
                     Intent intent = new Intent(getApplicationContext(), Activity_Pantalla5.class);
                     startActivity(intent);
                 }
-                if (marker.getTitle().equals(Utilidades.getLMarcadores().getListaMarcadores().get(5).getTitle())) {
+                if (marker.getTitle().equals(Utilidades.getLMarcadores().getListaMarcadores().get(5).getTitle()) && activado6) {
                     marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.baruakojauregiaredondo));
                     Intent intent = new Intent(getApplicationContext(), Activity_Pantalla6.class);
                     startActivity(intent);
@@ -213,7 +215,7 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
                 return false;
             }
         });
-*/
+
         /* Este es el codigo de activar el marcador si estamos a la distancia correcta
         //Si vengo de la pista 1...
         if(intent.getStringExtra("Pista1")!=null && intent.getStringExtra("Pista1").equals("Pista1")) {
@@ -344,6 +346,7 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
         //Activity_Mapa
         */
 
+        /*
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
@@ -381,7 +384,7 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
 
             }
         });
-
+*/
         //Este código es para meter el json al mapa:
        /*
        try {
@@ -583,7 +586,7 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
     }
 
     //Creo una funcion para obtener coordenadas y usarlas en el hilo
-   /* public void ObtenerCoordenadas(){
+    public void ObtenerCoordenadas(){
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             mFusedLocationClient.getLastLocation()
@@ -601,7 +604,7 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
                     });
         }
     }
-*/
+
     //Aquí le digo a la app que si los permisos están activados active la capa mylocation para que me encuentre la ubicación y me ponga
     //el botón my location. Si no están activados los pedimos pasandole una variable static int creada y el permido requerido, los activa. Esto
     //saltará a la función pública onRequestPermissionsResult:
@@ -616,7 +619,7 @@ public class Activity_Mapa extends FragmentActivity implements OnMapReadyCallbac
             mMap.setMyLocationEnabled(true);
 
             //Situo la cámara en mi ubicación actual
-            ObtenerLocalizacion();
+            //ObtenerLocalizacion();
         } else {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MY_PERMISSION_FINE_LOCATION);

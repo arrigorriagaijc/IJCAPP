@@ -68,7 +68,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/saltaraudio"
         android:textStyle="bold"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/givMikel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnAudio1"
